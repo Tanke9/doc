@@ -1,0 +1,30 @@
+https://git-scm.com/
+
+¿Está GIT instalado?
+
+Para confirmar que GIT esté totalmente listo para trabajar, abrimos nuestra terminal ó consola y después ejecutamos el siguiente comando:
+
+$git --version
+ git 1.8.0.3
+
+Ya estás listo para iniciar con GIT.
+Configuremos y personalicemos GIT
+
+Una vez instalado, debemos de configurar GIT.
+
+¿Por qué configurar?
+
+Sencillo, vamos a decirle con qué nombre y correo vas a utilizar GIT, además de establecer una conexión de tu computadora a GitHub, así podrás colaborar y descargar proyectos más fácilmente.
+
+ $git config --global user.name "Alberto Ruiz"
+ $git config --global user.email "alberto.ruiz@correo.es"
+
+El comando "config" se utilizará para la configuración de GIT. Usamos "global" para que tengamos todos los permisos.
+
+"user.name" que significa el nombre usuario y "user.email" que significa el correo electrónico (es importante que coloques el correo electrónico que usas con Github para que se vincule con la cuenta).
+
+¿Listo? Perfecto, vamos a verificar que todo este correcto. Introduzcamos:
+
+$git config --list
+user.name=Alberto Ruiz
+user.email=alberto.ruiz@correo.es
