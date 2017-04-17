@@ -1,0 +1,15 @@
+La gestión de un proyecto se divide en tres áreas:
+
+Local repository: Es el área donde se desarrolla y modifica el código en busca de reparar bugs o realizar features,
+involucra las computadoras y repositorios locales del líder del equipo y el resto de los desarrolladores.
+
+Central repository (github): Es donde el líder del equipo debate, acepta o rechaza los cambios que le envían el resto
+de los desarrolladores mediante los pull request.
+
+Remote repository (en este caso, Amazon webservices): Este lugar es donde se hace el despliegue del proyecto hacia los
+usuarios finales, se recomienda no enviar los cambios directamente desde el local repository, en su lugar debe hacerse
+desde el Central repository.
+
+
+Git pull lo utlizamos para sincronizar los cambios que se ha realizado en el proyecto y que realizaron otros elementos
+ que participan en el proyecto
