@@ -13,3 +13,5 @@ desde el Central repository.
 
 Git pull lo utlizamos para sincronizar los cambios que se ha realizado en el proyecto y que realizaron otros elementos
  que participan en el proyecto
+
+ yum install git instala git en servidor host donde no este instalado
