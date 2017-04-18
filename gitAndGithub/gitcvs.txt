@@ -1,6 +1,0 @@
-GitHub = Esuna plataforma de colaboración.
-Git = Es la harramienta para utilizar una plataforma de colaboración.
-
-Los sistemas de control de versiones te ayudan a guardar momentos en el tiempo
-registrando todo el proyecto. Accediendo a todo ese registro situandote en
-versiones del proyecto.

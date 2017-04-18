@@ -1,0 +1,11 @@
+Los sistemas de control de versiones te ayudan a guardar momentos en el tiempo
+registrando todo el proyecto. Accediendo a todo ese registro situandote en
+versiones del proyecto.
+
+GitHub = Esuna plataforma de colaboración.
+Git = Es la harramienta para utilizar una plataforma de colaboración.
+
+Arquitectura de árbol: Dónde se genera toda la historia sobre nuestro proyecto.
+Working Area: Espacio donde editas todo tu proyecto en tu computadora (Sublime, Atom, Notepad++).
+Staging Area: Área de preparación y selección de archivos que se subirán al repositorio final.
+Repositorio: Registro del proyecto donde se pueden ver los cambios en nuestros proyectos y hacer un seguimiento al control de versiones del mismo.

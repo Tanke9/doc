@@ -1,0 +1,39 @@
+https://git-scm.com/
+
+$git --version
+git 2.6.2
+
+Si no esta vamos a cmd y vamos a la ruta
+
+cd C:\Program Files\Git\usr\bin
+
+Se genera sin frase
+ssh-keygen -t rsa -C "email"
+
+Se copia
+type "C:\users\nombre usuario\.ssh\id_rsa.pub" | clip
+
+Se introduce en gitlab
+
+Ya estás listo para iniciar con GIT.
+Configuremos y personalicemos GIT
+
+Sencillo, vamos a decirle con qué nombre y correo vas a utilizar GIT, además de
+establecer una conexión de tu computadora a GitHub, así podrás colaborar y
+descargar proyectos más fácilmente.
+
+ $git config --global user.name "Alberto Ruiz"
+ $git config --global user.email "alberto.ruiz@correo.es"
+
+El comando "config" se utilizará para la configuración de GIT. Usamos "global"
+para que tengamos todos los permisos.
+
+"user.name" que significa el nombre usuario y "user.email" que significa el
+correo electrónico (es importante que coloques el correo electrónico que usas
+con Github para que se vincule con la cuenta).
+
+¿Listo? Perfecto, vamos a verificar que todo este correcto. Introduzcamos:
+
+$git config --list
+user.name=Alberto Ruiz
+user.email=alberto.ruiz@correo.es
