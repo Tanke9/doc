@@ -1,0 +1,8 @@
+Un commit esta formado por:
+parent
+author
+fecha
+Commit id : (SHA-1 (Secure Hash Algorithm)): es un algoritmo de digestión o
+función hash; es prácticamente imposible que se genere un commit ID repetido
+(colisión) por varias razones. Para empezar, tendrían que realizar algo así
+como 2^80 (1.20892581961463 e24) commits. 

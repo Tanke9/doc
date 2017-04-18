@@ -1,0 +1,11 @@
+-git reset hard (id_commit): es el comando para borrar commits y tambien para 
+restaura el ultimo commit borrado.
+
+-git reset mix se borra es staging area y el repositorio....no se mete con el
+working area(sublime text o cualquier otro editor).
+
+-git reset soft se borra el commit y no el staging area y el working area....los
+archivos quedan cargados para hacer un nuevo commit en el staging area.
+
+-git checkout id_commit se utiliza para regresar en el tiempo a un punto
+determinado del proyecto.
