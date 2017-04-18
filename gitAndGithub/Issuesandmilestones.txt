@@ -1,0 +1,11 @@
+En issues, labels and milestones sirven para poner objetivos generales o descriptivos
+que nos permitirán avanzar en el proyecto y saber exactamente lo que necesitamos, es
+una manera de establecer metas.
+
+el Milestone es un conjunto de tareas (Issues) y las Issues son objetivos mas generales
+
+
+Ej.
+Milestone —> Remodelar casa, se debe entregar en febrero
+Issue —> Miembro1 se encarga de pintar.
+Miembro2 se encarga del piso.

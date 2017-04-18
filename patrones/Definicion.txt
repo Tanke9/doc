@@ -1,0 +1,12 @@
+-un patron es una solucion reutilizable a un problema comun en un contexto dado.
+-se enfoca en la solucion, no en el problema.
+-identifica responsabilidades e interacciones entre los participantes
+-un patron es principalmente una forma de masticar consejos sobre un problema.
+
+Caracteristicas:
+
+-vocabuliario y entendimiento comun para el diseño de software
+-alternativas de diseñor para que sea flexible y reutilizable
+-Construir arquitecturas de software complejas y heterogeneas
+-Favorece la vida y la mantenabilidad
+-Incrementa tu experiencia profesional

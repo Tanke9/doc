@@ -1,0 +1,8 @@
+Problema
+  -Diseñar un sistema con ciertas caracteristicas o modulos y que cada uno
+  no dependa del otro
+  -La comunicacion entre capas
+Contexto : aplciaciones grandes que requieren descomposicion
+Solucion: Estructurar en grupos de subtareas
+
+Ejemplo patron layers_ Capa presentacion, capa logica, capa datos.
