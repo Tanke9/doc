@@ -4,8 +4,7 @@ para crear la rama
 1-git branch nombre rama
 2-o bien poner: git checkout -b nombre la rama (la crea y se pone en ella)
 
-Para ir a una rama
-git checkout nombre de la rama
+Para ir a una rama: git checkout nombre de la rama
 
 para fusionar la rama que va a recibir o absorver la rama
 git merge (ramaqueva a ser absorvida)
@@ -14,6 +13,4 @@ git log para ver guay las ramas usando alias.
 git log --oneline --graph --all
 git config --global alias.nicelog "log --oneline --graph --all"
 
-Para borrar una rama
-
-git branch -d nombre rama
+Para borrar una rama: git branch -d nombre rama

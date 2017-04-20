@@ -1,0 +1,20 @@
+Origin/master en tu local es una rama escondida que refleja la rama remota del
+repositorio de github. Cuando descarga de github el master se copia en ésta de
+mi repositorio local.
+
+Antes de nada hay que ver si ha habido cambios en el master del repositorio remoto.
+Con el git fetch, se descargaria a la rama escondida origin/master. Y luego hacer
+una fusion del origin/master de mi local con el master de mi local. Seguidamente
+puedo hacer un push al repositorio.
+
+Git Fetch & Git Merge
+
+Creamos ó entramos a la carpeta de nuestro proyecto
+$ git init (si apenas vamos a iniciar)
+$ git remote add origin [HTTS or SSH]
+$ git fetch origin
+$ git merge origin/master
+Hacen cambios
+$ git fetch origin
+$ git merge origin/master
+$ git push origin master

@@ -3,17 +3,12 @@ https://git-scm.com/
 $git --version
 git 2.6.2
 
-Si no esta vamos a cmd y vamos a la ruta
-
-cd C:\Program Files\Git\usr\bin
-
-Se genera sin frase
-ssh-keygen -t rsa -C "email"
-
-Se copia
-type "C:\users\nombre usuario\.ssh\id_rsa.pub" | clip
-
-Se introduce en gitlab
+1-Si no esta vamos a cmd y vamos a la ruta: cd C:\Program Files\Git\usr\bin
+2-Se genera la llave
+  ssh-keygen -t rsa -C "email"
+3-Se copia
+  type "C:\users\nombre usuario\.ssh\id_rsa.pub" | clip
+4-Se introduce en gitlab
 
 Ya estás listo para iniciar con GIT.
 Configuremos y personalicemos GIT
@@ -37,3 +32,6 @@ con Github para que se vincule con la cuenta).
 $git config --list
 user.name=Alberto Ruiz
 user.email=alberto.ruiz@correo.es
+
+La carpeta .git oculta que se crea cuando se inicia el commit se puede borrar y
+se carga todo el git de ese proyecto.

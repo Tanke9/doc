@@ -1,8 +1,0 @@
-Fork proyecto
-Crear repositorio local ( git init)
-Agregar remote origin (git remote add origin ssh_dir_proyecto_fork)
-Agregar remote upstream (git remote add upstream ssh_dir_proyecto_original)
-Descargar cambios de proyecto fork ( git fetch origin )
-Realziar fusión en local ( git merge origin/master )
-Descargar cambios de proyecto original  (  git fetch upstream)
-Realziar fusión en local (git merge upstream/master)

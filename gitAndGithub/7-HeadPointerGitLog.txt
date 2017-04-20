@@ -1,3 +1,5 @@
+HEAD: Indica el commit en el cual nos encontramos dentro de nuestro proyecto.
+
 LOGS
 
 git log --oneline     (Te muestra el id commit y el titulo del commit)

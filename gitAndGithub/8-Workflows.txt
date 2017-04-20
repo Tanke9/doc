@@ -1,0 +1,31 @@
+Como lograr que varios profesionales trabajen sobre un codigo sin matarse.
+
+Github se puede usar en modo exploracion (clone) o colaboración.
+
+Exploracion : git clone respositorio via ssh o https
+Local repository: repositorio local, mi workspace
+Remote repository: respositorio remoto, por ejemplo en github
+
+CONECTARNOS CON GITHUB
+
+Crear repositorio en github
+Crear llave ssh
+	$ ssh-keygen -t rsa -b 4096 -C "poner aquí correo electrónico"
+Buscar la llave pública que se guardo en la dirección por defecto para ponerla
+en github, puedes verificar los directorios con:
+		ls -la
+y verificar que existe la carpeta .ssh, entramos a .ssh y verificando sus
+archivos examinamos el archivo (llave pública) id_rsa.pub para extraer la llave
+pública y dársela a github con el comando:
+		cat id_rsa.pub
+lo que sale (el número-te enorme) es la llave pública que colocaremos en github
+(Settings - SSH) para que github identifique que tenemos de alguna forma la
+llave privada (Guardada en el local).
+
+SUBIR CAMBIOS A GITHUB
+$ git init
+$ git remote add origin [HTTPS or SSH]
+$ git remote -v
+Generamos cambios
+$ git commit -am "[Mensaje]"
+$ git push origin master

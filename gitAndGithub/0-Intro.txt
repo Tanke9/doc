@@ -2,10 +2,15 @@ Los sistemas de control de versiones te ayudan a guardar momentos en el tiempo
 registrando todo el proyecto. Accediendo a todo ese registro situandote en
 versiones del proyecto.
 
-GitHub = Esuna plataforma de colaboración.
+GitHub = Es una plataforma de colaboración. En la cual los desarrolladores suben
+sus proyectos de codigo, con el objetivo de mejorarlos a traves de la
+colaboración y gestión. o dicho de otra manera, es un servicio de hosting de
+repositorios a traves de una interfaz grafica.
 Git = Es la harramienta para utilizar una plataforma de colaboración.
 
 Arquitectura de árbol: Dónde se genera toda la historia sobre nuestro proyecto.
 Working Area: Espacio donde editas todo tu proyecto en tu computadora (Sublime, Atom, Notepad++).
 Staging Area: Área de preparación y selección de archivos que se subirán al repositorio final.
 Repositorio: Registro del proyecto donde se pueden ver los cambios en nuestros proyectos y hacer un seguimiento al control de versiones del mismo.
+
+Github se puede usar en modo exploracion (clone) o colaboración.

@@ -1,0 +1,35 @@
+En los respositorios forked no somos dueños del repositorio pero podemos
+colaborar con ellos enviando peticiones pull request y los propietarios son
+los encargados de aceptar o rechazar esas peticiones.
+
+Hay que identificar 2 repositorios. Los cuales hay que descargar a nuestro local
+y conectar mediante el git remote:
+1-El respositorio forked replica del original y que tenemos en nuestra cuenta.
+  git remote add origin
+2-El original del propietario
+  git remote add upstream (upstream la rama vinculo con el repositorio original)
+
+Por lo tanto en nuestro local repositori quedarian 3 ramas, 2 escondidas
+  1. origin/master
+  2. upstream/master
+  3. master
+
+Crear ó entrar a la carpeta del proyecto
+$ git remote add origin [HTTPS ó SSH del proyecto forked]
+$ git remote add upstream [HTTPS ó SSH del proyecto "main"]
+$ git fetch upstream
+$ git merge origin/upstream
+$ git fetch origin(en caso de que haya mas personas en el forked)
+$ git merge origin/master
+
+Y se harian los cambios en local
+$ git fetch upstream
+$ git merge upstream/master
+si se realizan los cambios se haria luego un
+$ git add -A
+$ git commit -m "mensaje"
+$ git push origin master (pus a mi repositorio fork)
+El ultimo paso es el pull request
+
+El propietario podria ir comentando acerca del pull request, cerrar los
+comentarios y si lo acepta hacer el merge pull request.
