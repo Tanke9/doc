@@ -1,0 +1,6 @@
+Repositorios que se pueden instalar en un servidor.
+Sirven para almacenar un proyecto web.
+
+A diferencia de un repositorio normal no tiene working area ni stagin area.
+
+Los bare repository se conectan por push y pull.

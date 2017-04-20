@@ -1,0 +1,15 @@
+impide subir archivos a tu repositorio
+En el archivo se agrega que extensiones quieres qu no suban  al repositorio.
+
+Se crea la carpeta ignore,
+touch readme.md.
+git init
+git add- A
+git commit -m "inicio"
+
+touch ignorame.txt
+touch .ignore
+vim .ignore (permite editar letra o)
+*.txt (ignora todos los terminados en .txt)
+ignorame.txt (este fichero lo ignora)
+Salgo (escape, : , x)

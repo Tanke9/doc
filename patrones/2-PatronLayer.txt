@@ -1,0 +1,35 @@
+Problema
+  -Diseñar un sistema con ciertas caracteristicas o modulos y que cada uno
+  no dependa del otro
+  -La comunicacion entre capas
+Contexto : aplciaciones grandes que requieren descomposicion
+Solucion: Estructurar en grupos de subtareas, cada cual con un nivel de abstraccion.
+
+Ejemplo patron layers_ Capa presentacion, capa logica, capa datos.
+
+El Patron layer se basa en capas concatenadas.. todas tienen una dependencia
+directa de la otra que son necesarias para proporcionar servicios.
+
+La arquitectura de tres capas es un patrón de arquitectura de software
+cliente-servidor en el que la interfaz de usuario (PresentationLayer), la lógica
+de negocio funcional (LogicLayer), el acceso y almacenamiento de datos(DataLayer)
+en están desarrollados y mantenidos como módulos independientes, con mucha
+frecuencia en plataformas separadas.
+
+ejemplo python
+
+class DataLayer():
+ def l1Service(self):
+ print("Executing %s Service" % self.name);
+
+class DomainLayer():
+ def l2Service(self):
+ print("Starting %s Service" % self.name)
+ self.lowerLayer.l1Service()
+ print("Finishing %s Service" % self.name)
+
+class PresentationLayer():
+ def l3Service(self):
+ print("Starting %s Service" % self.name)
+ self.lowerLayer.l2Service()
+ print("Finishing %s Service" % self.name)

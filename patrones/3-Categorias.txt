@@ -1,0 +1,16 @@
+Sintomas de mal diseño
+    -Rigidez. Un cambio implica multiples cambios
+    -Fragilidad. Un cambio choca con muchas otras piezas
+    -Inmovilidad. Reutilizar codigo o componente en otros lados
+    -Viscosidad: realizar un cambio sobre una pieza impacta sobre la forma en
+     que estaba diseñado
+
+Principios SOLID
+
+    -Responsabilidad: Definir funcionanlidad exacta de clase o componente.
+    -Open closed: Abierto para poder extender le comportamiento de las clases hijas,
+     cerrado porque no debe de impactar a las clase padre.
+    -Substitución: las clases hijas puedan ser sustitidas por la clase padre
+    -Segregación de interfaces: Permitir realizar interfaces detallasdas (espesificas)
+    -Inversión de dependencias: Solo depender de las clases abstractas o padre mas de
+    las las clase hijas

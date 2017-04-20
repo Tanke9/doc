@@ -1,0 +1,18 @@
+Git tags es una tecnica para especificar momentos de tu repositorio importantes.
+Una nueva version del proyecto, una funcionalidad fuerte, etc.
+
+existen dos formas de crear:
+
+-annotated tag: con mensaje,la estructura es la siguiente:
+
+      git tag-a [version] -m [mensaje]
+      git tag -a v1.0 -m "el mensaje"
+
+-lightweight tag:que agregas la versión y listo sin mensaje; la estructura es la
+siguiente:
+
+      git tag v1.1
+
+git tag : solamente muestra todos los tag
+git show: me muestra información sobre algún tag
+git tag -d version : se utiliza para borrar u tag que uno no desee
