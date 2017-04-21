@@ -1,3 +1,5 @@
+http://lineadecodigo.com/patrones/
+
 -un patron es una solucion reutilizable a un problema comun en un contexto dado.
 -se enfoca en la solucion, no en el problema.
 -identifica responsabilidades e interacciones entre los participantes

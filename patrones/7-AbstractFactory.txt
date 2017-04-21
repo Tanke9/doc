@@ -1,0 +1,26 @@
+• Problema:
+    ▫ Desea proporcionar una biblioteca de clases de productos
+    ▫ Desea revelar sólo sus interfaces, no sus
+    implementaciones.
+• Contexto:
+    ▫ Evitar añadir código a las clases existentes con el fin de
+    hacer que encapsule información más general.
+• Solución:
+    ▫ Proporciona una interfaz para crear familias de objetos
+    relacionados o dependientes sin especificar sus clases
+    concretas.
+
+PARTICIPANTES DEL PATRON
+    • AbstractFactory
+        ▫ declara una interfaz para las operaciones que crean
+        AbstractProduct
+    • ConcreteFactory
+        ▫ implementa operaciones para crear Product concretos.
+    • AbstractProduct
+        ▫ declara una interfaz para un tipo de objetos Product.
+    • Product
+        ▫ define un producto a ser creado por el ConcreteFactory
+        correspondiente; que implementa la interfaz AbstractProduct.
+    • Client
+        ▫ utiliza las interfaces declaradas por las clases AbstractFactory
+        y AbstractProduct.
