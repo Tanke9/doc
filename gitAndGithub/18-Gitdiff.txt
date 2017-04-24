@@ -1,0 +1,8 @@
+Compara commit de cambios y avances
+
+git log (te muestra los commits)
+
+Nos situamos en el commit que queremos (git checkout..)
+del segundo pillamos el commit
+
+git diff (commit)

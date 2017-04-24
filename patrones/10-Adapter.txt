@@ -1,0 +1,232 @@
+
+Un adaptador es para no obligar a los clientes de nuestro código a cambiar su código.
+
+Este ejemplo esta genial
+
+http://codejavu.blogspot.com.es/2013/08/ejemplo-patron-adapter.html
+
+Este patrón permite la cooperación entre clases para extender sus funcionalidades
+a clases de diferentes tipos, que no pueden usarlas por mecanismos comunes como
+la herencia....
+
+Muchas veces tenemos que integrar clases o librerías necesarias para nuestra
+aplicación, pero en ocasiones no podemos utilizar directamente sus funcionalidades
+usando la Herencia (por ejemplo) ya que por X o Y motivo no hay compatibilidad
+entre nuestras clases y las que provee la librería...... gracias a problemáticas
+como esta nace el patrón Adapter que en pocas palabras permite establecer un
+puente entre la clase incompatible con el resto de las clases que quieren usar
+su funcionalidad, adaptando dichas funcionalidades con el sistema...... veamos.
+
+El Problema.
+
+Supongamos que tenemos un sistema que trabaja con diferentes tipos de motores
+(Común, Económico) que comparten características comunes así como su
+funcionamiento, se desea vincular al sistema una clase de tipo motor Eléctrico
+con un funcionamiento diferente al de los demás, se debe adaptar la nueva clase
+sin que esto afecte la lógica inicial de la aplicación...
+
+La Solución.
+
+Ya que nos plantean vincular un nuevo motor totalmente diferente al resto de
+motores definido en el sistema, entonces deducimos que si bien es un motor no
+puede tener un tratamiento igual al de los demás, ya que el modo de encenderlo,
+ponerlo en funcionamiento y hasta apagarlo podría ser muy distinto y podría
+afectar la lógica establecida, como no podemos modificar bruscamente nuestro
+código entonces utilizaremos el patrón Adapter para dar solución a nuestra
+problemática....
+
+Como vemos nuestro sistema gira en torno a los motores, utilizamos la herencia
+para compartir funcionalidades comunes para los diferentes tipos de motores con
+los que trabajaremos, sin embargo evidenciamos que no todos ellos se comportan
+de la misma manera como es el caso del Motor Eléctrico, por tal razón no podemos
+ponerlo a heredar directamente de la clase Motor, ya que los métodos que esta
+nos provee no serian útiles para esta clase....
+
+En este punto es donde hacemos uso de una clase Adapter que serviría de puente
+entre la clase Padre y La Clase que debe ser adaptada, así este adaptador seria
+el encargado de establecer comunicación con el motor Eléctrico y ejecutar las
+solicitudes que el cliente realice...
+
+Clase Motor.
+
+Esta clase es desde la cual heredaran los diferentes tipos de motores, provee
+los métodos comunes (encender, acelerar, apagar) para el funcionamiento de los
+mismos.
+
+public abstract class Motor {
+   abstract public void encender();
+   abstract public void acelerar();
+   abstract public void apagar();
+}
+
+Motores Común y Económico.
+
+Esta clase representa la estructura de los motores normales con los que el
+sistema funciona, básicamente heredan de la clase Motor y realizan el
+funcionamiento básico que esta provee.
+
+public class MotorComun extends Motor {
+
+    public MotorComun(){
+        super();
+        System.out.println("Creando el motor comun");
+    }
+
+    @Override
+    public void encender() {
+        System.out.println("encendiendo motor comun");
+    }
+
+    @Override
+    public void acelerar() {
+        System.out.println("acelerando el motor comun");
+    }
+
+    @Override
+    public void apagar() {
+        System.out.println("Apagando motor comun");
+    }
+}
+
+Clase MotorElectricoAdapter.
+
+Aquí se establece el puente por medio del cual la clase incompatible puede ser
+utilizada, hereda de la clase Motor y por medio de la implementación dada ,
+realiza la comunicación con la clase a adaptar usando para esto una instancia
+de la misma...
+
+public class MotorElectricoAdapter extends Motor{
+    private MotorElectrico motorElectrico;
+
+    public MotorElectricoAdapter(){
+        super();
+        this.motorElectrico = new MotorElectrico();
+        System.out.println("Creando motor Electrico adapter");
+    }
+    @Override
+    public void encender() {
+        System.out.println("Encendiendo motorElectricoAdapter");
+        this.motorElectrico.conectar();
+        this.motorElectrico.activar();
+    }
+
+    @Override
+    public void acelerar() {
+        System.out.println("Acelerando motor electrico...");
+        this.motorElectrico.moverMasRapido();
+    }
+
+    @Override
+    public void apagar() {
+        System.out.println("Apagando motor electrico");
+        this.motorElectrico.detener();
+        this.motorElectrico.desconectar();
+    }
+}
+
+
+Clase MotorElectrico.
+
+Esta es la clase adaptable, como vemos a pesar de ser un motor posee
+características muy diferentes a los demás tipos de motores del sistema, por lo
+tanto no puede heredar directamente de la clase Motor, en vez de esto, es
+accedida por la clase Adapter...
+
+public class MotorElectrico {
+
+    private boolean conectado = false;
+
+    public MotorElectrico() {
+        System.out.println("Creando motor electrico");
+        this.conectado = false;
+    }
+
+    public void conectar() {
+        System.out.println("Conectando motor electrico");
+        this.conectado = true;
+    }
+
+    public void activar() {
+        if (!this.conectado) {
+            System.out.println("No se puede activar porque no " +
+              "esta conectado el motor electrico");
+        } else {
+            System.out.println("Esta conectado, activando motor" +
+              " electrico....");
+        }
+    }
+
+    public void moverMasRapido() {
+        if (!this.conectado) {
+            System.out.println("No se puede mover rapido el motor " +
+              "electrico porque no esta conectado...");
+        } else {
+            System.out.println("Moviendo mas rapido...aumentando voltaje");
+        }
+    }
+
+    public void detener() {
+        if (!this.conectado) {
+            System.out.println("No se puede detener motor electrico" +
+              " porque no esta conectado");
+        } else {
+            System.out.println("Deteniendo motor electrico");
+        }
+    }
+
+    public void desconectar() {
+        System.out.println("Desconectando motor electrico...");
+        this.conectado = false;
+    }
+}
+
+
+Clase Aplicación.
+
+Finalmente esta clase representa el Cliente del sistema que usa los diferentes
+tipos de motores,  como vemos desde aquí se hacen los llamados sin importar cual
+es la lógica detrás de estos, por medio del patrón Adapter llamamos a los mismos
+métodos encender(), acelerar() o apagar(), siendo transparente el proceso interno
+que se realiza...... podemos evidenciar también como se utiliza el polimorfismo
+para hacer este tipo de llamados.....
+
+private void usarMotorComun() {
+    Motor motor = new MotorEconomico();
+    motor = new MotorComun();
+    motor.encender();
+    motor.acelerar();
+    motor.apagar();
+}
+
+private void usarMotorElectrico() {
+    Motor motor = new MotorElectricoAdapter() ;
+    motor.encender();
+    motor.acelerar();
+    motor.apagar();
+}
+
+private void usarMotorEconomico() {
+    Motor motor = new MotorEconomico();
+    motor.encender();
+    motor.acelerar();
+    motor.apagar();
+}
+
+
+Y Listo!!! hasta aquí realizamos el ejemplo, mas abajo veremos el link de
+descarga....
+
+Conclusiones.
+
+Como vimos, se pudo utilizar una nueva clase sin afectar la lógica del sistema,
+utilizamos una clase que sirvió como puente o adaptador para la clase nueva, sin
+que eso afectara el código de nuestras clases existentes.
+
+El ejemplo fue muy básico y tal vez común, sin embargo muchas veces tendremos que
+utilizar librerías o clases que no pueden ser modificadas y se debe hacer de la
+forma menos traumática para nuestra aplicación, por lo tanto este patrón puede
+ser de mucha ayuda discriminando el uso de esas nuevas clases por medio de un
+adaptador....
+
+Con este patrón terminamos la secuencia de entradas sobre este tema, mas
+adelante trabajaremos otra serie de artículos que pueden ser de interés...

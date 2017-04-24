@@ -1,0 +1,41 @@
+Es una fachada.
+
+Poder definir una interfaz que de manera sencilla se pueda interactuar con un
+sistema complejo.
+
+Este patron tiene dos participantes
+
+Facade: sabe la complejidad del sistema. Todas sus peticiones las delega en las
+diferente piezas del subsistema
+Clases del subsistema :Todos los demas participantes que podrian ser
+
+
+Ejemplo de un compilador, compuesto por subsistemas, como scaner con el analisis
+lexico, el parxer, etc etc etc...:
+
+
+class Scanner:
+	def __init__(self):
+		self.name = "Scanner"
+
+class Parser:
+	def __init__(self):
+		self.name = "Parser"
+
+
+class Compiler:
+	def __init__(self):
+		self.name = "Compiler"
+		self.scanner = Scanner()
+		self.parser = Parser()
+
+	def compile(self):
+		print("Compiling ...")
+		print("Scanning %s" % self.scanner.name)
+		print("Parsing %s" % self.parser.name)
+
+
+
+if __name__ == "__main__":
+	compiler = Compiler()
+	compiler.compile()

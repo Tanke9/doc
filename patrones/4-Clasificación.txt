@@ -1,0 +1,34 @@
+1- Clasificacion de patrones de diseño gof
+
+      -Proposito
+        .Refleja lo que hace un patrón
+        .Patrones de creación(de objetos), estructura(composicion de objetos) y
+        comportamiento(iteraccion de estas clases)
+      -Alcance
+        .Especifica si el patron se aplica principalmente a clases u objetos
+        .Patrones de clase y de objeto
+
+2- Patrones de diseño creacionales(No son todos(23), pero si los mas comunes) :
+
+        -Factory Method: Crea una instancia de varias clases derivadas. Si quiero crear
+        un objeto derivado de otro, por ejemplo necesito crear un perro, gato..etc de
+        una fabrica de animales
+        -Abstract Factory: Crea una instancia de varias familias de clases
+        -Builder: Separa la construccion de un objeto de su representacion
+        -Prototype: De que manera generamos prototipos para reutilizarlos
+        -Singleton: Asegurarnos de que solo exista una instancia de una clase dentro
+        de toda la aplicación
+
+3-Patron Builder:
+
+        -Problema: Conforme mas compleja, mas complejo se vuelven los objetos y clases
+        -Contexto: Aplicacion que necesita mecanismos independientes para
+        construir objetos.
+        -Solucion: Definir una instancia para crear un objeto y que las subclases
+        decida que clase instanciar
+
+        Participantes del patron Builder:
+        -Builder.class: ES la interfaz abstracta
+        -ConcreteBuilder. Una herencia de los tipos de builder.
+        -Director class: El que va a utilizar estos objetos
+        -Product: el producto en question

@@ -1,0 +1,145 @@
+Factory Method
+Crea una instancia de varias clases derivadas. Permite delegar en una clase la
+responsabilidad de crear objetos de otras clases,
+
+• Problema:
+      ▫ Una clase no puede anticipar la clase de objetos que
+      debe crear.
+      ▫ Una clase quiere sus subclases especifiquen los objetos
+      que crean.
+• Contexto:
+      ▫ Los frameworks utilizan clases abstractas para definir y
+      mantener las relaciones entre objetos. Una
+      responsabilidad es crear tales objetos.
+• Solución:
+      ▫ Definir una interfaz para crear un objeto, pero dejando la
+      elección de su tipo a las subclases, la creación se aplaza
+      hasta el tiempo de ejecución.
+
+
+Participantes del patron Factory Method:
+
+  Product
+      ▫ define la interfaz para los objetos que FactoryMethod
+      crea.
+  ConcreteProduct
+    ▫ implementa la interfaz Product.
+  Creator(o Factory)
+    ▫ declara el método FactoryMethod, que devuelve un
+    objeto Producto. Puede llamar al método de generación
+    para la creación de objetos Product
+  ConcreteCreator
+    ▫ sobreescribe el método de generación para crear objetos
+    ConcreteProduct
+
+Ejemplo 1:
+
+interface ImageReader {
+    DecodedImage getDecodeImage();
+}
+
+class DecodedImage {
+    private String image;
+
+    public DecodedImage(String image) {
+        this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return image + ": is decoded";
+    }
+}
+
+class GifReader implements ImageReader {
+    private DecodedImage decodedImage;
+
+    public GifReader(String image) {
+        this.decodedImage = new DecodedImage(image);
+    }
+
+    @Override
+    public DecodedImage getDecodeImage() {
+        return decodedImage;
+    }
+}
+
+class JpegReader implements ImageReader {
+    private DecodedImage decodedImage;
+
+    public JpegReader(String image) {
+        decodedImage = new DecodedImage(image);
+    }
+
+    @Override
+    public DecodedImage getDecodeImage() {
+        return decodedImage;
+    }
+}
+
+public class FactoryMethodDemo {
+    public static void main(String[] args) {
+        DecodedImage decodedImage;
+        ImageReader reader = null;
+        String image = args[0];
+        String format = image.substring(image.indexOf('.') + 1, (image.length()));
+        if (format.equals("gif")) {
+            reader = new GifReader(image);
+        }
+        if (format.equals("jpeg")) {
+            reader = new JpegReader(image);
+        }
+        assert reader != null;
+        decodedImage = reader.getDecodeImage();
+        System.out.println(decodedImage);
+    }
+}
+
+
+Ejemplo2:
+
+FactoryMethod.py (clase abstracta)
+
+  from abc import ABCMeta
+
+class Car(metaclass=ABCMeta): //es la manera de definir que es abstracta en pyth
+    def __init__(self):     //constructor
+        self.name = None    //Nombre inicilizado a nulo
+        self.maxSpeed = None //Velocidad maxima
+
+    def __str__(self):    //El equivalente a toString de java
+        return "name is {:s}, maxSpeed is {:s}".format(self.name, self.maxSpeed)
+
+class SportsCar(Car):       //Clase SportsCar que hereda de Car
+    def __init__(self):
+        self.name = "Deportivo"
+        self.maxSpeed = "250 km/hr"
+
+class FamilyCar(Car):     //Clase FamilyCar que hereda de Car
+    def __init__(self):
+        self.name = "Familiar"
+        self.maxSpeed = "150 km/hr"
+
+
+
+class MyFactory:
+    def createCar(self, carType):
+        self.car = None
+        if carType == "sports":
+            self.car =  SportsCar();
+        elif carType == "family":
+            self.car =  FamilyCar();
+        else:
+            print("Car type {:s} is not defined".format(carType))
+        return self.car
+
+    def doSomething(self):
+        print(self.car)
+
+if __name__ == "__main__":
+    myFactory = MyFactory()
+    s = myFactory.createCar("sports")
+    f = myFactory.createCar("family")
+
+    print(s)
+    print(f)

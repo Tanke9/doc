@@ -1,0 +1,231 @@
+El Patrón Decorator Permite agregar funcionalidades y responsabilidades a objetos
+de forma dinámica y transparente para el usuario, esto se realiza por medio de
+relaciones con otras clases extendiendo su funcionalidad al incorporar las de
+las clases asociadas, de esta forma el patrón no es dependiente de la Herencia
+ya que aunque esta puede jugar un papel importante, prevalece el uso de
+conceptos como la composición al momento de definir comportamientos....
+
+• Problema:
+    ▫ Agregar responsabilidades a objetos individuales dinámica y transparentemente
+• Contexto:
+    ▫ A veces queremos añadir responsabilidades a objetos individuales, no para
+    toda una clase
+• Solución
+    ▫ Adjuntar responsabilidades adicionales a un objeto de
+forma dinámica.
+    ▫ Decorators proporcionan una alternativa flexible a las
+    subclases para ampliar la funcionalidad.
+
+Participantes
+
+• Component
+  ▫ Interfaz para objetos que pueden tener responsabilidades
+  añadidas dinámicamente
+• ConcreteComponent
+  ▫ Define un objeto al cuál se le pueden añadir
+  responsabilidades adicionales
+• Decorator
+  ▫ Mantiene una referencia al objeto Component y define
+  una interfaz que cumple con la interfaz de Component
+• Concrete Decorators
+  ▫ Extienden la funcionalidad del Component al añadirle
+  estado o comportamiento
+
+tenemos una SuperClase de la cual heredan clases concretas y las clases
+Decoradoras que a su vez también pueden ser clases padre de clases decoradoras
+Concretas...... ¿Que?.....
+
+¿Pero si dijimos que el patrón no es dependiente de la herencia porque hablamos
+de SuperClases?
+
+La pregunta anterior es muy común, ya que puede llegar a ser muy confusa la
+definición, sin embargo la respuesta es muy simple, con el Decorator la herencia
+es requerida ya que los decoradores deben tener el mismo tipo de los objetos a
+decorar pero no se utiliza la Herencia para lograr el comportamiento....... el
+comportamiento se da al realizar la composición de decoradores con los
+componentes concretos.....(Cuando Hablamos de comportamiento, nos referimos a
+las nuevas funcionalidades que usamos...)
+
+Si se basará en la herencia el comportamiento solo se definiría estáticamente en
+tiempo de compilación dependiendo de lo que las clases padres hereden, a demás
+todas las subClases deben heredar comportamientos que puede que no vayan a
+utilizar.....
+
+El Problema.
+
+Un restaurante de comidas rápidas ofrece 3 tipos de combos (Combo Básico, Combo
+Familiar, Combo Especial) cada combo tiene características diferentes en cuanto
+a cantidad, porciones, salsas entre otros, el restaurante también ofrece la
+posibilidad de aumentar el pedido mediante diferentes porciones adicionales
+(Tomate, Papas, Carne, Queso), se desea crear un sistema de pedidos que permita
+al usuario seleccionar el combo deseado, así como armar su propio pedido con las
+porciones adicionales, el sistema deberá informar sobre el pedido del usuario y
+el valor total del mismo.
+
+La Solución.
+
+En el problema nos están solicitando algo puntual, fácilmente deducimos que
+tenemos una familia de Combos en la que podemos usar la herencia, pero si
+atacáramos nuestro problema solo con este concepto, entonces tendríamos que
+crear clases concretas por cada posible combinación de porciones adicionales,
+tal vez esto no seria problema y el sistema funcione, pero si queremos realizar
+varias combinaciones para crear nuevos pedidos tendríamos que entrar a modificar
+el código fuente y luego ejecutar nuevamente la aplicación para que los cambios
+puedan ser visualizados.... por esta razón anteriormente dijimos que usando la
+herencia el comportamiento solo se definiría estáticamente basados en lo heredado
+por las clases Padre....
+
+La solución que nos da el patrón Decorator es solo utilizar la herencia para que
+las clases Decorator tengan el mismo tipo de los objetos a decorar y utilizaremos
+la composición para determinar el comportamiento de forma dinámica y en tiempo de
+ejecución basados en concepto de "Usa" relacionando los decoradores con los
+componentes concretos, así no modificaríamos la lógica de las clases existentes
+cada vez...... Veamos....
+
+Crearemos nuestro sistema ajustándonos al diagrama de clases del patrón, tenemos
+una SuperClase Combo que representa los combos de comidas rápidas disponibles de
+la cual heredan los tipos ComboBasico, ComboFamiliar y ComboEspecial, también
+hereda de el las clases Decorator, en este caso tenemos la clase de Adicionales
+como el decorador y a su vez las hijas que corresponden a cada porción, siendo
+estas las clases decoradoras concretas....
+
+Vamos a explicar la Aplicación agrupándola en sus 3 paquetes: Componentes,
+Decoradores y Principal...
+
+PracticaDecorator
+  |
+  src
+     |_componentes
+                |_Combo.java
+                |_ComboBasico.java
+                |_ComboEspecia.java
+                |_ComboFamiliar.java
+      decoradores
+                |_AdicionalesDecorator.java
+                |_Carne.java
+                |_Papas.java
+                |_Queso.java
+                |_Tomate.java
+      principal
+              |_Principal.java
+              |_VentanaMenu.java
+
+              Componentes.
+
+  Este paquete contiene la Jerarquía de componentes del patrón, aquí tenemos la
+  SuperClase Combo y sus hijas concretas, el Combo es una clase Abstracta que
+  define una descripción que cada subClase definirá (de que se compone el combo),
+  así como también el método abstracto valor que sera definido por cada subClase
+  que lo implemente.
+
+public abstract class Combo {
+
+ String descripcion = "";
+
+ public String getDescripcion()
+ {
+  return descripcion;
+ }
+
+ public abstract int valor();
+
+}
+
+Las estructura de las clases concretas también es simple, definirán el precio
+del combo correspondiente y asignaran una descripción. (Cada Clase es igual...)
+
+public class ComboBasico extends Combo{
+
+ public ComboBasico() {
+  descripcion="Porcion de Papas Fritas, " +
+   "salsa, queso, amburgueza sencilla, gaseosa";
+ }
+
+ @Override
+ public int valor() {
+  return 6200;
+ }
+}
+
+Decoradores.
+
+Los Decoradores en este caso serán las porciones adicionales, tenemos una clase
+AdicionalesDecorator que es el decorador principal del cual implementaran los
+decoradores concretos, esta clase es hija de la clase Combo y proporciona un
+método abstracto descripcion() para anexar a la descripción del combo, la
+porción seleccionada por el usuario...
+
+public abstract class AdicionalesDecorator extends Combo{
+
+ public abstract String getDescripcion();
+}
+
+Cada Decorador concreto implementa el método getDescripcion(), agregando a la
+descripción la porción seleccionada por el usuario, también implementa el método
+valor() de la clase Combo, en el cual se agrega al valor del combo, el precio de
+la porción....... como vemos en estos decoradores concretos se aplica la
+composición en el momento que creamos el objeto combo (la clase Combo es
+abstracta por lo tanto no puede ser instanciada directamente, por lo tanto el
+objeto que llega como parámetro al constructor se creó previamente por medio de
+polimorfismo)....
+
+public class Carne extends AdicionalesDecorator{
+
+ Combo combo;
+
+ public Carne(Combo combo)
+ {
+  this.combo=combo;
+ }
+
+ @Override
+ public String getDescripcion() {
+  return combo.getDescripcion()+" , Porcion de Carne";
+ }
+
+ @Override
+ public int valor() {
+  return 2500+combo.valor();
+ }
+}
+
+Principal.
+
+Finalmente en el paquete principal tenemos la clase donde se ejecuta el programa
+y la ventana que representa el Menú de Selección desde el cual el usuario puede
+seleccionar el Combo y las porciones a pedir, al enviar el pedido el sistema de
+forma dinámica por medio del patrón Decorator valida las combinaciones
+solicitadas y calcula el precio Total del pedido.
+
+
+Y listo, al aplicar el patrón pudimos crear un menú de comidas que puede ser
+construido por el usuario, sin necesidad de modificar cada vez el código fuente
+ya que el armado del menú se realiza en tiempo de ejecución gracias al Decorator!!!
+
+
+Conclusiones.
+
+Como vemos el patrón nos facilita enormemente el trabajo en este tipo de
+problemáticas  imaginen tener que usar solo la herencia para crear un Menú que
+cumpla con las necesidades de cada cliente, cuantas combinaciones se tendrían
+que realizar por cada posible combinación, en cambio con el patrón tan solo
+necesitamos las clases Bases y los decoradores, gracias a la lógica aplicada,
+las combinaciones se realizan solas....
+
+La lógica del patrón actúa como envoltorios dependiendo de los posibles tipos de
+combos y adicionales seleccionadas, si queremos un combo familiar con papas extra
+entonces se crea esta agrupación, si además escogemos una porción de queso
+entonces dicha porción es agregada a la anterior...
+
+Cuando usamos este patrón reducimos las posibilidades de generar errores o
+defectos secundarios no deseados, ya que si queremos añadir nuevas
+funcionalidades, agregamos nuevo código sin modificar el existente...
+
+Con el Patrón los diseños son resistentes al cambio y lo suficientemente
+flexibles como para satisfacer necesidades cambiantes.
+
+El patrón a demás de utilizar la herencia y la composición también aplica
+conceptos de polimorfismo que pueden ser evidenciados en el código fuente..
+
+Como en todo la practica es fundamental, por eso los invito a repasar el Patrón
+y descargarlo para un mayor entendimiento.

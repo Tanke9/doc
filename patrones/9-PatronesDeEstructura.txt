@@ -1,0 +1,19 @@
+Son aquellos que nos ¿Cómo pueden trabajar una clase y un objeto? Como
+interactuar uno con otro
+
+• Adapter
+Relaciona interfaces de diferentes clases, modulos distintos, etc..
+• Bridge
+Separa la interfaz de un objeto de su implementación
+• Composite
+Una estructura de árbol de objetos simples y
+compuestos
+• Decorator
+Añadir responsabilidades a los objetos dinámicamente, en funcion de los permisos,
+etc..
+• Façade
+Una única clase que representa todo un subsistema
+• Flyweight
+Una instancia usada para compartición eficiente
+• Proxy
+Un objeto que representa a otro objeto

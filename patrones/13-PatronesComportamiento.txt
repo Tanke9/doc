@@ -1,0 +1,28 @@
+Una manera para interactuar entre objetos.
+
+¿Cómo interactuo entre objetos?
+
+• Chain of responsibility
+    Una manera de pasar una petición a una cadena de objetos
+• Command
+    Encapsular una petición de comandos como un objeto
+• Interpreter
+    Una manera de incluir elementos del lenguaje en un
+    programa
+• Iterator
+    Acceso secuencial a los elementos de una colección
+• Mediator
+    Define una comunicación simplificada entre clases
+• Memento
+    ▫ Captura y restaura el estado interno de un objeto
+• Observer
+    ▫ Una forma de notificar cambios a varias clases
+• State
+    ▫ Altera el comportamiento de un objeto cuando cambia de
+    estado
+• Strategy
+    ▫ Encapsula un algoritmo dentro de una clase
+• Template method
+    ▫ Difiere los pasos exactos de un algoritmos a una subclase
+• Visitor
+    ▫ Define una nueva operación a una clase sin cambiarla

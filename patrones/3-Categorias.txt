@@ -14,3 +14,9 @@ Principios SOLID
     -Segregación de interfaces: Permitir realizar interfaces detallasdas (espesificas)
     -Inversión de dependencias: Solo depender de las clases abstractas o padre mas de
     las las clase hijas
+
+Categorias de patrones
+
+  -Patrones de aquitectura: Layers, Mvc, EDA, etc
+  -Patrones de diseño: Factory Method, Facada, Strategy, Observer, etc
+  -Idiomas/Modismos: Manejo de memoria, uso del lenguaje, convenciones de nombrado.

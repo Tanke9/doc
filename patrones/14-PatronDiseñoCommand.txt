@@ -1,0 +1,144 @@
+• Problema:
+    ▫ Especificar, encolar y ejecutar peticiones en diferentes
+    tiempos
+    ▫ Callbacks
+• Contexto:
+    ▫ Emisiión de peticiones a objetos sin saber nada de la
+    operación que se solicite o el receptor de la solicitud
+• Solución
+    ▫ Encapsular una petición como un objeto
+    ▫ Almacenar las peticiones en una cola
+
+Participantes
+
+• Command
+    ▫ Declara una interfaz para ejecutar una operación
+• ConcreteCommand
+    ▫ Extiende Command, implementando el método execute
+    al invocar las operaciones correspondientes en el
+• Invoker
+    ▫ Le pide al Command que ejecute la petición
+• Receiver
+    ▫ Sabe cómo ejecutar las operaciones
+• Client
+    ▫ Crea un objeto ConcreteCommand y le asigna su
+
+
+Ejemplo
+
+interface Command {
+    void execute();
+}
+
+class DomesticEngineer implements Command {
+    public void execute() {
+        System.out.println("take out the trash");
+    }
+}
+
+class Politician implements Command {
+    public void execute() {
+        System.out.println("take money from the rich, take votes from the poor");
+    }
+}
+
+class Programmer implements Command {
+    public void execute() {
+        System.out.println("sell the bugs, charge extra for the fixes");
+    }
+}
+
+public class CommandDemo {
+    public static List produceRequests() {
+        List<Command> queue = new ArrayList<>();
+        queue.add(new DomesticEngineer());
+        queue.add(new Politician());
+        queue.add(new Programmer());
+        return queue;
+    }
+
+    public static void workOffRequests(List queue) {
+        for (Object command : queue) {
+            ((Command)command).execute();
+        }
+    }
+
+    public static void main( String[] args ) {
+        List queue = produceRequests();
+        workOffRequests(queue);
+    }
+}
+Output
+
+take out the trash
+take money from the rich, take votes from the poor
+sell the bugs, charge extra for the fixes
+
+Ejemplo 2:
+from abc import ABCMeta
+
+class Command(metaclass=ABCMeta):
+	def execute(self):
+		pass
+
+
+class Light:
+	""" clase Receiver"""
+	def turnOn(self):
+		print("foco encendido")
+
+	def turnOff(self):
+		print("foco apagado")
+
+
+class Switch:
+	""" clase Invoker"""
+	def __init__(self, onCommand, offCommand):
+		self._onCommand = onCommand
+		self._offCommand = offCommand
+
+
+	def on(self):
+		self._onCommand.execute();
+
+	def off(self):
+		self._offCommand.execute();
+
+
+class OnCommand(Command):
+	def __init__(self, light):
+		self._light = light
+
+	def execute(self):
+		self._light.turnOn()
+
+class OffCommand(Command):
+	def __init__(self, light):
+		self._light = light
+
+	def execute(self):
+		self._light.turnOff()
+
+
+class LightSwitch:
+	""" clase Client"""
+	def __init__(self):
+		self._foco = Light()
+		self._switchUp = OnCommand(self._foco)
+		self._switchDown = OffCommand(self._foco)
+		self._switch = Switch(self._switchUp, self._switchDown)
+
+	def operation(self, cmd):
+		if cmd =="ON":
+			self._switch.on()
+		elif cmd =="OFF":
+			self._switch.off()
+		else:
+			print("Operación invalida")
+
+if __name__ == "__main__":
+	client = LightSwitch()
+	print("testing on command")
+	client.operation("ON")
+	print("testing off command")
+	client.operation("OFF")

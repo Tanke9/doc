@@ -1,0 +1,215 @@
+Básicamente debemos saber que el patrón Observer es un patrón de comportamiento
+que permite relacionar diferentes objetos entre si en torno a uno Principal, así
+cada vez que este ultimo cambie su estado, los demás también cambiaran de forma
+automática....
+
+Podemos decir entonces que dicho patrón se compone de un objeto observable u
+Observado (SujetoConcreto) y objetos observadores (ObservadorConcreto)....
+
+Un  Objeto Observable puede tener uno o mas Observadores, como vemos el
+ObservadorConcreto implementa la interface Observer (propia de Java) la cual
+permite informar sobre los cambios en los objetos observables mediante una
+llamada al método update()...
+
+java también nos proporciona la Clase Observable de la cual extienden las clases
+o sujetos concretos (los observados), esta clase provee varios métodos
+importantes como por ejemplo registerObserver(), removeObserver(),
+notifyObservers() entre otros necesarios para el funcionamiento del patrón, mas
+adelante en nuestro ejemplo veremos como lo podemos usar.
+
+El Problema.
+
+Nos solicitan desarrollar una paleta de colores donde el usuario1 pueda
+seleccionar y visualizar el color que le guste, a la vez dicha selección debe
+ser controlada en tiempo real por el usuario2 y el usuario3 que hacen
+seguimiento a la selección realizada, el problema radica en que estos usuarios
+se encuentran en habitaciones distintas y no pueden ver la selección del usuario1...
+
+La Solución.
+
+Aplicaremos el Patrón Observador ya que según la solicitud, los usuarios 2 y 3
+deben ser informados de manera automática sobre la selección del usuario1, (esto
+descarta la posibilidad de que ambos usuarios tengan que refrescar el sistema,
+pantalla o ventana para estar al tanto del color elegido por el usuario1) de
+esta forma podríamos definir que el usuario1 sera el observado y los demás los
+observadores.............sin embargo podemos manipular nuestra solución para que
+todos tengan ambos roles.
+
+
+La Aplicación.
+
+Crearemos 3 Ventanas que presentarán las aplicaciones de los usuarios, dichas
+ventanas implementarán las interfaz Observer, siendo cada una un
+ObservadorConcreto,  tenemos también la ClaseObservador la cual extenderá de la
+clase Observable siendo así el sujetoConcreto, pero como mencionamos
+anteriormente vamos a hacer que todas las aplicaciones de los usuarios tengan
+ambos roles, para esto asociaremos a las clases "Ventanas" con la
+ClaseObservador mediante instancias de esta ultima y de esta forma nuestras
+clases Ventanas serán tanto Observadores Concretos como Sujetos Concretos,
+donde el rol dependerá de la función de cada una...
+
+ClaseObservador.
+
+Esta clase sera el medio por el cual las clases VentanaSelección, VentanaColor,
+y VentanaOpciones podrán convertirse en SujetosConcretos (Usando métodos set y
+get...)...........la claseObservador extiende de Observable heredando los
+métodos requeridos para notificar a los observadores sobre los cambios
+realizados, para esto usaremos el atributo colorSeleccionado activando los
+eventos de setChanged() y notifyObservers()
+
+public class ClaseObservador extends Observable{
+
+ private int colorSeleccionado;
+ private String color;
+
+ public ClaseObservador(){
+
+ }
+ public void setColorSeleccionado(int i) {
+  this.colorSeleccionado = i;
+  setChanged();
+     notifyObservers();
+ }
+ public int getColorSeleccionado() {
+  return colorSeleccionado;
+ }
+ public void setColor(String color) {
+  this.color = color;
+ }
+ public String getColor() {
+  return color;
+ }
+}
+
+Clase Principal.
+
+Esta sera la clase encargada de dar inicio al sistema, además en ella también
+estableceremos las relaciones entre la ClaseObservador y las Clases "Ventanas",
+crearemos instancias de cada Clase y luego mediante el método addObserver()
+(Heredado de Observable) agregaremos todos los ObservadoresConcretos a nuestro
+SujetoConcreto.
+
+public static void main(String[] args)
+{
+  ClaseObservador observador=new ClaseObservador();
+  VentanaOpciones miVentanaOpciones=new VentanaOpciones(observador);
+  VentanaColor miVentanaColor=new VentanaColor(observador);
+  VentanaSeleccion miVentanaSeleccion=new VentanaSeleccion(observador);
+
+  /**Aqui se Agregan los observadores*/
+  observador.addObserver(miVentanaColor);
+  observador.addObserver(miVentanaSeleccion);
+  observador.addObserver(miVentanaOpciones);
+}
+
+VentanaColor.
+
+Esta será la clase que simulará la aplicación manejada por el usuario1, esta
+clase implementará la interfaz Observer y definirá el comportamiento del método
+update() que como mencionamos anteriormente es llamado cada vez que la
+ClaseObservador cambia de estado, también crearemos una instancia de dicha clase
+para convertir a VentanaColor en un SujetoConcreto y de esta forma las demás
+ventanas serán informadas cuando esta cambie mediante los eventos definidos por
+el usuario....
+
+VentanaOpciones.
+
+Esta clase corresponde a la aplicación del usuario2, brindaremos la opción al
+usuario de seleccionar algún color, en esta clase también definimos una
+instancia de ClaseObservador de modo que por medio del evento generado y la
+instancia mencionada podamos dar un comportamiento de SujetoConcreto, igual que
+la anterior también implementa la interfaz Observer...(El combo se actualiza si
+el usuario1 cambia de color)
+
+VentanaSelección.
+
+Representa la aplicación del usuario3, esta ventana a diferencia de las
+anteriores no posee ninguna opción disponible para el usuario, tan solo cumplirá
+el rol de ObservadorConcreto, posee una instancia de ClaseObservador mediante la
+cual estará informando al usuario sobre la opción seleccionada en alguna de las
+ventanas, todo esto gracias al método update() de la interfaz Observer.
+
+
+oTRO EJEMPLO
+
+public class Main {
+
+    Carlos carlos = new Carlos();
+    carlos.addObserver(new Parents());
+    carlos.addObserver(new GirlFriend());
+
+    carlos.wasFired();
+
+}
+
+public interface IObserver {
+
+    public void notify();
+}
+// observer
+public class Parents implements IObserver {
+
+    public void notify() {
+        System.out.println("We are gonna kill you!!!");
+    }
+}
+
+// observer
+public class GirlFriend implements IObserver {
+
+    public void notify() {
+        System.out.println("Oh honey!!!!");
+    }
+}
+
+// subjet
+public class Carlos {
+
+    private ArrayList<IObserver> observers;
+
+    public void addObserver(IObserver observer) {
+        observers.add(observer);
+    }
+
+    public void wasFired() {
+        for (IObserver observer : this.observers) {
+            observer.notify();
+        }
+    }
+}
+
+Conclusiones.
+
+Y Listo!!!...............Como vemos el ejemplo es muy básico, no tenemos paquetes
+ni cosas complejas, solo se busca cumplir con el objetivo de dar a entender la
+aplicación del patrón Observer, simulamos las ventanas como 3 aplicaciones
+diferentes, sin embargo este patrón también puede ser combinado con diferentes
+proyectos para hacer mucho mas real su aplicación.
+
+
+• Problema:
+    ▫ Un cambio en un objeto requiere cambios en otros,y no
+    sabes cuántos objetos necesitan ser cambiados
+    ▫ Una abstracción tiene dos aspectos dependientes.
+• Contexto:
+    ▫ Al particionar un sistema en una colección de clases
+    cooperativas, se requiere mantener la consistencia entre
+    objetos relacionados
+• Solución
+    ▫ Definir un dependencia uno-a-muchos entre objetos,
+    para que al cambiar un objeto, todos sus dependientes
+    sean notificados automáticamente.
+
+PARTICIPANTES
+
+• Observable
+    ▫ Declara una interfaz para añadir o remover Observers del
+    cliente
+• ConcreteObservable
+    ▫ Extiende Observable. Mantiene el estado del objeto y
+    cuando cambia, notifica a los Observers ligados
+• Observer
+    ▫ Interfaz que define las operaciones a ser usadas para
+    notificar a este objeto
+• ConcreteObserverA, ConcreteObserver2
+    ▫ Implementaciones concretas de Observer
