@@ -1,0 +1,11 @@
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:17:50:20 +0200] "GET /servlet-platzi/platzi-java?message=hola HTTP/1.1" 200 19 http-bio-8080-exec-1 56
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:17:50:28 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 200 - http-bio-8080-exec-3 442
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:17:52:11 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 500 1872 http-bio-8080-exec-1 58
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:17:53:07 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 200 - http-bio-8080-exec-1 280
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:17:53:58 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 500 1920 http-bio-8080-exec-2 16
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:17:55:03 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 200 - http-bio-8080-exec-1 458
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:17:56:07 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 200 - http-bio-8080-exec-1 558
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:17:58:31 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 200 - http-bio-8080-exec-1 456
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:17:59:03 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 200 - http-bio-8080-exec-2 4
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:18:01:28 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 200 - http-bio-8080-exec-1 410
+0:0:0:0:0:0:0:1 - - [26/Apr/2017:18:14:23 +0200] "POST /servlet-platzi/platzi-java HTTP/1.1" 200 - http-bio-8080-exec-1 479
