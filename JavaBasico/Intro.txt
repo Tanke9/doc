@@ -1,0 +1,42 @@
+El codigo fuente es compilado pero no a lenguaje maquina, sino, a un lenguaje
+intermedio llamado BYTECODE, el cual es posible ejecutar en cualquier
+arquitectura que ejecute la Java Virtual Machine (JVM).
+La JVM traduce en tiempo real (por lo que se dice que interpreta) a codigo
+maquina para ser ejecutado por el sistema operativo
+
+Sí tienes Windows (7, 8, 10), esta es la forma simplificada para agregar
+javac.exe a la variable PATH.
+
+1. Teclea el siguiente comando: Windows (Super) + R y escribe cmd.
+2. Ahora que tienes cmd en ejecución, escribe la siguiente línea:
+SET PATH=%PATH%;C:\Program Files\Java\jdk1.8.0_73\bin
+Nota: La ruta especificada pueda variar según arquitectura del sistema y versión
+del JDK.
+
+Tipos de datos enteros
+byte 1 byte (-128 a 127)
+short 2 bytes (-32765 a 32766)
+int   4 bytes (-2.147.783 a 2.147.483)
+long  8 bytes (-9.223.372.036 a 9.223.372.036)
+
+Decimales
+float 4 bytes
+double 8 bytes
+
+a) static: en ese caso la variable es única para todas las instancias
+(objetos) de la clase (ocupa un único lugar en memoria). A veces a las variables
+de clase se les llama variables estáticas. Si no se usa static, el sistema crea
+un lugar nuevo para esa variable con cada instancia (la variable es diferente
+para cada objeto). En el caso de una constante no tiene sentido crear un nuevo
+lugar de memoria por cada objeto de una clase que se cree. Por ello es adecuado
+el uso de la palabra clave static. Cuando usamos “static final” se dice que
+creamos una constante de clase, un atributo común a todos los objetos de esa
+clase.
+
+b) final: en este contexto indica que una variable es de tipo constante.
+
+CamelCase
+VARIABLES, OBJETOS Y METODOS -> LOWERCAMELCASE
+int variableCameCase;
+Clases -> UpperCamelCase
+class CamelCase

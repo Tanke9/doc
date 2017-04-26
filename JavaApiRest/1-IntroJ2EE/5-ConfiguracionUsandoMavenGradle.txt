@@ -1,0 +1,29 @@
+WAR
+  |
+  |___WEB-INF
+  |       |
+  |       |___web.xml (opcional, ahora son anotaciones)
+  |       |___lib (librarty)
+  |       |___classes (all serve side .class files for this web module)
+  |
+  |____Web pages(estaticos)
+
+  El build especifica como empaquetar. Y en los plugins son importantes por
+  ejemplo para configurar un tomcat. El tomcat plugin de maven permite compilar,
+  empaquetar y ejecutar un tomcat que va a correr la aplicacion.
+
+  ....
+  <build>
+    <plugins>
+    ..
+      <plugin>
+        <groupid>org.apache.tomcat.maven</groupid>
+        <artifactid>tomcat7-maven-plugin</artifactid>
+        <version>2.2</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  A diferencia del ide no hay que hacer configuraciones propias del IDE.
+
+  Repositorios maven. http://search.maven.org

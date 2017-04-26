@@ -1,0 +1,12 @@
+Orientadas a presentacion: html, xhtml, jsp
+Orientadas a servicios: Servicios para cualquier tecnologias, apis backend para
+que cualquier dispositivo pueda llamarlos
+
+USER--uses-->CONTROLLER--manipulates-->MODEL--updates-->VIEW--sees-->USER
+
+¿Cuáles son los Java EE APIs quenos ayudan con todo esto?
+    Java Servlet Technology
+    Java API para servicios REST (JAX-RS)
+    Dependency Injection (CDI)
+    Java Persistence API
+                

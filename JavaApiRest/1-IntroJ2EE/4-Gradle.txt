@@ -1,0 +1,128 @@
+************
+***Gradle***
+************
+
+Gradle es un sistema de automatización para la construcción de paquetes de
+propósito general, esta basado en Groovy y Kotlin.
+
+Soporta la descarga automática y configuración de dependencias y librerías.
+
+************************
+***Proyectos y tareas***
+************************
+Cada proyecto se conforma de procesos o tareas que representan una pieza de
+trabajo en el ciclo de ejecución de un proyecto, Gradle se encarga de esto.
+
+******************
+***build.gradle***
+******************
+El archivo principal es build.gradle, este archivo define proyectos y tareas.
+La estructura base de un proyecto Java es:
+
+                    apply plugin: 'java'
+
+                    repositories {
+                        jcenter()
+                    }
+
+                    dependencies {
+                        compile 'org.slf4j:slf4j-api:1.7.21'
+                        testCompile 'junit:junit:4.12'
+                    }
+
+*********************
+***Instalar Gradle***
+*********************
+1-Antes de instalar gradle necesitas tener JDK, asegurándonos que la variable
+JAVA_HOME esté definida.
+
+2-Descarga la ultima versión completa de Gradle https://gradle.org/install
+
+3-Debemos agregar las variables de entorno GRADLE_HOME con el valor de la ruta
+donde descomprimimos Gradle
+GRADLE_HOME   c:/gradle3.5
+
+4-En la variable Path debemos agregar la ruta de la carpeta bin de Gradle.
+ %GRADLE_HOME%\bin
+
+5-Abrimos la terminal y ejecutamos el comando `gradle -v
+
+************************
+***Manejo de plug-ins***
+************************
+Gradle utiliza plug-ins para extender su funcionalidad estos añaden tareas, uno
+que nos interesa bastante es el plug-in java, este añade tareas para compilar,
+correr test y crear archivos JAR.
+
+Para agregar un plug-in agregamos la linea apply plugin: 'nombre' dentro del
+archivo build.gradle
+
+*********************************
+***Repositorios y Dependencias***
+*********************************
+Podemos manejar dependencias propias o de terceros, un repositorio es una
+ubicación donde gradle puede localizar los archivos JAR, un popular repositorio
+es Maven Central.
+
+Nota: Todo respositorio que publiques en maven central debe contener un Group
+Id (group), un Artifact Id (name) y una Version (version)
+
+                repositories {
+                mavenCentral()
+                }
+Podemos agregar repositorios desde una url especifica
+
+              repositories {
+                  maven {
+                      url "http://repo.mycompany.com/maven2"
+                  }
+              }
+Luego de definir los repositorios donde traeremos nuestras dependencias, debemos definir las dependencias del proyecto.
+
+        dependencies {
+          testCompile group: 'junit', name: 'junit', version: '4.+'
+        }
+
+************
+***Tareas***
+************
+Para listar las tareas que tiene gradle podemos ejecutar el comando gradle tasks
+
+También podemos crear nuestras tareas propias, dentro del archivo build.gradle
+escribe:
+
+      task compileTarea << {
+          System.out.println "compilando..."
+      }
+
+  En la consola podemos ejecutar gradle compileTarea de esta manera creaste tu
+  primera tarea.
+
+********************
+***Proyectos JAVA***
+********************
+Como ya habíamos nombrado arriba, un extra fundamental es el Java Plugin, este
+nos añadira tareas para compilar, realizar test, pruebas.
+
+  1- Generar estructura
+    En la terminal ejecutamos el comando gradle init --type java-library
+    Esto nos genera la estructura de archivos para crear una librería de Java.
+  2-Limpiar dependencias
+    Ejecutamos el comando gradle clean, esto limpiará builds anteriores.
+  3-Compilar código.
+    Ejecutamos el comando gradle assemble compilamos el código y generamos los
+    archivos .class
+    Nota: recuerda siempre que quiereas volver a compilar deberías ejecutar
+    primero el comando gradle clean
+  4-Generar archivo .jar
+    Ejecutamos el comando gradle build, esto compila, ejecuta test y genera
+    nuestro paquete .jar
+
+**********
+***IDEs***
+**********
+    Recuerda que cuando se utiliza un IDE todos estos procesos se pueden gestionar desde el, puedes consultar las guias oficiales.
+
+    Intellij https://www.jetbrains.com/help/idea/2016.2/gradle.html
+    Netbeans http://plugins.netbeans.org/plugin/44510/gradle-support
+    Eclipse https://gradle.org/eclipse/

@@ -1,0 +1,2 @@
+Definir un dominio de problema , que queremos lograr.
+Fijarnos en el escenario del problema y tratar de simularlo con objetos.

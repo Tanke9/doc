@@ -1,0 +1,165 @@
+***********
+***MAVEN***
+***********
+
+Es un proyecto creado por la fundación Apache, el cual busca manejar la
+construcción de proyectos, reportes, documentación de forma centralizada,
+básicamente una manera estándar de construir proyectos, esto nos da:
+
+Una definición clara de en que consiste el proyecto
+
+Una manera fácil de publicar proyectos y una manera de compartir JARs a través
+de varios proyectos
+
+Una herramienta que ahora es usada para construir y manejar cualquier proyecto
+en JAVA
+
+******************
+***¿QUÉ ES POM?***
+******************
+Project Object Model en la unidad fundamental de trabajo en Maven, un archivo
+XML que contiene información del proyecto y detalles de configuración usado por
+Maven para construir el proyecto, en este se defines cosas cómo:
+
+      -La descripción de un proyecto
+      -Nombre, versión, tipos, localización del código y dependencias.
+      -Plug-ins
+      -Perfiles
+
+************************
+***OBJETIVOS DE MAVEN***
+************************
+      -Hacer fácil el proceso de construcción de un proyecto
+      -Proveer la forma uniforme de construir el sistema
+      -Proveer información de calidad del proyecto
+      -Proveer guías de buenas practicas de desarrollo
+      -Permitir la migración transparente para nuevas características
+
+*****************
+***INSTALACION***
+*****************
+1-Lo primero que debemos tener instalado JDK, además de esto debemos fijar el
+tener JAVA_HOME como variable de entorno en Windows.
+
+JAVA_HOME  C:\Program Files\Java\jdk1.8.0_102
+
+2- Debemos descargar Maven https://maven.apache.org/download.cgi (en Windows
+ descargamos la opción Binary zip archive), descomprimimos y añadimos M2_HOME y
+ MAVEN_HOME como variables de entorno con la ruta donde hemos colocado los
+ archivos.
+
+ M2_HOME   C:\apache-maven-3.3.9
+ MAVEN_HOME C:\apache-maven-3.3.9
+
+ Además debemos asegurarnos de adjuntar la ruta de la carpeta bin de Maven en
+ la variable path.
+ %JAVA_HOME%\bin
+ %MAVEN_HOME%\bin
+
+ 3-En la terminal podemos ejecutar el comando mvn -version esto debería
+ devolvernos información de Maven.
+
+**************************************
+***Creando nuestro primer proyecto.***
+**************************************
+
+1- Primero creamos una carpeta para nuestro proyecto, en este caso mi-proyecto
+
+2- Desde la consola nos posicionamos dentro de esta carpeta y ejecutamos el
+comando mvn archetype:generate (asegúrate de tener conexión a Internet, ya que
+buscara una lista de arquitecturas de proyectos y plug-ins)
+Lo que haremos con este comando es generar la estructura para nuestro proyecto
+
+    -Nos arroja una lista de arquitecturas de proyectos que podemos elegir,
+    vamos a dejar la opción por defecto (Lo más probable es que tengas un numero
+    por defecto diferente a la imagen)
+    -Seleccionamos que tipo versión de la arquitectura vamos a usar, podemos
+    usar la versión por defecto.
+    -En los siguientes pasos nos preguntara 4 datos fundamentales para nuestro
+    proyecto,
+      groupid: identificará tu proyecto a través de todos los proyectos, vamos
+      a usar com.proyecto
+      artifactid: nombre de la versión jar sin versión, vamos a usar primer-proyecto
+      version: Si planeas distribuir tu código debemos usar una versión basada en puntos (1.2, 1.3, 2.0,…) en este caso usaremos 1.0
+      package: nombre del paquete principal de la aplicación, usaremos com.proyecto.demo
+    Al final confirmas estos datos y ya tenemos los archivos del proyecto.
+
+*************************
+***Entendiendo pom.xml***
+*************************
+En el archivo pom.xml en la raíz del proyecto vamos a encontrar los datos que
+hemos definido, este archivo centraliza la información del proyecto y los
+detalles de configuración
+
+Al generar el anterior proyecto, tenemos un archivo con el siguiente código.
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>es.mavenproyect</groupId>
+  <artifactId>ejemplomaven</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>ejemplomaven</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+
+*************************
+***Crear archivos .jar***
+*************************
+1- Compilar los archivos .java a .class
+  Primero debemos remover todos los archivos binarios creados en anteriores
+  builds, para esto ejecutamos el comando ***mvn clean***
+2-Ahora compilamos nuestros código, esto convierte nuestros archivos .java a
+  .class, ejecutamos el comando ***mvn compile***
+3-Ejecutar tests
+  Debemos compilar los test, para esto ejecutamos el comando **mvn test-compile**
+4-Ahora debemos ejecutar los test, para esto usamos el comando **mvn test**
+5-Crear .jar
+  Ahora generamos el archivo .jar, para esto ejecutamos el comando **mvn install**
+
+*********************
+***Build Lifecycle***
+*********************
+Maven tiene definido un ciclo de vida para la construcción de paquetes, esta es
+una lista de los comandos principales o puedes encontrar la documentación en su sitio web.
+
+        -validate
+        -compile
+        -test
+        -package
+        -integration-test
+        -verify
+        -install
+        -deploy
+
+**********
+***IDEs***
+**********
+Todo el proceso que hemos realizado en esta guía desde la consola, podemos
+hacerlo desde cualquier IDEs, desde generar la estructura de un proyecto hasta
+crear el archivo .jar
+
+Para conocer el proceso en cada IDE puedes consultar la documentación oficial
+del que utilices.
+
+IntelliJ IDEA https://www.jetbrains.com/help/idea/2016.2/maven.html
+Netbeans https://platform.netbeans.org/tutorials/nbm-maven-quickstart.html
+Eclipse http://www.vogella.com/tutorials/EclipseMaven/article.html

@@ -1,0 +1,9 @@
+Que es?
+
+Productos necesitan aplicaciones distribuidas, transaccionales, y portables
+que hacen uso de la velocidad, seguridad y confiabilidad de tecnología de servidor.
+JEE provee varios APIs (Aplication Programming Interface) reduciendo el tiempo
+de desarrollo, complejidad de las aplicaciones y mejorando performance (rendimiento)
+
+API REST.- proveen servicio
+API JEE.- Librerias que dan acceso a tecnologias e implementaciones de jee

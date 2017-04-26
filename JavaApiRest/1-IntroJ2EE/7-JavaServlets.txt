@@ -1,0 +1,26 @@
+Servlets
+Una clase de Java usada para extender las capacidades de los servidores que
+albergan aplicaciones accesadas por medio del modo de programación
+request/response (solicitud/respuesta)
+Paquetes javax.servlet y
+javax.servlet.http contienen interfaces y clases para escribir Servlets
+Objetos de alcance (scope) = Web Context, Session, Request,Page (JSP)
+Métodos de servicio (doGet, doPost…)
+
+Para la instalacion del proyecto servlet llamado ejemploservlet seguir pasos:
+
+Paso 1: Crear una carpeta nueva (siguiendo el ejemplo de la clase, servlet-platzi).
+Paso 2: Bajar el pom.xml de los archivos de esta clase y copiarlo en la carpeta creada.
+Paso 3: Con una ventana de comandos, situarnos en la carpeta en la que está el pom.xml
+Paso 4: Ejecutar el comando:
+mvn eclipse:eclipse
+Paso 5: Ejecutar el comando:
+mvn clean install
+De esta manera, se bajarán todas las dependencias necesarias para crear la clase Servlet
+Paso 6: Importar el proyecto generado en Eclipse
+Paso 7: Crear la carpeta de fuentes /src/main/java
+Paso 8: Crear el paquete y las clases que se utilizan durante toda la clase
+Paso 9: El uso del Tomcat se hace con el comando
+mvn tomcat7:run
+
+Un saludo.
