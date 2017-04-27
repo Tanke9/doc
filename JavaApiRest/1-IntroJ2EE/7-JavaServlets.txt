@@ -24,3 +24,9 @@ Paso 9: El uso del Tomcat se hace con el comando
 mvn tomcat7:run
 
 Un saludo.
+
+
+Para depurar ejecuntado por consola poner antes
+
+export MAVEN_OPTS=-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n
+mvn tomcat7:run

@@ -1,0 +1,12 @@
+Spring Web MVC
+
+@SpringBootApplication
+
+@RestController apartir de spring 4.0
+@RequestMapping("/mensaje"), va a responder a esa uri. Se puede poner tanto a
+nivel de clase o a nivel de metodo. Y a ambas sise pone en el nivel de clase
+/mensaje y a nivel de metodo /mensaje2, responderia a la uri /mensaje/mensaje2
+
+
+jersey es la implementacion de la especificacion de java para los servicios
+REST. 

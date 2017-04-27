@@ -17,6 +17,7 @@ public class PlatziJava extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String message = req.getParameter("message");
+		Object segunEstado = req.getAttribute("segundEstado"); //definido ene el filter
 		resp.setContentType("application/json");
 		try (PrintWriter out = resp.getWriter()){
 			out.print("{\"message\": \"" + message + "\"}");

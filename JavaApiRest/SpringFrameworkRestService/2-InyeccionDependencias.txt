@@ -1,0 +1,24 @@
+Como manejamos las dependencias de nuestras clases dentro del código.
+
+El ejemplo de dependency-injection una vez descargado seguir pasos:
+
+1-gradle build (Crea la carpeta build/libs con el JAR del proyecto.)
+2. gradle eclipse (Generar los archivos para eclipse .classpath, .proyect,
+  .settings... para poder importar el proyecto en eclipse)
+
+ls -la
+7. Correr el proyecto
+gradle run
+
+Spring es un framework que facilita la inyeccion de dependencias.
+
+Estas dependencias ahora se hacen con anotaciones en lugar de los xmls que se
+realizaban antes.
+
+-@Configuration:evita usar los xml de configuración anteriores. En ella se
+  definen los beans que se van a inyectar.
+-@ComponentScan: escanea todos los objetos que tienen @component, inyecta las
+  dependencias y los instancia
+-@Autowired: Se puede hacer a nivel de propiedad o constructor, preferiblemente
+ constructor. Va a llamarlo e inyectar las dependencias. En este caso de
+ MessageService

@@ -1,0 +1,40 @@
+Respresentational State Transfer (REST)
+
+***********************
+Interfaz uniforme
+***********************
+        -Recursos identificados a traves de URIs
+        -Manipulacion de Recursos a través de representaciones (XML, JSON): Rest deja
+          escoger el tipo de recurso que quiere devolver.
+        -Mensajes auto-descriptivos (meta-data content/type)
+        -HATEOAS (Hypermedia As The Engine Of Application State)
+
+*******************
+Malos ejemplos
+********************
+        /addUser
+        /getUser?user=obernal
+        /getCourses?user=obernal&course=java-avanzado
+        /deleteUser?user=obernal -GET
+
+Nunca usar verbos o acciones en objetos. Deberian usarse los metodos Http, Get,
+Post, Put, ...etc
+
+********************
+Buenos ejemplos
+********************
+        /user/obernal -GET
+        /user -POST (adicionar)
+        /user/obernal/courses -GET
+        /user/obernal/courses/java-avanzado -GET
+
+****************************
+Códigos de Status http
+*************************
+Cuando retornamos http deberiamos entregar:
+
+        1XX:Informacional
+        2XX:Exito
+        3XX:Redirección
+        4XX:Error Cliente
+        5XX:Erro Servidor
