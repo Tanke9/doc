@@ -1,0 +1,29 @@
+******************************
+¿Por qué programar con Python?
+******************************
+Python es un lenguaje bastante bueno para aprender a programar ya que tiene una
+comunidad muy grande que te ayudará a superar tus dudas, tiene una sintaxis para
+escribir bastante sencilla.
+******************
+¿Qué es programar?
+******************
+Programar es darle instrucciones al computador, para hacer algo que tu quieres,
+desde tu sitio web a llevar humanos a marte.
+Para lograr construir lo que quieres debes unir piezas básicas del lenguaje y
+dependiendo de como las unas vas a construir eso que imaginas.
+Para crear tu primer hola mundo debes encender el intérprete de Python, este
+hola mundo es muy sencillo, ejecuta la función print así:
+print('hola mundo')
+*************************
+¿Qué es la programación?
+************************
+La programación es dar instrucciones a la computadora de forma ordenada, estas
+instrucciones definen lo que se va a realizar, desde cosas sencillas hasta cosas
+avanzadas.
+Todos los programas se componen de partes esenciales que son forma de darle
+datos de entrada a la computadora y formas estructuradas para procesar estos
+datos.
+***************************
+¿Cómo crearías un cuadrado?
+***************************
+Significa generar líneas y dar vueltas, ¿cómo escribes esto?

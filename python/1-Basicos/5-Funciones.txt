@@ -1,0 +1,44 @@
+*******************************
+Definir funciones con Python
+*******************************
+
+Las funciones son un concepto fundamental en la programación, estas son una
+secuencia de comandos que se pueden agrupar por un nombre, para definirlas
+usamos la palabra reservada def dentro de la función realizamos un procesamiento
+y regresamos un resultado.
+
+  def suma(num1, num2):
+    return num1 + num2
+
+Para usar una función que definimos debemos referirnos por su nombre seguido por
+paréntesis con los parámetros que recibe.
+suma(2,3)
+Recuerda:
+Para definir dónde comenzar el código usamos la línea if name == 'main'
+Para definir un bloque dentro de la función debemos identar con 4 espacios
+Las funciones nos permiten ejecutar determinado código con diferentes valores
+
+************************
+Funciones con parámetros
+**************************
+
+Limites al declarar funciones
+-----------------------------
+Los nombres no pueden comenzar con digitos
+No pueden utilizar una palabra reservada
+Las variables deben tener diferentes nombres
+Los nombres de las funciones deben ser descriptivas de lo que hacen las funciones
+
+Imprimir valor de variable
+--------------------------
+Para poder imprimir el valor de una variable dentro de un string podemos hacerlo así:
+'${} pasos mexicanos son ${} pesos mexicanos'.format(ammount, result)
+Declarar vs Ejecutar
+---------------------
+Declarar una función es escribir su estructura
+Ejecutar una función es llamar la función y ejecutar su código
+Donde se puede acceder a las variables
+----------------------------------------
+Escope de las variables, cada vez que una función se ejecuta se genera un
+contenedor donde las variables de la función van a vivir, una vez se sale de la
+función estas variables no van a existir.

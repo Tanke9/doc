@@ -1,0 +1,36 @@
+https://developer.wordpress.org/reference/functions/bloginfo/
+
+Para que algo pase de estático a dinámico, necesitamos de código PHP y
+propiamente de todas aquellas funciones que nos otorga WordPress. Por ejemplo:
+
+bloginfo(name) : Nos proporciona la información de nuestro sitio, y gracias al
+parámetro “name”, se muestra el nombre del sitio.
+bloginfo(url) : Nos muestra la URL del blog
+bloginfo(description) : Nos proporciona la descripción configurada en nuestro
+sitio
+bloginfo(stylesheet_url) : Nos indica en qué ruta tenemos nuestro archivo de
+estilos
+
+*****************************
+FUNCIONES DE INCLUSION DE ARCHIVOS
+********************************
+Un blog en WordPress puede crecer en múltiples archivos y puede ser complicado
+de organizar, entonces, contamos con funciones, que nos ayudan a modularizar
+nuestro contenido. Ejemplo: Si el Header y el Footer nunca van a cambiar, no es
+necesario volver a repetirlo en todos los archivos.
+
+Wordpress tiene el wp-header, el wp-footer, el wp-sidebar... que los podemos
+utilizar para incluir archivos que tengan ese nombre.
+
+<?php get_header(); ?> obtendra el header.php
+<?php get_footer(); ?> obtendrá el footer.php
+<?php get_sidebar(); ?> obtendrá el sidebar.php
+
+Puede haber casos especiales, por ejemplo si para la home quiero otro header,
+puedo pasar parametro el php a buscar en lugar del header.php
+
+<?php get_header("home"); ?> obtendra el header-home.php
+
+***************
+OTRAS FUNCIONES
+***************

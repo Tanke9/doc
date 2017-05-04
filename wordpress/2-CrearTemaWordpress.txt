@@ -1,0 +1,7 @@
+hay tres carpetas
+wp-admin
+
+si se añade una nueva entrada con una imagen se añade en la carpeta wp-content
+uploads ...
+
+En los themes podemos crear uno nuestro, por ejemplo uno que se llame portafolio

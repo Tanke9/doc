@@ -1,0 +1,43 @@
+*****************************************************************
+¿En qué orden se solucionan las operaciones complejas?
+*********************************************************************
+Este orden se define siguiendo un acrónimo llamado ****PEMDAS****
+          Paréntesis
+          Exponentes
+          Multiplicación / División
+          Adición / Sustra**cción
+
+****************
+Valores y Tipos
+****************
+Los tipos permiten saber a Python, cuál es el resultado de aplicar una
+operación, los tipos básicos son:
+      Integer <int>
+      Float <float>
+      String <str>
+      Boolean <bool>
+Para revisar el tipo puedes usar la función type.
+Ejemplos:
+  type(2)
+  type('Hola')
+  type(False)
+
+***********************
+variables
+*********************
+
+Declarar variables y expresiones
+Las variables nos permiten guardan valores, logrando reutilizar valores y
+haciendo nuestros programas más legibles.
+El valor que contiene una variable puede ser reasignado.
+Las variables tienen algunas limitantes,
+Tienen que tener un nombre significativo
+El lenguaje tiene palabras reservadas que ya utiliza, no podemos utilizar para
+nombrar variables
+Para definir una variable escribes el nombre que quieres asignarle y con =
+defines el valor que va a almacenar, por ejemplo:
+pi = 3.14159  radio = 3  area = pi  radio**2print(area)
+Recuerda:
+Todos los programas de Python deben guardarse con extensión .py
+Para darle soporte a acentos en nuestros programas debemos usar la
+línea # -- coding: utf-8 -*-

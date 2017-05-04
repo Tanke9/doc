@@ -1,0 +1,30 @@
+Secuencia de elementos a partir de una fuente que soporta operaciones de
+agregación
+
+
+Comparator<Mensaje> c = (Mensaje m1, Mensaje m2) -> m1.getSize() - m2.getSize();
+
+// Convierte un array a una lista (Objeto Mensaje).
+List<Mensaje> mensajes = Arrays.asList(
+    new Mensaje("Mensaje mas largo que existe"),
+    new Mensaje("Mensaje menos largo"),
+    new Mensaje("Mensaje realmente mas largo que existe"));
+
+**************************************************************************
+/**
+ * Crea una lista de los mensajes que contienen una palabra.
+ */
+List<Mensaje> listaFiltradaSinLambda = new ArrayList<Mensaje>();
+for(Mensaje message : mensajes){
+  if (message.getMessage().contains("existe")){
+    listaFiltradaSinLambda.add(message);
+  }
+}
+System.out.println(listaFiltradaSinLambda.size());
+****************************************************************************
+
+List<Mensaje> listaFiltradaConLambda =
+    mensajes.stream().filter(
+    message -> message.getMessage().contains("existe")).collect(Collectors.toList());
+
+System.out.println(listaFiltradaConLambda.size());

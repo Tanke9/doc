@@ -121,7 +121,8 @@ nos añadira tareas para compilar, realizar test, pruebas.
 **********
 ***IDEs***
 **********
-    Recuerda que cuando se utiliza un IDE todos estos procesos se pueden gestionar desde el, puedes consultar las guias oficiales.
+    Recuerda que cuando se utiliza un IDE todos estos procesos se pueden gestionar
+    desde el, puedes consultar las guias oficiales.
 
     Intellij https://www.jetbrains.com/help/idea/2016.2/gradle.html
     Netbeans http://plugins.netbeans.org/plugin/44510/gradle-support

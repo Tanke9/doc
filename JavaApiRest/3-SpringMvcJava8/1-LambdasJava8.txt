@@ -1,0 +1,121 @@
+
+***************
+    JAVA8
+***************
+
+    Lambdas Expressions
+    Streams
+    Date API
+
+Lambdas: Funciones como argumentos/código como datos.
+
+package platzi;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class LambdaExpressionMain {
+	public static void main(String args []) {
+		/**
+		 * Crear un hilo (Thread) y ejecutar el método abstracto run().
+		 * Antes: Defino una clase nueva MyThread.
+		 ******************************************************
+		 * -- Opción 1 --
+		 * public interface Runnable {
+		 *     public abstract void run();
+		 * }
+		 *
+		 * public class MyThread implements Runnable {
+		 *@Override
+		 *     public void run() {
+		 *         System.out.println("Lamda Platzi.");
+		 *     }
+		 * }
+		 *
+		 * -- Opción 2 --
+		 * Runnable miMetodo() {
+		 *     return new Runnable() {
+		 *         public void run() {
+		 *             System.out.println("Lamda Platzi.");
+		 *         }
+		 *     }
+		 * }
+		 ****************************************************************
+		 * Ahora: Con Lambda...
+		 *     - () : Utiliza un método sin argumentos. El método run().
+		 *     - -> : Funcionalidad a colocar ald método.
+		 *     - Implementar el método abstracto de la Interface.
+     *****************************************************************
+		 */
+		Runnable runnable = () -> System.out.println("Lamda Platzi.");
+		runnable.run();
+
+		/**
+    ***************************************************************************
+		 * Comparator: Es una clase que compara objetos.
+		 * 		- (Mensaje m1, Mensaje m2) : Utiliza un método con argumentos. El
+     *    método compare().
+		 */
+		Comparator<Mensaje> c = (Mensaje m1, Mensaje m2) -> m1.getSize() - m2.getSize();
+
+		// Convierte un array a una lista (Objeto Mensaje).
+		List<Mensaje> mensajes = Arrays.asList(
+				new Mensaje("Mensaje mas largo que existe"),
+				new Mensaje("Mensaje menos largo"),
+				new Mensaje("Mensaje realmente mas largo que existe"));
+
+		System.out.println("\nDisorderly");
+		// ForEach sin Lambda
+		for (Mensaje mensaje : mensajes) {
+			System.out.println(mensaje.getSize());
+		}
+
+		/**
+		 *  Ordena la lista de objetos de menor a mayor según su tamaño.
+		 *  El método sort utiliza un ciclo, compara objetos a pares y cambia su posición.
+		 */
+		mensajes.sort(c);
+
+		System.out.println("\nOrdered");
+		// ForEach con Lambda
+		mensajes.forEach(mensaje -> System.out.println(mensaje.getSize()));
+
+		/**
+		 * Crea una lista de los mensajes que contienen una palabra.
+		 */
+		List<Mensaje> listaFiltradaSinLambda = new ArrayList<Mensaje>();
+		for(Mensaje message : mensajes){
+			if (message.getMessage().contains("existe")){
+				listaFiltradaSinLambda.add(message);
+			}
+		}
+		System.out.println(listaFiltradaSinLambda.size());
+
+		List<Mensaje> listaFiltradaConLambda =
+				mensajes.stream().filter(message -> message.getMessage().contains("existe")).collect(Collectors.toList());
+
+		System.out.println(listaFiltradaConLambda.size());
+	}
+}
+
+public class Mensaje {
+	privatefinalintsize;
+	privatefinalString message;
+
+	public Mensaje(String message) {
+		this.size = message.length();
+		this.message = message;
+	}
+
+	publicint getSize() {
+		returnsize;
+	}
+
+	publicString getMessage() {
+		return message;
+	}
+}

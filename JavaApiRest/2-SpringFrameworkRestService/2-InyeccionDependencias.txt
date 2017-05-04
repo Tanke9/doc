@@ -22,12 +22,3 @@ realizaban antes.
 -@Autowired: Se puede hacer a nivel de propiedad o constructor, preferiblemente
  constructor. Va a llamarlo e inyectar las dependencias. En este caso de
  MessageService
-
-
-Si un componente con la anotacion @component usa una clase que ha de inyectar,
-con el autowired. Esta ha de estar definida en la clase con el @confinguration,
-y en caso de que haya dos definiciones se pueden disgtinguir con la anotacion
-@Qualifier(metodo de bean configuration o bien se puede poner en el application
-config la convenccion @Bean(name="beanName"))
-
-de @component extienden otras como repository, service, controller....

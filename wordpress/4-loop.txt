@@ -1,0 +1,26 @@
+The Loop, nos permite recorrer la base de la tabla donde están nuestros
+diferentes contenidos, dicho de otro modo: “Es un bucle que nos permite recorrer
+todos nuestros contenidos y asignar a cada uno de ellos, una función, como
+mostrar título o contenido”.
+
+1. La función the_excerpt(); ya retorna la etiqueta p, por lo que no se debería
+incluir dentro de etiquetas p, sino dentro de un div o directamente ponerla:
+
+<div><?php the_excerpt(); ?></div>   ó
+<?php the_excerpt(); ?>
+
+2. El div con clase "block_body", @Wakkos lo abrió, pero nunca lo cerró.
+
+the_title()
+
+the_excerpt()
+
+the_content()
+
+the_category()
+
+the_tags()
+
+the_author()
+
+the_date()

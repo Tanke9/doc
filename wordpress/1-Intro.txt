@@ -1,0 +1,32 @@
+MS (Content Management System): Permite generar y administrar contenido dinamico.
+
+Facilita las tareas y administración
+
+Permite que el mismo cliente pueda acceder y publicar sus contenidos
+
+Manejo de usuarios
+
+temas y plantillas que mejoran la experiencia de usuario y facilitan su implementación
+
+
+***************************************************************
+                INSTALACION
+***************************************************************
+Descargar MAMP de la web.
+En preferencias ver donde queremos tener la carpeta php instalada.
+
+En phpMyAdmin es donde controlamos la base de datos, wordpress puede añadir
+todas las tablas que se quiera pero no crearla. Desde php se puede crear la bdd.
+
+Desde la pestaña databases se puede crear la bdd nueva. Usuario y password. Root
+root, root admin, admin root, admin vacio, root vacio....
+
+*****************************************
+INSTALACION WORDPRESS EN LOCAL
+*****************************************
+1- WORDPRESS.ORG, descargar wordpress y copiar la carpeta wordpress descomprimida
+en la carpeta que hemos indicado en el pamp de php, suele ser por defecto
+mamp/httpdocs.
+
+2- Si se pone en la ruta localhost de mamp /"nombre de la carpeta " sale la
+bienvenida y los requisitos para acabar de configurar

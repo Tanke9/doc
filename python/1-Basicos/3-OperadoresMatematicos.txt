@@ -1,0 +1,14 @@
+Los operadores nos permiten trabajar con valores y generar nuevos valores por medio de estas operaciones.
+Existen muchos operadores básicos,
++ Suma
+- Resta
+Multiplicación
+/ División
+// División de enteros
+% Operador de módulo
+* Potencias
+> Mayor que
+< Menor que
+== Igual
+>= Mayor igual
+<= Menor igual
