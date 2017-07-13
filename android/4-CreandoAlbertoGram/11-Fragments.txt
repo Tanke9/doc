@@ -1,0 +1,25 @@
+Fragments representa un comportamiento o una porción de la interfaz de usuario
+en una actividad.
+Un fragment debería estar siempre dentro de una actividad
+Vamos a ver como utilizar FragmentManager, Transacciones y Commits.
+
+Vamos a crear una actividad, fragments para buscar, home y perfil
+Para el bottom bar vamos utilizar una librería externa que encuentras en
+https://github.com/roughike/BottomBar
+Recuerda añadir en el archivo de gradle
+compile 'com.roughike:bottom-bar:2.0.2'
+Mira cómo implementamos nuestro bottom bar
+
+https://romannurik.github.io/AndroidAssetStudio/icons-generic.html#source.type=image&source.space.trim=1&source.space.pad=0&size=24&padding=0&color=fff%2C100&name=ic_hom
+Recuerda:
+
+Un Fragment se va a parecer a un Activity, pero no son lo mismo.
+
+Para actualizar un poco les comento que a finales de septiembre
+Google libero la libreria oficial de BottomNaviationView esta soportada desde el SDK 25.2.2
+
+Documentacion
+https://developer.android.com/reference/android/support/design/widget/BottomNavigationView.html
+
+Ejemplo :
+https://www.youtube.com/watch?v=aTPwcWQIckw

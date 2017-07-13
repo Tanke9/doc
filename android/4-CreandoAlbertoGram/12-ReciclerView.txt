@@ -1,0 +1,6 @@
+¿Cómo funciona un RecyclerView?
+RecyclerView, es un componente mucho más eficiente que un ListView, este solo
+carga los ítems que se visualizan en la pantalla.
+Con RecyclerView tenemos varias formas de ver elementos, aunque la estructura es
+un poco más compleja, debido al código que implementa. Este se compone de un
+DataSet, Adapter, LayoutManager, RecyclerView.

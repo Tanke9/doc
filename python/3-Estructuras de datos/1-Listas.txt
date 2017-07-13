@@ -1,0 +1,10 @@
+Introducción a las listas en Python
+Una lista es una secuencia de elementos, para crearlas usamos [], por ejemplo:
+amigos = ['camilo', 'juan', 'mateo']
+numeros = [1,2,3,4,5]
+Las listas también tienen un índice para acceder a los elementos de la lista,
+que inicia en cero.
+Para añadir elementos a un alista podemos utilizar el método append
+amigos = ['camilo', 'juan', 'mateo']
+amigos.append('marcos')
+amigos # ['camilo', 'juan', 'mateo', 'marcos']

@@ -1,0 +1,120 @@
+Inicia a programar para Android: ¿Qué necesito?
+**************************************************
+¿Qué necesito instalar para empezar a Desarrollar en Android?
+
+a) Java Development Kit (JDK) 7 (Minimo)
+
+Sin importar el sistema operativo que uses en tu computadora; es primordial
+descargar el Java Development Kit desde su sitio oficial.
+
+Esto porque Android Studio usa la JVM y Dalvik(ART) para compilar tu aplicación.
+
+**Posibles errores:  **Puede que la variable de entorno no se configuré por
+defecto en tu sistema operativo (más frecuente en Windows), para ello, te
+recomiendo visitar el siguiente enlace:
+
+https://www.java.com/es/download/help/path.xml
+
+b) Android Studio
+
+El IDE oficial para desarrollar en Android es Android Studio (Eclipse ya no es
+ soportado). Es gratuito y multiplataforma. Además, si tienes alguna duda de qué
+ requerimientos mínimos debes tener, puedes consultarlos en la misma página de
+  descarga. http://developer.android.com/sdk/index.html
+
+El instalador es muy sencillo, nada ajeno a hacer click en siguiente en cada paso.
+
+Android Studio Update
+C) SDK
+
+Cada versión de Android cuenta con su propio SDK. El nombre comercial de cada
+una está inspirado en un dulce y para los desarrolladores sólo cambia el número
+de API. Al instalar Android Studio, tendrás algunas versiones instaladas; pero
+el verdadero valor es manejarlas por nuestra cuenta.
+
+Para lograrlo, en la página de inicio de Android Studio, localiza la opción
+de settings:
+
+SDK manager
+Y ve a SDK Manager:
+
+5
+Las actualizaciones del SDK son independientes de las actualizaciones Android
+Studio. Y es importante tenerlas al día. Esto se puede configurar de forma
+automática, tal como con Android Studio.
+
+paquetes
+El SDK Manager nos muestra de manera gráfica el nombre del paquete, la versión
+y si lo tenemos instalado. Además, Contamos con 3 categorías: Tools, SDK API
+(Level) y extras:
+
+API Level Android
+Tools
+
+En esta sección nos encontramos todos los paquetes que necesita Android Studio
+para interpretar tu código, compilar y ejecutar de manera correcta.
+
+SDK API (level)
+
+Aquí es donde podemos instalar las diferentes versiones de Android con las que
+queremos desarrollar. A su vez, cada versión cuenta con paquetes como se muestra
+a continuación:
+
+versiones de Android
+SDK Platform: es obligatorio para poder crear y ejecutar tus aplicaciones de
+acuerdo a las versiones a las que quieras dar soporte. Por ejemplo, si quieres
+desarrollar a partir de Ice Cream Sandwich, instala Android 4.0 (API 14). Si
+solo quieres soporte para Lollipop instala 5.0.1 (API 20).
+
+Como mínimo, se recomienda instalar la versión menor y la más reciente a la que
+quieras soportar. No te preocupes por versiones anteriores a Ice Cream Sandwich,
+ya no vale la pena sacrificar funcionalidad por la cantidad de dispositivos
+corriendo esta versión.
+
+Samples: instalará todos los ejemplos de ese SDK (opcional).
+
+System Images: aquí es donde encontramos las diversas imágenes para usar el
+emulador nativo de Android Studio (AVD). Estas tienen gran peso y especifican si
+son para teléfonos, Wear, Glass, TV o Auto.
+
+Sources: recordemos que Android es Open Source y tenemos acceso al código fuente
+e imágenes del mismo. No es necesario instalarlo.
+
+**Extras: **incluye todas las librerías oficiales de Google; además de
+herramientas que mejorarán tu experiencia al ejecutar las aplicaciones. En este
+caso, te recomiendo instalar todo, no ocupan tanto espacio.Y ahora que ya tienes
+todo instalado, ya puedes empezar a crear tus aplicaciones.
+
+No tengo un teléfono Android: ¿El emulador nativo es suficiente?
+
+Es bueno, pero consume muchos recursos y no es tan rápido. Yo te recomiendo usar
+Genymotion.Tiene una versión gratuita y sólo requiere de un plugin para funcionar
+ en Android Studio (en la página de descarga te muestran cómo instalarlo).
+ Además, crear una máquina virtual es muy sencillo; ya que cuenta con presets
+ de equipos Android que actualmente existen en el mercado.
+
+Genymotion
+¿Existe algún estándar o guía a seguir en mi proyecto?
+
+guidelines
+En proyectos grandes y/o colaborativos, es importante mantener nuestro código y
+archivos lo más ordenados y legibles posible. Para ello, es recomendado seguir
+la guía propuesta por la comunidad de desarrollo que puedes encontrar en Github.
+
+¿Dónde puedo encontrar librerías y recursos para mis proyectos?
+
+Android Resources
+Google constantemente actualiza su documentación y escribe sobre algún cambio
+importante en su blog. Aunque también es una buena idea seguir los canales de
+Android y de Diseño en Google+.
+
+Además, en Android Arsenal encontrarás un amplio catálogo de librerías
+recomendadas por la comunidad para usar en tu proyecto. Gradle, please también
+hace buen trabajo si ya sabes lo que buscas
+
+.Arsenal
+
+Por último
+
+Si se te ocurre alguna otra herramienta que quieras recomendar, la sección de
+comentarios es el lugar ideal para hacerlo. Continuemos con el curso.

@@ -1,0 +1,16 @@
+EditText con Material Design
+La versión de soporte de Material Design intenta hacer ver lo más parecido
+posible en versiones anteriores.
+Veamos como modificar algunos estilos del editText
+android:textColorHint
+android:textSize
+android:textColorPrimary
+android:colorAccent
+android:colorControlNormal
+android.colorControlActivity
+
+Recuerda:
+Debes asociar tu tema personalizado usando el nombre, en la etiqueta a aplica
+con android:theme="@style/StyleName"
+EditText tiene varios estados, debes definir el estado para todos estos.
+Todas las medidas de la aplicación las trabajamos en el archivo dimens.xml

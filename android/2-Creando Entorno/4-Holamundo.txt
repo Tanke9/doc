@@ -1,0 +1,8 @@
+Hola Mundo
+Vamos a hacer nuestro "hola mundo" en Android
+El nombre de tu aplicación en la play store sera identificada con la suma de
+application name y company name
+Puedes elegir la ruta donde estará guardar tu aplicación
+Debemos definir desde qué versión de Android va a ser compatible
+Nuestra pantalla se va a componer de dos cosas, un archivo de Java y un archivo
+xml que será la interfaz

@@ -1,0 +1,25 @@
+
+CardView es uno de los nuevos elementos de Material Design, estas nos permite
+mostrar información dentro de tarjetas.
+CardView es un ViewGroup.
+Necesitamos añadir la librería de soporte en gradle.
+
+RecyclerView, es una lista de elementos que busca ser eficiente, normalmente
+usado para listas de CardViews
+Floating Action Button, botón flotante con el que podemos crear acciones
+principales.
+
+Maquetando Cardview
+
+
+Debemos primero agregar el soporte para cardviews, esto lo hacemos añadiendo la
+línea en dependencies en el archivo Modulo: app de gradle
+compile 'com.android.support:cardview-v7:24.2.0'
+Con esto veamos cómo pasar nuestro diseño a código, creando nuestra CardView
+
+Recuerda:
+Una buena práctica es manejar el código de una tarjeta en un archivo separado.
+Siempre revisa que tu Medium DPI coincida con las medidas que estas tomando en
+el layout
+Para el like podemos utilizar un icono, lo puedes descargar desde
+ https://icons8.com/android-icons

@@ -1,0 +1,5 @@
+Android por defecto tiene arquitectura MVC
+Vistas - La interfaz definida en XML.
+Controlador - Controla todo lo que la vista necesita hacer.
+Modelo - Las lógica de negocio relacionada directamente con los datos de la
+aplicación.

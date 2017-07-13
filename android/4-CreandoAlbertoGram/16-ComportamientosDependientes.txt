@@ -1,0 +1,5 @@
+Un comportamientos dependientes, es un elemento es dependiente de otro en un
+evento.
+Para esto vamos a usar simple-view-behavior
+Agregamos la librería en gradle
+compile 'com.zoonref:simple-view-behavior:1.0'

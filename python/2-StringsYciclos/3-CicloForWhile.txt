@@ -1,0 +1,40 @@
+Ciclos en Python con for
+Cuando necesitamos realizar operaciones sobre una serie de datos podemos
+utilizar iteraciones.
+
+Función range
+-------------
+La función range nos permite generar un string apartir de un rango
+range(5) # [0,1,2,3,4]
+range(5, 40, 3)   [5,8,14,17,20,23,26,29,32,35,38]
+
+Iteraciones con for
+--------------------
+for nos permite recorrer un arreglo, asignando cada valor a una variable que
+decidas
+for i in range(5):
+  print(i)
+
+Podemos operar los valores usando también condiciones, en este caso solo
+queremos elevar al cuadrado, los valores que sean divisibles por 3
+for i in range(30):
+  if i % 3 != 0:
+    continue
+  else:
+    print(i**2)
+La palabra reservada continue permite saltar a la siguiente iteración del ciclo
+y break permite salirse del ciclo.
+
+r= 'ferrocarril'
+for letter in r:
+    print(letter)
+
+**************************
+Ciclos en Python con while
+**************************
+Existe una forma de iterar con el keyword while, este ciclo continúa sucediendo
+mientras que una condición sea evaluada como True
+Si no tenemos cuidado en definir la condición que permite parar el ciclo,
+podemos caer en una secuencia infinita, ten mucho cuidado con esto.
+Recuerda:
+Para detener la ejecución de un ciclo, puede utilizar CTRL + C

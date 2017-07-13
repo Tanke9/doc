@@ -1,0 +1,6 @@
+-CoordinatorLayout, ayuda a especificar comportamientos de interacciones en los
+views hijos, ayuda a controlar vistas flotantes.
+-AppBarLayout, es un linerLayout vertical, nos permite manejar caracteristicas de
+Material Design en AppBar.
+-CollapsingToolbarLayout, es un wrapper para Toolbar el cual implementa el efecto
+collapsable en toolbar y los elementos hijos. Es hijo de appBarLayout

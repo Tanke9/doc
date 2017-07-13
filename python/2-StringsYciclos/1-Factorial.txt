@@ -1,0 +1,12 @@
+Factorial de un número con recursión
+Una función puede llamarse a si misma, dentro del cuerpo de la función.
+Un factorial es el número multiplicado por los números antes de el, por ejemplo
+5! es 5*4*3*2*1
+o 5*4!....
+
+Esto se puede expresar como
+5fac(4)
+  4fac(3)
+      3fac(2)
+          2fac(1)
+              1*fac(0)

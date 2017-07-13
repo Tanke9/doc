@@ -1,0 +1,39 @@
+my_string ="hola"
+len(my_string) mide el tamaño de un string. Nos devuelve 4
+Ojo: Para acceder a la ultima letra
+my_string[len(my_string-)1]
+"a"
+
+Los string tienen algunos métodos útiles cómo:
+my_string.upper() # retorna el string en máyusculas
+my_string.lower() # retorna el string en minúscula
+my_string.find('F') # retorna el índice donde se encuentra
+
+Separar cadenas de texto en Python
+Podemos separar partes de un string y generando nuevos strings
+my_string = 'platzi'
+my_string[1:3] # la
+my_string[1:] # latzi
+my_string[1:6:2] # lti  //del 1 al 6 de 2 en 2
+my_string[::-1] # iztalp //accede del final hacia delante (-1)
+
+********************************
+Comparación de strings y unicode
+********************************
+Los strings son inmutables, esto quiere decir que no se pueden cambiar.
+Si quieres modificar el texto de un string debes definir un nuevo string.
+
+
+Comparación de strings
+----------------------
+Se pueden realizar operaciones con strings, por ejemplo comparar si son iguales
+o mayores o menores.
+
+Diferencia entre ASCII y Unicode
+--------------------------------
+Los caracteres también son números, para esto existen estándares que asigna un
+número a cada carácter, para generar un estándar se creó el ASCII pero esta solo
+toma en cuenta los caracteres en inglés, para dar soporte a más lenguajes se
+crea UNICODE.
+Python codifica en ASCII por default, para cambiarlo por UNICODE debemos colocar
+u antes del string.

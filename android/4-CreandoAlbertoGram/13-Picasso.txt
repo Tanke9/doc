@@ -1,0 +1,9 @@
+Veamos cómo traer nuestras imágenes desde internet.
+Para esto usaremos Picasso
+http://square.github.io/picasso/
+
+Debemos agregar en gradle
+compile 'com.squareup.picasso:picasso:2.5.2'
+Una vez integrada la librería, podemos usar la libreria en onBindViewHolder con
+la linea de código de referencia
+Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);

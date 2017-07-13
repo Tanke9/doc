@@ -1,0 +1,17 @@
+Requerimientos y Herramientas para el Desarrollo en Android
+¿Qué requerimientos técnicos tienes al desarrollar con Android?
+Sistema operativo:
+-------------------
+Windows 7/8/10 (32 o 64 bits)
+Mac OS X 10.8.5 o posteriores
+Linux con entorno gnome o KDE
+Hardware:
+----------
+Mínimo 4GB de RAM, minimo 2GB de espacio en disco, resolución mínima de 1200,
+procesador compatible con virtualización.
+Software:
+---------
+Android Studio
+SDK Android
+Recuerda:
+Con cada versión de Android se ha liberado un API de desarrollo.

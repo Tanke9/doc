@@ -1,0 +1,11 @@
+Intents, cuando queremos unir componentes en una aplicación.
+
+Explicitos, para unificar dos actividades
+Implícitos, para unificar una actividad con otro componente.
+Intent intent = new Intent(this, nameActivity.class)
+El primer parámetro es donde está ubicado, segundo parámetro la actividad
+objetivo
+
+El botón de Back, regresa en un orden cronológico de cómo hemos usado la 
+aplicación.
+El botón de up, identifica la jerarquía y va a la pantalla superior.

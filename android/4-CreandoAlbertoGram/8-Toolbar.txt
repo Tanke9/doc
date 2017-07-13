@@ -1,0 +1,14 @@
+Vamos a crear una nueva actividad para crear una cuenta.
+Modularización de código, podemos separar código en archivos independientes y
+requerir donde se necesite con la etiqueta include.
+Para que el toolbar se vea bien en versiones anteriores a lollipop tener estas
+líneas
+Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+setSupportActionBar(toolbar)
+getSupportActionBar().setTittle(tittle)
+
+Recuerda:
+Es una buena idea reutilizar código.
+Cada View debe tener una clase de Java
+Para llamar un recurso desde Java utilizamos getResources().getString(R.tipo.id,
+false)

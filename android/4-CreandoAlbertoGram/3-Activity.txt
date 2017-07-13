@@ -1,0 +1,42 @@
+¿Qué es un Activity?
+Activity, es un componente de una aplicación que nos provee de una pantalla para
+que el usuario interactúe con ella. Todo lo que queremos que viva en la
+aplicación debe estar definido en AndroidManifest.xml
+Un Activity se va a componer de una clase de Java que derive de una clase
+activity y un layout XML que deben estar declaradas en AndroidManifest.xml
+Una actividad de una aplicación va a tener un ciclo de vida, estas se
+representan en los métodos:
+
+.onCreate()
+Cuando la actividad es creada. La actividad esta en un estado created. En java,
+el metodo oncreate recibe como parametro un Bundle con el estado de la actividad.
+
+.onStart()
+Es donde la actividad se muestra ya al usuario     como comentamos anteriormente.
+
+.onResume()
+Es el estado en donde se encuentra en primer plano y el usuario interactúa con
+la actividad, podemos decir en español que es el estado “corriendo” o “ejecutando”.
+
+.onPause()
+Es cuando esta se encuentra parcialmente oscurecida por una actividad que se
+encuentra en el primer plano, por ejemplo está medio transparente o   no cubre
+toda la pantalla, en este estado no se reciben datos de entrada del usuario y no
+puede ejecutarse código.
+
+.onStop()
+En este estado se encuentra completamente invisible u oculto para el usuario,
+podemos decir que se encuentra en el “fondo”, en este estado podemos decir que
+todo se congela, por ejemplo las variables e información se mantiene pero no
+podemos ejecutar el código.
+
+.onDestroy()
+Cuando el sistema destruye su actividad se manda a llamar al método
+"onDestroy()" para la actividad. Este método es la última oportunidad que
+tenemos de limpiar los recursos y que si no eliminamos podrían no tener un buen
+rendimiento para el usuario en caso de olvidarlo. Es buena práctica asegurarse
+de que los hilos que creamos son destruidos y las acciones de larga duración
+también estén ya detenidas.
+
+Tip:
+Maneja términos en inglés para los nombres de las actividades

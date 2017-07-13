@@ -1,0 +1,8 @@
+Creando un emulador
+Para crear un emulador debemos seguir los siguientes pasos
+Tools/android/AVD Manager
+Create virtual device
+Seleccionar la categoría de Hardware
+Seleccionamos un dispositivo al que le podemos configurar el hardware que lo compone
+Seleccionamos la imagen del sistema operativo que queremos usar
+Creamos nuestra imagen

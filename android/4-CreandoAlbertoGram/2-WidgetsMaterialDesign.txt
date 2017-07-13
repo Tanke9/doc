@@ -1,0 +1,11 @@
+Widgets de Material Design
+Ya hemos definido nuestro tema y los colores para PlatziGram, ahora veamos lo
+widgets que vamos a utilizar o nos trae material design.
+Toolbar,
+TextInputLayout
+TextInputEditText
+Reised Button
+Floating Action Button
+CardView
+RecyclerView
+Recuerda puedes obtener más información en https://developer.android.com/

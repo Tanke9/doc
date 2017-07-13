@@ -1,0 +1,12 @@
+Material Design es una guía integral para el diseño visual de movimientos y de
+interacción en distintas plataformas y dispositivos.
+Nuestra interfaces deberían estar construida con las guías material design
+-Tema nuevo
+-Nuevos widgets
+-Nuevas librerías para animaciones
+Recuerda:
+Disponemos de una librería para soportar material en versiones anteriores de
+Android.
+En material design surgio a partir del 5.0 de android debemos definir tres
+colores principales colorPrimary(elementos generales), ColorPrimaryDark,
+colorAccent

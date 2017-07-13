@@ -1,0 +1,2 @@
+En el archivo styles.xml puedes generar tus estilos personalizados y
+referenciarlos con el nombre que le asignas.

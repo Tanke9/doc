@@ -1,0 +1,13 @@
+Configurando nuestro tema Material
+Comencemos a construir nuestra app PlatziGram
+Primero debemos configurar los colores que va a manejar el diseño, para esto
+google pone a disposición una herramienta para definir una paleta de color para
+nuestra app
+https://material.google.com/style/color.html
+En materialpalette.com podemos generar una paleta de colores para nuestra
+aplicación.
+Recuerda:
+El archivo para configurar el tema, lo encuentras en res/values/styles.xml
+En el archivo res/values/colors.xml definimos los colores a utilizar
+
+materialpalette.com

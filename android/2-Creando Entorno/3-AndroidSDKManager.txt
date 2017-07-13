@@ -1,0 +1,14 @@
+Despues de instalar android studio:
+********************************
+Veamos como configurar SDK manager
+A través de configure/SDK Manager, podemos seleccionar las APIs que necesitamos
+y la ruta donde se van a guardar estas.
+Como mínimo, se recomienda instalar la versión menor y la más reciente a la que
+quieras soportar. No te preocupes por versiones anteriores a Ice Cream Sandwich,
+ya no vale la pena sacrificar funcionalidad por la cantidad de dispositivos
+corriendo esta versión.
+Mira cómo decidir qué API debes instalar.
+Tip:
+Recuerda leer nuestra guía para conocer que necesitas para comenzar a programar
+en Android https://platzi.com/clases/android/concepto/creando-nuestro-entorno-de-desarrollo/inicia-a-programar-para-android-que-necesito8115/material/
+Es recomendable partir desde la versión Android 4.0

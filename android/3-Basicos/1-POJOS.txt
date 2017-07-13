@@ -1,0 +1,4 @@
+Plain Old Java Object
+Es un término que existe en el marco de la programación orientada a objetos y
+se utiliza para describir estructuras de objetos.
+Un POJO es simplemente una clase, que debe ser lo más simple posible

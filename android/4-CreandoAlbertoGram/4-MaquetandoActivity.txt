@@ -1,0 +1,9 @@
+Maquetando nuestros Activities
+
+
+Para soportar las diferentes densidades de pantalla nuestras imagenes deberían
+estar densificadas. puedes utilizar un plugin llamado Android Drawable Importer
+para generar estas diferentes versiones
+Siempre que quieras acceder a un recurso en XML debes usar @nombre_del_recurso
+Todos los textos deberían estar en values/strings.xml y ser llamados a través de
+su referencia

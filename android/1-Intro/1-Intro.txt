@@ -1,0 +1,13 @@
+****************************
+Introducción a Android
+****************************
+Veamos un poco el contexto histórico de android
+Android es un sistema operativo, que fue diseñado para correr en dispositivos
+móviles, hoy en día puede correr en casi cualquier dispositivo.
+Actualmente es utilizado en más de mil millones de teléfonos y tablets.
+A cada versión de android se le ha colocado el nombre de un dulce.
+En 2003 android comenzó como una compañía fundada por Andy Rubin y Rich Miner,
+ellos planeaban desarrollar un sistema operativo inteligente.
+En 2005 google compra la compañía y en 2008 lanzan la versión 1.0 de android.
+Hagamos un viaje por las características que nos han traído las diferentes
+versiones de Android.

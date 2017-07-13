@@ -1,0 +1,26 @@
+Los elementos básicos que vas a usar en tus proyectos son:
+
+-TextView: una etiqueta de texto, la propiedad text nos permite definir el texto
+a mostrar
+-EditText: Campo para ingreso de datos, la propiedad inputType nos permite
+definir el tipo de dato
+-Button: Etiqueta para definir un botón, con la propiedad text definimos el texto
+a mostrar
+-Toast: mensaje que nos notifica de una acción realizada.
+
+Acciones del botón:
+Podemos definir acciones desde una propiedad onClick o a través de un set
+OnClickListener
+
+Widgets desde java
+
+Cada Views tiene una clase que viene en el SDK que nos ayuda a controlarlo como
+un objeto.
+Podemos acceder al elemento a través del identificador, buscandolo con la
+función findViewById(..)
+Cualquier recurso al cual quieras acceder en Java debes hacerlo a través del
+archivo R con:
+EditText edtNombre = (EditText) findViewById(R.id.nombre)
+Recuerda:
+Al buscar con elemento findViewById() este llega como un view.
+Con ctrl + space reconoce el método y te ofrece auto completar.
