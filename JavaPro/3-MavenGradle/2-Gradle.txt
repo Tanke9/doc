@@ -1,0 +1,19 @@
+Gradle también es un asistente inteligente,
+-Basado en Groovy
+-Usa un lenguaje de programación que usa Domain Specified Language que es una
+forma de analizar la información, modelandola en objetos JSON.
+
+  static mapping = {
+    table 'person'
+      columns {
+        name column:'name'
+      }
+  }
+
+  (mapea la tabla person que tiene una columna que se llama name)
+
+La información de configuración del proyecto la encontraremos en un archivo
+llamado build.gradle la cuál estará en forma de objetos JSON.
+-Dependencias
+-Compilacion de codigo
+-empaquetado

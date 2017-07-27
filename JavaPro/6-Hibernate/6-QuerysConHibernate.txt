@@ -1,0 +1,27 @@
+Queries a la base de datos usando Hibernate
+
+Para poder utilizar todos los mapeos y configuraciones que hemos hecho al
+proyecto es necesario utilizar las siguientes clases:
+
+-SessionFactory sessionFactory
+-Configuration configuration
+-Session session
+
+Ellos nos dan acceso a nuestra base de datos leyendo nuestro archivo de
+configuración que tiene los parámetros de conexión y las clases mapeadas que
+fungirán como entidades.
+
+Una vez obtenido nuestro objeto session si queremos ejecutar un query en
+Hibernate debemos iniciar una transacción
+session.beginTransaction();
+
+posteriormente declarar el query
+session.save(media);
+
+y finalmente ejecutar la transacción con commit.
+session.getTransaction().commit();
+
+Course course = new Course("Java Avanzado", "Tema 1", "Rest API");
+        session.beginTransaction();
+        session.save(course);
+        session.getTransaction().commit();

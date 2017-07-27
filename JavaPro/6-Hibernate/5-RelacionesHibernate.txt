@@ -1,0 +1,79 @@
+Relaciones o Asociaciones en Hibernate [One To One, One To Many y Many to Many]
+En Hibernate podemos manejar las relaciones que existen en la base de datos,
+tenemos las siguientes:
+
+-One to One (Unidireccional):un objeto tenga una referencia a otro objeto de
+forma que al persistirse el primer objeto también se persista el segundo.
+@OneToOne(cascade=CascadeType.ALL)
+Ej.: Una persona solo puede tener un email, y un email solo puede pertenecer a
+una persona
+
+-One to One (Bidireccional): Los dos objetos tienen referencias uno de otro.
+@OneToOne(cascade=CascadeType.ALL)
+Ej.: en la clase persona tengo referencia a email, y en la clase email tengo
+referencia a la persona, para traer los datos de esa persona.
+
+-One to Many: Un objeto tenga una lista de otros objetos de forma que al
+persistirse el objeto principal también se persista la lista de objetos. Ejemplo
+un teacher tiene muchos cursos, pero un curso solo lo da un teacher.
+Habra una entidad owner (Teacher) y una entidad no owner(Courses).
+Entity Owner (teacher)
+@OneToMany(mappedBy="entity", cascade = CascadeType.ALL)
+Entity no owner (course)
+@ManyToOne(optional=true, fetch = FetcType.EAGER)
+@JoinColumn(name="primary_key")
+
+-Many to Many: Un objeto A tenga una lista de otros objetos B y también que el
+objeto B a su vez tenga la lista de objetos A. Es por tanto bidireccional.
+
+Entity Owner
+@ManyToMany(cascade = {CascadeType.ALL})
+@JoinTable(name="entityMapped",
+joinColumns={@JoinColumn(name="campoTablaPadre")},
+inverseJoinColumns={@JoinColumn(name="campoTablaHijo")})
+Entity No Owner
+@ManyToMany(cascade = {CascadeType.ALL},mappedBy="entityName")
+Adicional conoceremos la anotación @JoinColumn que nos idicará el nombre de la
+columna que une las tablas
+
+Mapeando Relaciones a nuestro proyecto
+
+En el Proyecto trabajaremos las siguientes relaciones:
+
+- One to Many - Uno a muchos
+
+La clase Teacher tiene una colección de Cursos
+La clase Curso tiene una referencia de Curso
+
+Nuestra clase Padre (Owner) será Teacher
+La clase Hijo (No Owner) Courses
+
+Por lo tanto en la clase Teacher donde tenemos nuestra colección de Cursos
+colocaremos la anotación: @OnetoMany(mappedBy=“teacher”)
+
+Mientras que en la clase Course donde tenemos la referencia de Teacher
+colocaremos la anotación: @ManyToOne(optional=true, fetch=FetchType.EAGER) y
+además @JoinColumn(name=“id_teacher”) aquí se especifica el nombre del campo de
+la tabla que tiene la llave foránea
+
+- Many to Many - Muchos a muchos
+
+La relación de Teacher hacia TeacherSocialMedia va de Uno a muchos
+La relación de SocialMedia hacia TeacherSocialMedia va de Uno a muchos
+
+Dicho lo anterior la clase Teacher tiene una colección de TeacherSocialMedias y
+la clase SocialMedia también
+
+Por lo tanto en la clase Teacher donde tenemos la colección TeacherSocialMedia
+colocaremos la siguiente anotación: @OneToMany(cascade=CascadeType.ALL) y
+@JoinColumn(name=“id_teacher”) donde se especifica el nombre del campo de la
+tabla que tiene la llave foránea
+
+Ahora en la clase SocialMedia haremos algo similar vamos a la colección
+TeacherSocialMedia colocamos: @OneToMany y @JoinColumn(name=“id_social_media”)
+que especifica el nombre del campo de la tabla que tiene la llave foránea.
+
+Por último en la clase TeacherSocialMedia vamos a la referencia de Teacher y
+SocialMedia y ponemos: @ManyToOne(fetch=FetchType.EAGER) junto con
+@JoinColumn(name=“id_teacher”) para teacher y @JoinColumn(name=“id_social_media”)
+para socialMedia los cuales indican el campos que tienen la llave foránea.

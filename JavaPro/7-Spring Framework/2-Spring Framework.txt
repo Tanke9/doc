@@ -1,0 +1,33 @@
+¿Qué es Spring Framework?
+
+Spring usa inversión de control, específicamente controlará la creación y
+destrucción de objetos.
+
+Un programa tradicional de java tendrá en su método main todas las llamadas a
+los objetos secuencialmente.
+
+Con Spring framework tendremos las llamadas a los objetos se concentrarán en un
+contenedor y de este se encargará Spring.
+
+Podemos decir que la clase A para ser llamada y convertirse en objeto, depende
+de la clase Principal (la que contiene el método main) la llame. Entonces si se
+implementa el contenedor de Spring en la clase Principal decimos que Spring está
+inyectando el objeto A, es decir Spring está inyectando la dependencia.
+
+Tenemos lo siguiente:
+Clase Vehículo - A
+Clase Motor - B
+
+En el ejemplo la clase Vehículo inyecta directa y explícitamente la clase Motor,
+la clase A inyecta la clase B.
+
+Debemos evitar que la clase B decida qué objetos crear.
+
+La forma de desacoplar esta dependencia directa es creando una clase más
+genérica, nos referimos a una interfaz que tenga métodos que puedan ser
+implementados en varias clases, esta Interfaz será la indicada a inyectar en la
+clase A (Vehículo) pues al ser genérica se puede crear no solo un tipo de objeto
+sino varios.
+
+Recuerda que cuando sobreescribimos métodos y le damos diferente comportamiento
+a ese comportamiento le llamamos Polimorfismo

@@ -1,0 +1,30 @@
+Operaremos MySQL a partir de PhpMyAdmin que lo tendremos disponible a partir de
+XAMPP.
+Puedes descargar XAMPP en este enlace: https://www.apachefriends.org/es/index.html
+y lo tendrás disponible para Windows, Linux y MacOS.
+
+No importa cual es tu sistema operativo asegurate de tener iniciados los
+siguientes como mínimo:
+
+-MySQL Database
+-Apache Web Server o Apache solamente
+
+Igual hay que parar el servicio si tenemos el workbeanch corriendo. El apache
+webserver nos permite manipular la bdd con el phpmyadmin.
+
+Una vez iniciados los servidores
+
+localhost/phpmyadmin
+
+aparecen las bdd.
+
+1-Creamos una cuenta. Creamos cuenta de usuario, buena practica definir el nombre
+de usuario con el mismo de la bdd. Nombre de host local. Y marcar casilla crear
+base de datos con el mismo nombre y otorgar los privilegios.
+2-Crear tabla. columnas. Poner cotejamiento ut8 a los campos de textro y a las
+tablas.
+3-Marcar casilla nulo los campos que pueden estar nulos.
+4-Marca campos que quieren que seas indicies y dar a indices.
+5-En vista relaciones de la bdd en relaciones internas se hacen las relaciones
+6-Se puede comprobar en Diseñadores vista diseñador se ve el modelo
+7-En operaciones ponemos la base de datos con cotejamiento utf8 general.

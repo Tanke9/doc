@@ -1,0 +1,9 @@
+Configurando Service
+
+
+La capa Service se enfocará en la lógica de negocio.
+Esta se ecargará de coordinar las fuentes de datos.
+Haremos un paquete llamado service ahí crearemos las clases e interfaces que
+tienen que ver con esta capa.
+Copiaremos todos los métodos de las interfaces DAO y las pegaremos en las de
+Service

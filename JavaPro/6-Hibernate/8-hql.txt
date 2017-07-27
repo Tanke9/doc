@@ -1,0 +1,8 @@
+Hibernate Query Language
+
+Se parece a SQL. Sin embargo, comparado con SQL,
+● Es completamente orientado a objetos y comprende nociones como herencia,
+polimorfismo y asociación.
+
+Cuando se trabaja con este HQL se piensa en las entidades (clases) del proyecto
+en lugar de pensar en las tablas de la BDD

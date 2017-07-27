@@ -1,0 +1,10 @@
+Modelo Vista Controlador: es un patrón de arquitectura que facilita el
+mantenimiento de la aplicación separando los conceptos que en esta habita, esos
+conceptos son :
+
+Modelo: Se encarga de gestionar la información que usa la aplicación.
+Vista: Es el medio de entrega de la información ya con un formato legible para
+el usuario; puede der un jsp, o una consola para nosotros que somos programadores .
+-Controlador: Es el intermediario entre la vista y el modelo que se encarga de
+pedir y entregar informacion desde el modelo a la vista cuando el usuario
+solicita nueva informacion en la aplicación.

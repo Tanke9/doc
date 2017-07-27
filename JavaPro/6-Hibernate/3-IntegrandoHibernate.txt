@@ -1,0 +1,35 @@
+Integrando Hibernate al proyecto y conectando a la base de datos
+
+
+Crearemos una carpeta llamada resources esta contendrá el archivo de
+configuración cfg.hbm de hibernate.
+Desde nuestro File Explorer vamos al workspace del proyecto
+
+-Entramos a nuestro proyecto hibernate -> src -> main
+-Dentro crearemos la carpeta resources
+-Regresamos al IDE damos click derecho en el proyecto Properties -> Java Build
+Path -> Source
+-Damos click en Add Folder
+-Buscamos resources la seleccionamos y damos Ok y Apply
+-Cerramos la ventana dando Ok
+-Aparecerá nuestra carpeta, la seleccionamos y le damos click derecho New ->
+Other -> Hibernate -> Hibernate Configuration File (cfg.xml)
+
+Nos aparecerá una ventana solicitando los datos de conexión a la base de datos.
+Llenaremos lo siguiente:
+
+Driver class: com.mysql.jdbc.Driver
+Connection URL: jdbc:mysql//localhost:3306/platziprofesores
+Username: platziprofesores
+Password: platziprofesores
+
+Como resultado tendremos un archivo hibernate.cfg.xml con los datos que
+ingresamos en formato XML.
+
+Por último integraremos la dependecia de Hibernate:
+
+  <dependency>
+  <groupId>org.hibernate</groupId>
+  <artifactId>hibernate-core</artifactId>
+  <version>5.2.6.Final</version>
+  </dependency>

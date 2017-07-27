@@ -1,0 +1,5 @@
+● Basado en Eclipse
+● Creado por la comunidad SpringSource
+● Plantillas de proyectos basados en
+Spring
+● Integración con Maven(para gradle un plugin adicional)

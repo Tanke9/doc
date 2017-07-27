@@ -1,0 +1,31 @@
+Mapeo y Anotaciones con Hibernate JPA
+Para cada tabla de la base de datos que queramos persistir en el proyecto debemos h
+acer un mapeo.
+
+Los Mapeos los haremos a partir de Annotations @ de Java
+
+@Entity: Se aplica a la clase e indica que esta clase es una entidad a persistir.
+@Table: Se aplica a la clase indica el nombre de la tabla de la base de datos.
+@Column: Se aplica a una propiedad Java e indica el nombre de la columna de la tabla.
+@Id: Se aplica a una propiedad de la clase e indica que es la clave primaria.
+@GeneratedValue: Indica que Hibernate deberá generar el valor de la clave primaria
+
+Haremos el mapeo de nuestros beans SocialMedia, Teacher, Course,
+TeacherSocialMedia. Todas las anotaciones las traeremos del paquete javax.persistence.*
+
+Primero colocaremos nuestra etiqueta @Entity arriba del nombre de la clase y
+posteriormente @Table(name=“nombre_tabla_base_datos”) para indicar el nombre de
+la tabla.
+
+Para los campos usaremos @Column(name=“columna_base_datos”) y en el campo que
+referencía al identificador colocaremos @Id seguido de
+@GeneratedValue(strategy=GenerationType.IDENTITY) que indica que se autogenere
+el identificador.
+
+Al tener una tabla de llaves que adicionalmente tiene un campo tenemos que mapear
+también la tabla para mapear el campo, normalmente no sería necesario pues
+ Hibernate se encargaría de generar la relación.
+La forma de modelar las relaciones a muchos en Java es manejando colecciones de
+Objetos
+
+Podemos usar la Colección Set, List, Vector, HashMap, etc.

@@ -1,0 +1,37 @@
+¿Qué es un Framework?
+
+Librería: conjunto de clases, métodos etc. que son invocadas por el flujo del
+programa y que posteriormente devuelven el control a este.
+
+Framework: Un framework controla el flujo del código, él decide cuándo llamar
+nuestro código.
+
+-Librería - Programación secuencial.
+-Framework - Programación por eventos.
+
+Inversión de Flujo o de control
+Se da cuando el programador deja de tener el control del flujo del código y en
+su lugar el framework toma el control del programa, llamando al código cuando
+suceda un evento específico.
+
+Inversion de control
+
+● Librería vs. Framework
+● Librería: conjunto de clases, métodosetc. que son invocadas por el flujo del
+programa y que posteriormente devuelven el control a este.
+
+Inversión de control - Librería
+Programación Secuencial
+● 1. Nuestro código invoca la librería.
+● 2. Se ejecuta el contenido de la librería.
+● 3. Regresa al flujo de nuestro código.
+
+● Framework: Un framework controla el flujo del código, él decide cuándo llamar
+nuestro código:
+Programacion por eventos
+● 1. Se invoca la librería y el código se queda
+escuchando
+● 2. Al darse un evento específico se ejecuta nuestro
+código
+● 3. Regresa al flujo de la librería para continuar
+escuchando

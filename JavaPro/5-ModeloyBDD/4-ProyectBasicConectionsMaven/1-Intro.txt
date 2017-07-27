@@ -1,0 +1,21 @@
+Creando un proyecto de Java que se conecta a la base de datos
+
+En el video anterior creamos nuestra base de datos, en este trabajaremos con
+nuestro diagrama UML.
+Abriremos Spring Tool Suite y crearemos un nuevo proyecto basado en Maven:
+-Damos Click derecho New->Other->Maven->Maven Project
+-Damos Next -> Next -> Next
+-Escribimos el Group Id (nuestro package): com.platzi
+-Ponemos el Artifact Id (nombre proyecto): hibernate
+-Damos click en Finish
+
+Abrimos nuestro archivo pom.xml para integrar la dependencia de MySQL
+Puedes obtener dependecias del sitio: https://mvnrepository.com/
+Buscaremos MySQL y seleccionamos la versión 5.1.21
+En el resultado copiamos la correspondiente a Maven:
+
+<dependency>
+<groupId>mysql</groupId>
+<artifactId>mysql-connector-java</artifactId>
+<version>5.1.21</version>
+</dependency>

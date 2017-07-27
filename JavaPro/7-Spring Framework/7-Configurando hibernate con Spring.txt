@@ -1,0 +1,10 @@
+Configurando Hibernate con Spring
+
+Crearemos nuestra clase DataBaseConfiguration.java esta reemplazará al archivo
+hibernate.cfg.xml haremos la instanciación de esta clase a partir de Spring Framework.
+
+Para que Spring pueda hacer su trabajo de inyección de dependecias es necesario
+indicar con la anotación @Configuration que será una clase de configuraciones de
+beans. Por lo tanto también usaremos la anotación @Bean.
+
+Esta clase también gestionará la sesión de conexión a la base de datos.

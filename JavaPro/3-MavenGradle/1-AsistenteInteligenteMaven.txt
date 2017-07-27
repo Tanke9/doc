@@ -1,0 +1,26 @@
+Si pensamos en todo lo que hemos hecho hasta ahora podemos decir:
+
+-Creamos un proyecto Web y debemos la mayoría de archivos desde cero
+-Generamos un archivo war
+-Si queremos integrar librerías debemos hacerlo dando click derecho en el
+proyecto Properties -> Java Build Path -> Libraries y seleccionar la librería
+previamente descargada
+
+Esto de repente se vuelve repetitivo y cansado, tenemos asistentes inteligentes
+en Java que nos ayudan a resolver lo anterior y principalmente:
+-Crear Proyectos basados en plantillas
+-Descargar librerías de terceros jar
+-Crear todos los componentes y archivos ejecutales
+
+Tenemos un Asistente muy importante su nombre es Maven y nos ayuda esencialmente
+a ejecutar las acciones que describimos, a través de un archivo de configuración
+pom.xml
+
+Maven
+Es un proyecto de Apache
+● Configuración y Construcción basado en XML
+● Project Object Model pom.xml
+○ Describe el proyecto a construir
+○ Dependencias
+○ Compilación del código
+○ Empaquetado

@@ -1,0 +1,22 @@
+Integrando Spring al proyecto
+
+Abriremos Spring Tool Suite y daremos click derecho New > Other > Spring >
+Spring Starter Project
+
+-Name > ProfesoresPlatzi
+-Type > Seleccionamos Maven
+-Versión de Java > 1.8
+-Packaging > Jar
+-Group > com.platzi
+-Artifact > profesoresplatzi
+-Descrption > Descripción del proyecto
+-Package > com.platzi.profesoresplatzi
+
+Presionamos Next
+-Spring Boot Version > 1.5.2
+-Dependencias:
+SQL > MySQL y JPA
+Web > Web
+
+Presionamos Next
+Dejamos todo como esta y damos click en Finish

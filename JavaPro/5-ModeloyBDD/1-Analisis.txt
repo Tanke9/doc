@@ -1,0 +1,19 @@
+Nuestro proyecto será un catálogo de Teachers y Courses.
+
+Analizando el Problema tendremos las siguientes relaciones:
+
+La relación entre Teacher y Course será de 1:M (1 teacher puede tener muchos
+courses pero 1 course solo puede ser dado por 1 teacher)
+
+Por ejemplo:
+Teacher Anahí Salgado solo puede dar el curso de Java EE (nuestro caso
+particular ???? )
+La relación entre Teacher y SocialMedia será M:M (1 Teacher puede tener muchas
+Social Medias y una Social Media puede estar vinculada a muchos Teachers)
+Por ejemplo:
+Teacher Anahí puede tener la Social Media Facebook, Twitter y Linkedin pero la
+Social Media Facebook puede tener muchos Teachers de Platzi.
+Por esta razón separaremos la relación generando una entidad más:
+TeacherSocialMedia que reúna las relaciones de las tablas anteriores, ahí
+encontraremos la vinculación del teacher contra el tipo de red social y su
+respectivo nickname

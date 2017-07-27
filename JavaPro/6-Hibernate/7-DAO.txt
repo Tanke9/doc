@@ -1,0 +1,13 @@
+DAO significa Data Access Object
+
+El cuál es un patrón de diseño que nos permite crear un API de un Objeto específico.
+Un APi significará crear todas las acciones que se pueden realizar hacia un objeto.
+Por ejemplo un CRUD:
+
+-Create
+-Read
+-Update
+-Delete
+
+Generaremos un DAO de cada entidad para ello debemos crear una Interfaz donde se
+declaren los métodos de API y una clase que implemente la interfaz.

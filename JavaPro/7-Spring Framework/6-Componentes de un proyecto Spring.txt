@@ -1,0 +1,25 @@
+Componentes de un proyecto en Spring Boot
+
+Capas de nuestra aplicación
+-Repositories: Se encarga de conectar y traer datos de la base de datos
+-Services: Coordina las fuentes de datos.
+-Controllers: Coordina las entradas y salidas de información
+-Json - FrontEnd: Es lo que el usuario visualiza, los datos en formato json
+
+Para trabajar estas capas necesitaremos las siguientes anotaciones
+-@Repository > Se enfoca en los DAO’s
+-@Service > Servicios, Llama a los DAO’s
+-@Controller > Trabaja con la capa de presentación
+
+Spring Boot - @Controller
+La capa de presentación, aquí se llega cuando solicitas una ruta, también utiliza
+@RequestMapping
+
+Spring Boot - @Service
+Maneja la lógica del negocio, llama a los DAO’s y ejecuta cálculos relacionados
+Generalmente se conecta con @Repository
+
+Spring Boot - @Repository
+Es la capa de persistencia de la aplicación que se utiliza para obtener datos de
+la base de datos. Es decir, todas las operaciones relacionadas con la base de
+datos son realizadas por este repositorio.

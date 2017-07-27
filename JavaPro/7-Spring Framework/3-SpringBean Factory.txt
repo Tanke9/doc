@@ -1,0 +1,17 @@
+Spring Bean Factory
+
+Los objetos que son la columna vertebral de tu aplicación y que son
+administrados por el contenedor Spring se denominan beans.
+
+Un bean en Spring será un objeto que tenga consigo un CRUD de acciones
+
+Los DAO’s son Beans, pero usaremos su interfaz pues es el elemento más abstracto
+y reutilizable.
+
+También tendremos objetos de servicio y objetos que nos permitan conectarnos con
+otras partes del sistema como Bases de Datos.
+
+Cuando nuestra interfaz implementa solo a una clase usaremos la anotación
+@Autowired(como los DAO de la interfaz)
+Cuando la interfaz implementa a varias clases usaremos la anotación
+@Configuration y @Bean

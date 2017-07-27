@@ -1,0 +1,29 @@
+La composición de todo el Spring framework
+|--------------------------|   ----------------------------
+|  DATA ACCESS/INTEGRATION |   |       WEB                |
+|    JDBC     ORM          |   | WebSocket    Servlet     |
+|    OXM      JMS          |   | Web          Portlet     |
+|    TRANSACTIONS          |   |___________________________
+----------------------------
+    AOP          Aspects      Instrumentantion     Messaging
+
+|--------------------Core container---------------------------
+|Beans            Core           Container          SpEL     |
+|____________________________________________________________|
+_____________________________________________________________
+|                TEST                                        |
+|____________________________________________________________|_
+
+La composición de Spring MVC
+
+Spring Boot
+
+● Va a simplificar toda la configuración de Spring, se encarga del servidor,
+ seguridad, servicios, etc.
+● Proveer una forma muy sencilla de arrancar desarrollos Spring
+● Proporcionar una serie de características no funcionales comunes a los
+proyectos (por ejemplo, servidores embebidos, seguridad, indicadores,
+configuración externalizada)
+● No necesitar generación código ni configuración XML. Salvo las dependencias
+que de spring que tienen que ir en el pom. spring-boot-starter-web y
+spring-boot-starter-data-jpa

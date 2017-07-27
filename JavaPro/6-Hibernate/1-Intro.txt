@@ -1,0 +1,19 @@
+¿Qué es Hibernate?
+
+Hibernate es un ORM (Object Relational Mapping)
+
+-Es una herramienta que nos permite mapear una base de datos
+-Hibernate esta diseñado para trabajar con bases de datos relacionales.
+-La idea de Hiberante es tener una clase equivalente a una tabla de base de datos
+incluyendo los campos.
+-Podremos operar los datos operando no sobre tablas sino sobre objetos
+-Busca solucionar el problema de la diferencia entre dos modelos de datos
+coexistentes en una aplicación
+-Podemos definir tipos de datos
+-Generar sentencias SQL
+
+Hibernate permite conectarnos a una base de datos a partir de un archivo de
+configuración llamado hibernate.cfg.xml.
+
+Mapearemos las tablas y campos de una base de datos a partir de Anotaciónes @
+en las clases

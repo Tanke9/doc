@@ -1,0 +1,11 @@
+Un contenedor web es un servidor que se limita solamente a entregar información
+solicitada por el cliente (solicitud y entrega) y esta funcion es posible
+gracias a los servlets, normalmente el software que se utiliza es Apache Tomcat.
+
+Un servidor de aplicaciones es un servidor dedicado para dar servicio de una
+aplicación a una cantidad grande de usuarios (dependiendo de la capacidad de tu
+servidor) por medio de la red, todas las operaciones que hagas en la aplicacion
+utiliza recursos del servidor y muy pocos de tu ordenador, es como si manejaras
+una computadora remota desde tu navegador web, a diferencia de los contenedores
+web, el software como WebSphere, GlassFIsh gestiona la seguridad y el manejo de
+usuarios de la aplicación cuando acceses a la red a esta aplicación montada.

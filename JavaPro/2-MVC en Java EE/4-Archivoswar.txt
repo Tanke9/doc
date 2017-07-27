@@ -1,0 +1,11 @@
+Archivos War empaquetados y su estructura
+
+war (Web application ARchive)
+WAR (Web ARchive): Es un archivo que contiene componentes para una aplicacion
+web de Java y se estructuran siguiendo una jerarquia 
+Para generar un war de nuestro proyecto daremos click derecho en el proyecto
+seleccionamos Export -> War File colocamos el nombre del proyecto y destino del
+archivo war.
+El archivo war. almacenará todos los recursos de la aplicación como archivos jsp,
+js, css etc. y en cuánto al código sólo almacenará los archivos de bytecode
+agregando una capa de seguridad.

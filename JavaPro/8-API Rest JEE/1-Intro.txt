@@ -1,0 +1,25 @@
+¿Qué es y cómo funciona API Rest?
+
+Compilemos el proyecto con Maven, para ello:
+Daremos Click derecho en el proyecto Run As
+Seleccionamos 6 Maven Build…
+En la ventana que abra verifica que estes en la pestaña Main
+En la opción Goals colocaremos clean install
+Damos click en Run
+Después corremos el proyecto:
+Daremos Click derecho en el proyecto Run As
+Spring Boot App
+
+API Rest
+REST REpresentational State Transfer, lo que significa que cada vez que se envíe
+o reciban datos estos serán representados por un estado en particular.
+En el Blog de Platzi tenemos la siguiente nota:
+ https://platzi.com/blog/como-crear-apis/
+
+Un API será un conjunto de métodos o acciones que se enfocan en un objeto en
+particular.
+
+Si unimos todo lo que acabamos de aprender, un API Rest significará un conjunto
+de métodos/acciones que se pueden aplicar a un objeto representadas por un
+estado en particular.
+Para definir las URI’s debemos usar sustantivos, objetos, en vez de verbos.

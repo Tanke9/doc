@@ -1,0 +1,4 @@
+Servlet: Es una clase que hereda métodos de la clase HttpServlet, una vez
+heredados tiene la capacidad de manejar cualquier tipo de request, para
+identificarlo puedes ubicar dentro del código sus métodos doGet o doPost o
+atraves de su anotación (@WebServlet) + el nombre que le quieras dar como URL.
