@@ -1,0 +1,6 @@
+git rebase: hace prácticamente lo mismo que merge, cambiamos la historia de nuestro proyecto
+sin crear bifurcaciones del proyecto. Es mejor usar merge
+
+Usar solo git rebase de manera local.
+
+-i: de manera interactiva, nos abrira el editor que tengamos definido en la configuración de git.

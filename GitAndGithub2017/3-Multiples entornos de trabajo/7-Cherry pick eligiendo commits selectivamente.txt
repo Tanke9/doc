@@ -1,0 +1,5 @@
+Si estás trabajando en una rama, pero de repente notas que hiciste un cambio en la rama que
+no debías, para esto podemos usar cherry pick. Este comando nos puede salvar la vida, ya que
+nos permite sacar cambios específicos de una rama y mezclarlos en otra.
+
+git cherry-pick [SHA1] nos permite cambiar un commit a otra rama para salvarnos la vida
