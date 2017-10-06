@@ -1,0 +1,4 @@
+git checkout [nombre/sha1]: Nos permite mover entre ramas y entre commits, no vamos a borrar nada.
+Acá es donde podemos movernos en el tiempo.
+
+git checkout -b [nombre_rama]: Nos permite crear una nueva rama sin necesidad de usar branch

@@ -1,0 +1,6 @@
+Las ramas son muy importantes si quieres trabajar con un equipo y no quieres tocar la rama master para no crear conflictos,
+
+git branch [nombre] se crea una nueva rama
+-l: listamos las ramas
+-d/-D [nombre]: borramos rama
+-m [nombre] [nombre_nuevo]: para renombrar ramas
