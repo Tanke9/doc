@@ -1,0 +1,8 @@
+Con el git reset hard vamos a hacer resets que serán definitivos.
+
+git reset --hard [SHA1]: Nos elimina los cambios incluso del working directory, es el más
+peligroso de todos porque podemos perder parte de nuestro trabajo.
+
+git reset --soft [SHA 1]: elimina los cambios hasta el staging area
+git reset --mixed [SHA 1]: elimina los cambios hasta el working area
+git reset --hard [SHA 1]: regresa hasta el commit del [SHA 1]

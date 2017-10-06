@@ -1,0 +1,7 @@
+Alguna vez tuviste un error y quisiste borrar el commit que habías enviado.
+Para esto podemos hacer a través de git reset. Si quieres usar este comando debes tener
+mucho cuidado, porque puedes borrar muchos commits.
+El comando reset --soft nos permite identificar el commit que queremos resetear.
+
+git reset --soft [SHA1]: Nos permite quitar los cambios de un commit específico.
+Deja los archivos en el staging area, listos para hacer un commit

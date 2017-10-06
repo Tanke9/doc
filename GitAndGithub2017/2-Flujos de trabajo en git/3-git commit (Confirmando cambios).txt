@@ -1,0 +1,6 @@
+Git commit -m [“mensaje”]: Es bueno ser descriptivos con el mensaje para saber lo que se hizo
+en ese commit y para informar al resto de personas.
+
+–amend: concatena nuevos cambios con cambios previos.
+
+git log: nos muestra la historia de todos los commits que hemos realizados

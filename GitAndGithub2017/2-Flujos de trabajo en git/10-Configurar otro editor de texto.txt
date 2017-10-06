@@ -1,0 +1,7 @@
+Configura otro editor de texto por defecto para que cada vez que haya que modificar algo no
+salga el vim
+
+git config --global core.editor "atom --wait"
+
+Esto deja el atom por defecto. Cuando haya que modificar algo esperara a que cierres esa sesion
+que se abre automaticamente de atom para que te devuelva el cursor nuevamente con los cambios.

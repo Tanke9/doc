@@ -1,0 +1,11 @@
+Algo que hemos estado revisando es la historia de nuestro proyecto.
+Éste se invoca con git log, los logs te muestran los códigos hexadecimáles que crea Sha-1, el
+autor y la fecha en la que se envió el ese commit.
+Git log se puede personalizar, y de ehcho es un comando que se puede personalizar mucho.
+Para esto podemos usar -oneline que nos ayuda a resumir mucho esos commits.
+Además, podemos ponerle múltiples parámetros, así como consultar solo los logs que nos
+interesan ver.
+
+El alias de superlog que nos dejo en el curso anterior Mike Nieva es genial.
+
+git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"

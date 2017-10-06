@@ -1,0 +1,8 @@
+a sabemos que podemos utilizar git reset para hacer cambios.
+Ahora vamos a ver git reset --mixed con el Sha-1 del commit.
+Para revisar lo que hemos hecho con este comando, podemos usar git status.
+Podemos ver que nos descarta cambios del stage.
+Lo podemos usar para hacer cambios a los commits en los que pudimos tener algunos errores.
+
+git reset --mixed [SHA1]: nos elimina los cambios, también del staging area.
+git reset HEAD [file] modificar manualmente los archivos en el staging area del ultimo commit.

@@ -1,0 +1,11 @@
+git tag: nos permite agregar etiquetas a nuestros cambios.
+-a para la anotación
+-m para el mensaje
+
+ejemplo: git -tag -a 1.0 -m 'version inicial del proyecto'
+para una etiquetacion ligera de un commit anterior. (se saca el commit con el git log) ejemplo
+git tag 0.5 8db23635656cfdf3242354
+
+-l nos muestra la lista de etiquetas
+-f para renombrar el tag: git tag -f -a 0.1 -m 'otra version' 8db23635656cfdf3242354
+-d para borrar el tag: git tag -d 1.0
