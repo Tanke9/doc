@@ -1,0 +1,3 @@
+GitHub Es una plataforma en la que se almacenan los cambios de un proyecto. Además es una
+plataforma que funciona como una red social. Aquí, las personas que visiten tu sitio puedan
+darle estrellitas a los proyectos que hayas desarrollado.

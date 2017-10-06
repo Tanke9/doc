@@ -1,0 +1,15 @@
+Creando tu primer archivo de Python
+Ya sabemos como ejecutar un "Hola Mundo" desde la terminal de Python, sin embargo, en los
+proyectos reales, siempre estaremos trabajando con archivos, mismos archivos tendrán una
+extención .py.
+
+Puedes usar cualquier editor de texto (recomendamos mucho sublime text / atom / notepad++ ) .
+
+En este caso, iniciamos con un archivo hola.py:
+
+print "Hola Platzi"
+
+Y para ejecutar ese archivo desde la consola de pyhon falta con ejecutar el comando Python
+ seguido del nombre del archivo:
+
+python hola.py

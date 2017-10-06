@@ -1,0 +1,3 @@
+¿Qué es Python?
+Python es un lenguaje interpretado muy similar a Pearl, su sintaxis es muy limpia y que favorece
+ un código legible y buenas prácticas de programación.

@@ -1,0 +1,7 @@
+Untracked files: Son archivos que están en nuestro Working Directory, lo que aparezca en rojo
+ es lo que se ha modificado y hay que pasarlo al Staging.
+
+git add [archivo]: Nos agrega al archivo al staging area(el limbo) ** -A** nos agrega todos los archivos
+git rm --cached: Nos devolvemos un paso
+git rm -f [file]: Elimina el archivo por completo.
+git add -n [file]: Que no haga nada

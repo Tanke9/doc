@@ -1,0 +1,16 @@
+Comandos útiles de la terminal
+
+**cd **= Change directory
+**mkdir **= Make directory
+**ls **= list - en ++windows ++deben usar dir
+**clear **= también se puede usar control + L
+**touch **= crea un archivo o modifica su fecha de modificación.
+**rm **= remove -rf(para borrar carpetas)
+
+Nunca usar rm -rf / o se despiden de su pc 😞
+
+VIM
+i = para poder editar
+escape y..
+:wq = para guardar y salir
+:q! = para salir sin guardar

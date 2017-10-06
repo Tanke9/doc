@@ -1,0 +1,9 @@
+
+Para crear nuestro primer repositorio vamos a crear el comando git init y el nombre de nuestro 
+repositorio.
+Si utilizamos el comando ls vemos que aún no tenemos nada. Por eso vamos a crear un nuevo
+archivo que se llame file.txt. Adicionalmente, vamos a crear una carpeta que se llame segundo_repo,
+y para esto vamos a usar el comando mkdir de la terminal.
+Si creamos un repositorio, pareciera que no tuviera información, sin embargo el sistema operativo
+crea unos archivos ocultos, para borrarlo podríamos buscar dentro de los archivos de nuestra máquina.
+Para borrar un repositorio, vamos a usar el comando rf -rm .git y así se haría de forma manual.

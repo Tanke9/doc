@@ -1,0 +1,12 @@
+Tu primer "Hola Mundo" en Python
+Una vez instalado Python, puedes iniciar con tu primer hola mundo, sólo abre tu terminal y ejecuta el comando python.
+
+Notarás que el promp cambia a ">>>"
+
+En el mismo prompt, puedes iniciar a escribir en la sintaxis del lenguaje. Lo mas sencillo es iniciar por print.
+
+>>> print "Hola Mundo"
+
+Obteniendo como resultado:
+
+Hola Mundo

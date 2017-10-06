@@ -1,6 +1,5 @@
 Factory Method
-Crea una instancia de varias clases derivadas. Permite delegar en una clase la
-responsabilidad de crear objetos de otras clases,
+Crea una instancia de varias clases derivadas
 
 • Problema:
       ▫ Una clase no puede anticipar la clase de objetos que
@@ -32,71 +31,8 @@ Participantes del patron Factory Method:
     ▫ sobreescribe el método de generación para crear objetos
     ConcreteProduct
 
-Ejemplo 1:
 
-interface ImageReader {
-    DecodedImage getDecodeImage();
-}
-
-class DecodedImage {
-    private String image;
-
-    public DecodedImage(String image) {
-        this.image = image;
-    }
-
-    @Override
-    public String toString() {
-        return image + ": is decoded";
-    }
-}
-
-class GifReader implements ImageReader {
-    private DecodedImage decodedImage;
-
-    public GifReader(String image) {
-        this.decodedImage = new DecodedImage(image);
-    }
-
-    @Override
-    public DecodedImage getDecodeImage() {
-        return decodedImage;
-    }
-}
-
-class JpegReader implements ImageReader {
-    private DecodedImage decodedImage;
-
-    public JpegReader(String image) {
-        decodedImage = new DecodedImage(image);
-    }
-
-    @Override
-    public DecodedImage getDecodeImage() {
-        return decodedImage;
-    }
-}
-
-public class FactoryMethodDemo {
-    public static void main(String[] args) {
-        DecodedImage decodedImage;
-        ImageReader reader = null;
-        String image = args[0];
-        String format = image.substring(image.indexOf('.') + 1, (image.length()));
-        if (format.equals("gif")) {
-            reader = new GifReader(image);
-        }
-        if (format.equals("jpeg")) {
-            reader = new JpegReader(image);
-        }
-        assert reader != null;
-        decodedImage = reader.getDecodeImage();
-        System.out.println(decodedImage);
-    }
-}
-
-
-Ejemplo2:
+Ejemplo:
 
 FactoryMethod.py (clase abstracta)
 

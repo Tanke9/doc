@@ -1,0 +1,12 @@
+Cómo cualquier lenguaje de programción, Python cuenta con carácteristicas unicias que lo
+vuelven unico a muchos otros, entre las cuales destacamos: 
+
+Legible: Sintaxis tanto intuitiva y estricta
+
+Productuvo: Más rapido que de llegar a una solucón similar hecha en C++ o Java
+
+Portable: Se puede ejecutar en cualquier sistema operativo y/o hardware
+
+Recargado: Cuenta con una gran comunidad y libreria de terceros que mantiene código
+
+Integrabe: Completamente viable usarlo junto con otros lenguajes de programación

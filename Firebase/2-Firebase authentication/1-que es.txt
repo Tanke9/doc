@@ -1,0 +1,12 @@
+Manejar un login en una app es esencial aunque no estrictamente necesario para todas las apps,
+pero la mayoría deben tenerlo.
+
+Al querer desarrollar una app podemos encontrarnos con la necesidad de que los usuarios
+tengan acceso con Facebook, twitter o incluso Google.Esto puede convertirse en un reto al
+ tener el control del acceso de usuarios a través de diferentes plataformas.
+
+Firebase nos permite tener un solo modulo, para poder gestionar todas las cuentas de autenticación.
+Firebase controla los accesos en una sola plataforma para administralos muy fácilmente.
+Nos proporciona un SDK muy fácil de integrar en nuestra aplicación, simplemente agregándolo
+en gradle una nueva librería que añadir, y de todo lo demás nos encargamos desde nuestro BaaS
+“firebase”

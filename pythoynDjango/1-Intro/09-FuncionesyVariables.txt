@@ -1,0 +1,27 @@
+Funciones y Variables
+
+Las variables y las funciones son las formas en las que nosotros etiquemos nuestro código.
+
+Variables:
+
+Las variables nos ayudan a etiquetar un valor de cualquier tipo de dato, como por ejemplo:
+
+a = 4.
+
+por lo que a siempre recordara que vale 4 y será así durante todo el tiempo de ejecución.
+
+Funciones:
+
+Las funciones etiquetan todo un conjunto de lineas de código y se realizan por la palabra
+reservada def, como ejemplo:
+
+
+def mi_funcion()
+    return "Esta es mi primera funcion"
+
+
+def mi_funcion_2()
+    print "Esta es otro tipo de funcion"
+
+Nota: Debemos recordar que Python funciona sin llaves, usa un sistema de identación, por lo
+ tanto, todo aquello que este a 4 tabs a la izquierda es lo que pertenece a esa función.

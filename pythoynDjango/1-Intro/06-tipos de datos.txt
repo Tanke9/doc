@@ -1,0 +1,27 @@
+Tipos de datos en Python
+
+Los tipos de datos son representaciones de información acordados al momento de la creación de
+un lenguaje. Sirven para mejorar el flujo de información de tu proyecto. Python tiene al momento
+
+ 6 tipos de datos básicos:
+
+int: Define cualquier valor númerico entero ejemplo: 10 , sin embargo, podemos definir otros
+valores como:
+
+float: Valor númerico de punto flotante o punto decimal, ejemplo: 3.1416
+long: Son números enteros, pero cuando son muy grandes, ejemplo: 231290212131029102912
+
+bool: Representa los datos lógicos (muy importantes para condicionales), y estan representados
+por la palabra reservada: True y False
+
+str: Los strings definen cualquier cadena de texto, se identifican por estar siempre entre comillas
+ (" "), ejemplo: "Hola Mundo"
+
+list: Es una colección de cualquier tipo de dato, ademas que hereda toda la teoria de conjuntos,
+muy similar a los arrays de cualquier otro lengujae de programación
+
+dict: Son colecciones de datos del tipo "llave-valor", puede contener cualquier valor (incluso list),
+y son muy similares a la definición de objetos en Javascript.
+
+tuple: Iguales a las listas, pero son esticas, una vez que se definen los datos, no se pueden
+agregar mas.

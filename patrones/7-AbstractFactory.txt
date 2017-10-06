@@ -1,25 +1,14 @@
-Antes que nada debemos saber que existe un patrón llamado Factory el cual permite
-delegar en una clase la responsabilidad de crear objetos de otras clases,
-basados en esto Podemos decir que el Abstract Factory es una nueva fase de
-Factory, Teniendo así una Fabrica de Objetos donde la creación es transparente
-para la clase que los solicita.
-
-Debemos saber entonces que el patrón Abstract Factory nos brinda una interfaz
-para crear familias de Objetos relacionados sin tener que especificar sus clases
-concretas desde la clase cliente (Clase que los solicita)
-
-
 • Problema:
-    ▫ Se solicita la creación de diferentes vehículos de transporte (Buses,
-    Busetas y Taxis) sin que se especifique en detalle la forma de su creación..
+    ▫ Desea proporcionar una biblioteca de clases de productos
+    ▫ Desea revelar sólo sus interfaces, no sus
+    implementaciones.
 • Contexto:
     ▫ Evitar añadir código a las clases existentes con el fin de
     hacer que encapsule información más general.
 • Solución:
-    ▫ Utilizamos el patrón Abstract Factory para independizar la forma como
-    crearemos los objetos, de esta manera creamos familias de objetos de tipo
-    Vehículo delegando el proceso y sin tener que entrar en detalles desde la
-    clase solicitante.
+    ▫ Proporciona una interfaz para crear familias de objetos
+    relacionados o dependientes sin especificar sus clases
+    concretas.
 
 PARTICIPANTES DEL PATRON
     • AbstractFactory
@@ -37,354 +26,72 @@ PARTICIPANTES DEL PATRON
         y AbstractProduct.
 
 
-La Aplicación.
+Ejemplo
 
-Una vez mas trabajamos con un ejemplo simple, veremos una aplicación pequeña
-que permite al usuario crear  familias de vehículos de 3 tipos diferentes,
-Buses, Busetas y Taxis, tan solo presentamos unas opciones de selección donde
-escogeremos que Objeto crear, he internamente  por medio del Patrón de Diseño
-ejecutamos el proceso de creación....
+from abc import ABCMeta, abstractmethod
+*******************************************************************************
+class Car(metaclass=ABCMeta):
+    def __init__(self):
+        self.name = None
+        self.maxSpeed = None
 
-Con este patrón revivimos Conceptos Básicos de Programación Orientada a Objetos
-tales como Las Interfaces, métodos Abstractos, Herencia, polimorfismo entre
-otros (si no los conocen los invito a darles una mirada aquí)...
+    def __str__(self):
+        return "name is {:s}, maxSpeed is {:s}".format(self.name, self.maxSpeed)
 
-EjemploAbstractFactory
-|
- src
-    |
-     classes
-        |-  Bus.java
-        |-  Buseta.java
-        |-  Taxi.java
-    fabricas
-        |-  FabricaBuses.java
-        |-  FabricaBusetas.java
-        |-  FabricaDeVehiculos.java
-        |-  FabricaTaxis.java
-     interfaces
-        |-  Vehiculo.java
-        |-  VehiculoDeTransporte.java
-     Principal
-        |-  Principal.java
+class SportsCar(Car):
+    def __init__(self):
+        self.name = "Deportivo"
+        self.maxSpeed = "250 km/hr"
 
-En General la Aplicación se divide en Clases Fabricas que permiten hacer el
-llamado a la creación de Objetos, Interfaces que permiten aplicar conceptos
-como la Herencia y el Polimorfismo, también contamos con clases Concretas
-que representan los Objetos que crearán las Fabricas y por ultimo la clase
-principal que permitirá delegar las solicitudes para iniciar el proceso de
-creación.... Veamos!!!
+class FamilyCar(Car):
+    def __init__(self):
+        self.name = "Familiar"
+        self.maxSpeed = "150 km/hr"
+*********************************************************************************
+class AbstractFactory(metaclass=ABCMeta):
+    def __init__(self):
+        self.manufacturer = None //nombre de la fabrica
 
-Las Interfaces.
+    def __str__(self):    //equivalente toString de java
+        return "manufacturer is {:s}".format(self.manufacturer)
 
-Interface Vehiculo.
+    @abstractmethod
+    def createCar(self, carType): pass
 
-Esta Interface es común para todos los vehículos de nuestra fabrica, en ella
-se declaran 2 métodos abstractos que serán comunes para los objetos a crear,
-sin importar si son Buses, Busetas o Taxis (Sabemos que por regla todos los
-métodos de una interfaz son abstractos, por ello no es necesario declararlos
-como tal)
+    @staticmethod
+    def get_factory(factoryName):
+        if factoryName == "vw":
+            return VWFactory()
+        elif factoryName == "mb":
+            return MBFactory()
 
-package interfaces;
+        raise TypeError("Unknown Factory")
 
-/**
- * interfaz donde se establece el codigo del servicio
- * @author chenao
- */
-public interface Vehiculo
-{
- public void codigoDeVehiculo();
- public int generarCodigo();
-}
 
-Interface VehiculoDeTransporte.
+class VWFactory(AbstractFactory):
+    def __init__(self):
+        self.manufacturer = "VW"
 
-Esta Interface será implementada por las diferentes fabricas de de vehículos de
-la aplicación, cuenta con el método abstracto crearVehiculo() que será común
-para cada fabrica y como su nombre lo dice, le permitirá a cada una implementar
-la lógica para crear sus objetos concretos.
+    def createCar(self, carType):
+        self.car = None
+        if carType == "sports":
+            self.car =  SportsCar();
+        elif carType == "family":
+            self.car =  FamilyCar();
+        else:
+            print("Car type {:s} is not defined".format(carType))
+        return self.car
 
-package interfaces;
+    def doSomething(self):
+        print(self.car)
 
-/**
- * interfaz que establece la creacion de un servicio
- * @author chenao
- */
-public interface VehiculoDeTransporte {
- public Vehiculo crearVehiculo();
-}
+if __name__ == "__main__":
+    myFactory = AbstractFactory.get_factory("vw")
 
-Las Fabricas.
+    print(myFactory)
 
-Se componen por la Fabrica de Vehículos Principal que hace el llamado a las
-fabricas de Objetos Concretos..... estas implementan la interface
-VehiculoDeTransporte permitiendo crear los vehículos del tipo correspondiente y
-asignar el respectivo código de creación.....
+    s = myFactory.createCar("sports")
+    f = myFactory.createCar("family")
 
-Clase FabricaDeVehiculos.
-
-Esta clase sera la Fabrica Principal cuenta con un método estático que permitirá
-la creación de los diferentes tipos de vehículos, aplicamos el concepto de
-polimorfismo para ejecutar el llamado a la Fabrica correspondiente y crear el
-objeto concreto solicitado  por el cliente.
-
-package fabricas;
-
-import interfaces.Vehiculo;
-import interfaces.VehiculoDeTransporte;
-
-/**
- * Clase que permite la creacion de un servicio
- * @author chenao
- *
- */
-public class FabricaDeVehiculos {
- public static void crearFabricaDeVehiculo(VehiculoDeTransporte factory){
-  /**Aplicamos Polimorfismo*/
-  Vehiculo objetoVehiculo= factory.crearVehiculo();
-  objetoVehiculo.codigoDeVehiculo();
- }
-}
-
-Clase FabricaBuses.
-
-package fabricas;
-import interfaces.Vehiculo;
-import interfaces.VehiculoDeTransporte;
-
-import javax.swing.JOptionPane;
-
-import clases.Bus;
-
-/**
- * Clase que permite la creacion de un objeto Bus
- * @author chenao
- *
- */
-public class FabricaBuses implements VehiculoDeTransporte{
-  public Vehiculo crearVehiculo() {
-  Bus miBus=new Bus();
-  miBus.setCodigo(miBus.generarCodigo());
-  JOptionPane.showMessageDialog(null, "Se ha creado un nuevo Objeto Bus  ");
-  return miBus;
- }
-}
-
-Clase FabricaBusetas.
-
-package fabricas;
-import interfaces.Vehiculo;
-import interfaces.VehiculoDeTransporte;
-
-import javax.swing.JOptionPane;
-
-import clases.Buseta;
-
-/**
- * Clase que permite la creacion de un objeto Buseta
- * @author chenao
- *
- */
-public class FabricaBusetas implements VehiculoDeTransporte{
- @Override
- public Vehiculo crearVehiculo() {
-  Buseta miBuseta=new Buseta();
-  miBuseta.setCodigo(miBuseta.generarCodigo());
- JOptionPane.showMessageDialog(null, "Se ha creado un nuevo Objeto Buseta");
-  return miBuseta;
- }
-}
-
-Clase FabricaTaxis.
-package fabricas;
-import interfaces.Vehiculo;
-import interfaces.VehiculoDeTransporte;
-
-import javax.swing.JOptionPane;
-
-import clases.Taxi;
-
-/**
- * Clase que permite la creacion de un objeto Taxi
- * @author chenao
- *
- */
-public class FabricaTaxis implements VehiculoDeTransporte{
- @Override
- public Vehiculo crearVehiculo() {
-  Taxi miTaxi=new Taxi();
-  miTaxi.setCodigo(miTaxi.generarCodigo());
-  JOptionPane.showMessageDialog(null, "Se ha creado un nuevo Objeto Taxi");
-  return miTaxi;
- }
-}
-
-Las Clases Concretas.
-
-Representan las clases de las que se instanciarán los objetos de tipo Vehículo
-(Buses, Busetas y Taxis) así como la clase principal que permite delegar las
-funcionalidades.....Las clases Bus, Buseta y Taxi Implementan la Interface
-Vehículo, y cada una permite generar un código aleatorio para identificar el
-vehículo creado....
-
-Clase Bus.
-
-package clases;
-import interfaces.Vehiculo;
-
-import javax.swing.JOptionPane;
-
-/**
- *  clase que establece el codigo del servicio de buses
- * @author chenao
- *
- */
-public class Bus implements Vehiculo{
- private int codigo;
-
- public int generarCodigo()
- {
-  int codigoBus=(int) (Math.random()*9999);
-  return codigoBus;
- }
- public int getCodigo() {
-  return codigo;
- }
- public void setCodigo(int codigo) {
-  this.codigo = codigo;
- }
- public void codigoDeVehiculo() {
-  JOptionPane.showMessageDialog(null,"El Codigo del Bus es : "+getCodigo());
- }
-}
-
-Clase Buseta.
-
-package clases;
-import interfaces.Vehiculo;
-
-import javax.swing.JOptionPane;
-
-/**
- *  clase que establece el codigo del servicio de busetas
- * @author chenao
- */
-public class Buseta implements Vehiculo{
-
- private int codigo;
- public int generarCodigo()
- {
-  int codigoBuseta=(int) (Math.random()*9999);
-  return codigoBuseta;
- }
- public int getCodigo() {
-  return codigo;
- }
- public void setCodigo(int codigo) {
-  this.codigo = codigo;
- }
- @Override
- public void codigoDeVehiculo() {
-JOptionPane.showMessageDialog(null,"El Codigo de la Buseta es:"+getCodigo());
- }
-}
-
-Clase Taxi.
-
-package clases;
-import interfaces.Vehiculo;
-
-import javax.swing.JOptionPane;
-
-/**
- * clase que establece el codigo del servicio de taxis
- * @author chenao
- */
-public class Taxi implements Vehiculo{
- private int codigo;
- public int generarCodigo()
- {
-  /**Generamos un codigo aleatorio para el taxi*/
-  int codigoTaxi=(int) (Math.random()*9999);
-  return codigoTaxi;
- }
- public int getCodigo() {
-  return codigo;
- }
- public void setCodigo(int codigo) {
-  this.codigo = codigo;
- }
- @Override
- public void codigoDeVehiculo() {
-  JOptionPane.showMessageDialog(null,"El Codigo del Taxi es : "+getCodigo());
- }
-}
-
-Clase Principal.
-
-Esta clase permite iniciar el sistema, en ella creamos las instancias de
-Fabricas y mediante un menú de opciones se define y delega que Fabrica inicia
-el proceso de creación...
-
-package principal;
-import javax.swing.JOptionPane;
-
-import fabricas.FabricaBuses;
-import fabricas.FabricaBusetas;
-import fabricas.FabricaDeVehiculos;
-import fabricas.FabricaTaxis;
-
-/**
- * clase principal del aplicativo donde se establecen las instancias
- * de las fabricas
- * @author chenao
- *
- */
-public class Principal {
-
-public static void main(String[] args)
-{
- FabricaBusetas busetas=new FabricaBusetas();
- FabricaTaxis taxi=new FabricaTaxis();
- FabricaBuses buses=new FabricaBuses();
- String cad="",salida;
-cad+="Ingrese la opción correspondiente para obtener el codigo del servicio\n";
- cad+="1. Codigo servicio de Taxis\n";
- cad+="2. Codigo servicio de Buses\n";
- cad+="3. Codigo servicio de Busetas\n\n";
- try {
- do {
-  try
-     {
-  int opcion=Integer.parseInt(JOptionPane.showInputDialog(cad));
-  switch (opcion)
-  {
-  case 1:FabricaDeVehiculos.crearFabricaDeVehiculo(taxi);
-   break;
- case 2:FabricaDeVehiculos.crearFabricaDeVehiculo(buses);
-   break;
- case 3:FabricaDeVehiculos.crearFabricaDeVehiculo(busetas);
-   break;
-default:JOptionPane.showMessageDialog(null,"No es un valor de consultavalido");
-    break;
-   }
-  } catch (Exception e) {
- JOptionPane.showMessageDialog(null,"No es un parametro de consulta valido");
-  }
- salida=JOptionPane.showInputDialog("Desea consultar otro codigo? S/N");
-
- } while (salida.toUpperCase().equals("S"));
-     } catch (Exception e) {
-  JOptionPane.showMessageDialog(null,"Bye!!!");
-  }
- }
-}
-
-Conclusiones.
-
-Y Listo!!! Como vemos  es un Patrón que al principio puede sonar un poco
-intimidante pero a medida que vamos trabajando con el nos damos cuenta de como
-podemos sacarle provecho a su aplicación...
-
-Podemos evidenciar también el uso de varios conceptos de programación orientada
-a objetos siendo los patrones de diseño un gran ejemplo de su aplicación....
+    print(s)
+    print(f)

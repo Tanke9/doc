@@ -1,0 +1,4 @@
+En firebase, se va a documentacion y en la guia de primeros pasos buscamos authentication y
+sale la ultima version de la libreria de autentication. Con firebase-auth vamos a tener acceso
+a los objetos importantes de firebase. Actualizar versiones de librerias del sdk. Google repository
+y google play services....

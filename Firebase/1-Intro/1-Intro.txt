@@ -1,0 +1,28 @@
+¿Qué es Firebase?
+
+Es propiedad de Google, originalmente no era la plataforma que es actualmente, mas bien era
+ simplemente una base de datos en tiempo real. Proveía un API que nos permitía integrar la base
+ de datos con clientes web o móviles, y tener sincronización de datos en tiempo real.
+
+Google ahora se ha encargado de insertar varios de sus productos de “Google Cloud Platform”
+ en la plataforma actual de firebase .
+
+La mejor manera de describir a Firebase es como Backend as a Service “BaaS”.
+Un Baas tiene características como:
+*vincular usuarios
+*autenticar usuarios en nuestras aplicaciones
+*enviar notificaciones
+*gestión de redes sociales
+*entre muchas otras más
+
+Firebase te permite tener el control completo de tus aplicaciones, con ello, firebase te ahorra el
+desarrollo backend para tus aplicaciones, esto también te permite ahorrar en costos de
+infraestructura si lo desarrollaras por tu cuenta, ya que te provee solamente lo necesario para
+tus aplicaciones.
+
+Firebase esta divido en tres partes importantes, crecer, ganar y desarollar.
+Desarrollo: incluye bases de datos en tiempo real, autenticación, cloud messaging, storage,
+remote config, test Lab, crash reporting.
+*Crecer: incluye notificaciones, App Indexing, Dynamic Links,Invites y Adwords.
+*Ganar: Incluye la integración de AdMob para integrar anuncios en nuestras aplicaciones y
+generar ingresos extras.

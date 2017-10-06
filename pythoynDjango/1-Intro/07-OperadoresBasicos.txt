@@ -1,0 +1,35 @@
+Operadores básicos en Python
+Existén 3 tipos de operadores que nos ayudan a interactuar con los diversos tipos de datos:
+
+Aritméticos: Son todos aquellos que nos permiten a hacer cualquier operación básica: suma, resta, multiplicación, división, modulos y pontencias.
+
+ejemplo:
+
+suma: 5 + 10
+
+multiplicación: 7 * 8
+
+resta: 10 - 2
+
+división: 10/2
+
+modulo: 15%4
+
+Lógicos: Son aquellos, que nos ayudan operar con los datos booleanos. Usan los operadores, and or y not. Puedes consultar sobre lógica booleana aqui
+
+ejemplo:
+
+and: True and True
+or: True or False
+
+Comparadores: Nos sirven para comparar 2 tipos de datos, si son iguales, diferentes, mayor a, menor a, etc.
+
+ejemplo:
+
+mayor: 5 > 4
+igual: 3 == "3"
+mayor o igual: 10 >= 10
+
+Sin importan el tipo de dato, puedes comparar hasta una lista con una tupla:
+
+[1,2,3] == (5,3,5)

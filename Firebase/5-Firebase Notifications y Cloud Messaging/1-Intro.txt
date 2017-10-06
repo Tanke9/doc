@@ -1,0 +1,6 @@
+Firebase Cloud messaging es el motor que hace posible mandar notificaciones desde nuestro
+panel a un dispositivo movil o web.
+Firebase proporciona un modulo exclusivo para manejar nuestras notificaciones.
+Hay 2 cosas
+Firebase clud messaging y el modulo de notificaciones (modulo muy enlazado con google
+analitycs, lo que permite crear campañas, enviar notifiaciones por sexo, por edad, etc...).

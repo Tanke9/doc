@@ -1,0 +1,8 @@
+Estos son los tres estados de Git:
+
+1- Working Directory: Es donde trabajamos de manera local, pero para guardarlo hay que pasarlo
+al Staging Area
+2- Staging Area: Es el área de preparación, se almacenan justo antes de hacer commit
+3- git repository: El repositorio donde almacenaremos los cambios del proyecto
+
+Estos tres estados representan el ciclo de vida de nuestros archivos dentro de la plataforma.

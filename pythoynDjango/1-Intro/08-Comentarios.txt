@@ -1,0 +1,21 @@
+Comentarios en tu código de Python
+Comentar código es una poderosa herramienta que proporciona contexto sobre lo que estamos
+ haciendo al escirbir nuestro proyecto. Existen 2 formas de comentar algo en Python:
+
+a) Comentario simple
+
+Se usa agregando "#" al inicio de la linea que quieres comentar, importante saber que solo puedes
+comentar una linea de este modo:
+
+# print "hola", soy un comentario y esto no afecta mi codigo.
+
+b) Comentario por bloque
+
+Se usa aregando triple " entre el pedazo de texto que quieres comentar:
+
+"""
+
+def saludo, hola, todo lo que esta dentro de las comillas no afectan mi codigo, es un comentario
+
+
+"""

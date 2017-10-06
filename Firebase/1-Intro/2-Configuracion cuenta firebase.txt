@@ -1,0 +1,30 @@
+Para accedera a la consola de firebase, es necesaria una cuenta de correo gmail.
+En el sitio de firebase podemos encontrar la documentación que es muy amplia.
+Una vez estando en el sitio firebase.google.com vamos a la consola
+en la pantalla inicial de la consola nos aparecen todos los proyectos que hayamos hecho
+en este caso agregamos proyecto, al agregar nos pide el nombre del
+proyecto y la region donde estara activa nuestra aplicacion
+si queremos que este disponible en toda america latina y españa lo mejor sera elegir U.S.A
+Despues de esto accederemos a la descripcion general de nuestro proyecto
+ademas de que veremos los modulos descritos en la clase anterior
+en la parte derecha veremos donde esta asociado nuestro proyecto, ya sea android, IOS, web o los tres
+en el apartado de overview, esta la configuracion del proyecto con las cosas claves del proyecto general
+ahi encontramos el nombre de nuestro proyecto, un nombre publico(o mas corto en caso de que el nombre del proyecto sea largo)
+el id del proyecto que es lo que identifica a nuestro proyecto firebase asi como una API para conectar el proyecto con los clientes
+tambien en podemos en este apartado podemos eliminar el proyecto
+para añadir firebase a nuestra proyecto de android, debemos seguir los siguientes pasos
+
+1.- Crear nuestro proyecto de Android en Android Studio
+2.- Copiar el nombre de package ubicado en el manifest
+3.- obtenemos nuestro codigo sha con las instrucciones proporcionadas por la pagina de firebase
+dependiendo si tu equipo es linux, Mac o Windows
+4.- Al realizar el paso anterior obtenemos el archivo de configuración json
+5.- el archivo json lo copiamos en la carpeta app dentro de android studio, por facilidad de acceso cambiamos la vista de Android a Project ubicamos la carpeta y pegamos el archivo
+6.-Procedemos el archivo gradle:Project, hay que identificarlo bien ya que son dos diferentes, ahi agregamos classpath 'com.google.gms:google-services:3.1.0’
+7.- en el otro archivo gradle el archivo gradle:Module agregamos apply plugin: 'com.google.gms.google-services’
+8.- por ultimo damos click en sync now y listo android studio a descargado y agregado lo necesario para utilizar firebase dentro de nuestra aplicacion
+
+
+*errores obteniendo el sha1. Ha sido necesario poner
+
+C:\Program Files\Java\jre1.8.0_121\bin>keytool -list -v -keystore "C:\Users\Alberto Ruiz\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android

@@ -1,0 +1,4 @@
+Firebase proporciona una base de datos no relacional en la nube, con todo listo para acceder
+a la bdd. La estructura de datos es en Json, lo que hace las consultas sumamente rapidas.
+Con un sdk personalizado para android, ios, web... y tendras los datos sincronizados, y cuando
+un dato cambié por otro dispositivo habra eventos que informen en tiempo real.
