@@ -1,0 +1,9 @@
+
+GitHub me permite personalizar la URL de mi GitHub Pages, primero debo comprar el dominio,
+ nosotros usamos namecheap.com.
+En el dashboard de namecheap vamos a manage nuestro dominio, vamos a configurar los DNS.
+En GitHub vamos a settings y creamos un custom URL.
+Creamos en el proyecto el archivo CNAME y en el ponemos la URL del dominio que compramos.
+La ip de GitHub es 192.168.252.153 - 192.168.252.154.
+
+en github pages podriamos cambiar por este dominio que tenemos

@@ -1,0 +1,4 @@
+Si tienes archivos que no pueden ser públicos, como archivos de configuración con contraseñas,
+lo ideal es que no los subas a tu repositorio, estos archivos los puedes poner en el archivo .gitignore.
+
+https://www.gitignore.io/

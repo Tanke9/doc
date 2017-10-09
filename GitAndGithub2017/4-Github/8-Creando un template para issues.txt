@@ -1,0 +1,5 @@
+En GitHub puedes crear un template para los issues, basta con crear un archivo llamado
+issue_template.md y definir los lineamientos para reportar un issue, ahora al generar un nuevo
+ issue se mostrará el nuevo template.
+Recuerda que los archivos .md por dentro contienen sintaxis markdown para dar estilos a tu texto,
+puedes usar esta guia

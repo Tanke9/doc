@@ -1,0 +1,9 @@
+GitHub tiene unas herramientas increíbles para nuestros proyectos. Una de estas herramientas
+es el projects de GitHub, la cual nos da la posibilidad de tener un mayor control del desarrollo de
+nuestro proyecto.
+Aquí como en la metodología de SCRUM tenemos la posibilidad de saber qué tenemos pendiente
+por hacer, cuáles son las features que se encuentran en desarrollo, identificar los bugs que
+emergen de nuestro proyecto, y los features que debemos revisar.
+
+una forma es añadir las tareas en columnas, por ejemplo TODO con todo lo que hay que hacer,
+otra con wip work in progress, BUGS, waiting for review y otra con DONE.
