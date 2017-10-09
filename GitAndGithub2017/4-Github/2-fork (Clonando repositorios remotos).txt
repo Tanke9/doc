@@ -1,0 +1,5 @@
+el **fork **en github nos hace una copia del proyecto en nuestro perfil/repositorios para poder
+hacerle lo que queramos sin afectar el proyecto original.
+
+git clone [https/ssh]: siempre es recomendable en lo que se puede de usar ssh
+(git@github.com…) en vez de usar https ya que la primera es mucho más segura.

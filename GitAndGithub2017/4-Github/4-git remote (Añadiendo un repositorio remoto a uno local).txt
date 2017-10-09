@@ -1,0 +1,6 @@
+git remote add [nombre(por convencion origin)][url/ssh] : funciona para añadir un repositorio
+remoto a nuestro repositorio local.
+
+git remote -v : funciona para comprobar que el repositorio remoto fue añadido correctamente.
+
+git remote remove origin: funciona para remover los repositorios remotos.

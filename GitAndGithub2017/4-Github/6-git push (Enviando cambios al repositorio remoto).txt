@@ -1,0 +1,13 @@
+Lo primero que debemos hacer es enviar nuestros tags en el proyecto.
+también recordemos que podemos eviar ramas, lo que también posdemos hacer a través del uso
+del comando git push [nombre de la rama].
+
+Asi subimos nuestros cambios a github:
+
+git push origin master
+Tambien podemos enviar los tags:
+
+git push origin master --tags
+Podemos enviar otras ramas:
+
+git push origin [otra_rama]
