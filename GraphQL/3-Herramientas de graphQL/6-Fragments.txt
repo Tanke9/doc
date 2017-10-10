@@ -1,0 +1,37 @@
+Los Fragments son una manera que nos permite GraphQL en las consultas de agrupar campos
+para poder utilizarlos de una manera conveniente para nuestra consulta.
+
+Los Fragments nos ayudan a abstraer duplicidad de las queries en una declaración que podemos
+re-utilizar. Si hay que hacer cambios lo hacemos en un solo lugar (El Fragment) en lugar de
+hacer cambios a las demas queries una por una.
+
+
+{
+ curso(id:1){
+    titulo
+  	descripcion
+  }
+  cursoMasvisto: curso(id:2){
+    titulo
+    descripcion
+  }
+}
+
+
+
+equivale a esto con fragments:
+
+{
+ curso(id:1){
+    ...camposNecesario
+  }
+  cursoMasvisto: curso(id:2){
+    ...camposNecesario
+  }
+
+}
+
+fragment camposNecesario on Curso{
+  titulo
+  descripcion
+}

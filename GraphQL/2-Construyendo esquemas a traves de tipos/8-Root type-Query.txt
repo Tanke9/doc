@@ -1,0 +1,10 @@
+Podríamos verlos como una analogía a los endpoints que tenemos en una arquitectura .REST.
+
+Type: Query Por medio de este Type exponemos la parte de nuestros esquemas al cliente
+
+type Query{
+  cursos : [Curso]                   //end point que devuelve la lista de Cursos
+  profesores: [Profesor]          //end point que devuelve la lista de profesores
+  curso(id: String!): Curso           //end point que recibe un id  que es un String y es requerido y devuelve el curso
+  profesor(id: String!, limite: Int): Profesor   //endpoint que recibe id String no null y un limite 
+}

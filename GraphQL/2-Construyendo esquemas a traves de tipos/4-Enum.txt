@@ -1,0 +1,7 @@
+El tipo Enum es un type que usamos cuando algo puede adquirir una o varias opciones, una de
+las cosas que podemos expresar a través de este type es:
+
+enum Genero {
+MASCULINO
+FEMENINO
+}

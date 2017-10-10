@@ -1,0 +1,16 @@
+Aliases es una manera de ponerle un nombre a una consulta.
+
+Uno de los motivos de usar un alias es al momento de pedir varios recursos del mismo Type
+ con diferente ID para que la Key (En este caso curso) no se pise o se sobre escriba
+ (Graphql no deja que eso pase).
+
+{
+  cursoMasVotado: curso(id: 1) {
+    titulo
+    rating
+  }
+  cursoMasVisto: curso(id: 2) {
+    titulo
+    descripcion
+  }
+}

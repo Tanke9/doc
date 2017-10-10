@@ -1,0 +1,41 @@
+Para traducir los pedidos en datos reales se usa la capa resolver.
+
+Para ver la documentacion ir a dev.apollodata.com/ en la parte de server.
+
+en este caso la capa de resolvers....
+
+Los resolvers son parecidos a la capa de controllers de un sistema mvc.
+
+Los resolvers son un objeto donde cada llave de ese objeto es uno de esos tipos (definidos en
+schema.js)
+
+Por ejemplo para este type
+type Query{
+  cursos: [Curso]
+  profesores: [Profesor]
+  curso(id: Int): Curso
+  profesor(id: Int): Profesor
+}
+
+un resolver podria ser:
+
+const resolvers = {
+  Query:{
+    cursos: () =>{
+      return [{
+          id: 1,
+          titulo: 'Curso de GraphQL',
+          descripcion: 'Aprendiendo GraphQL'
+      }, {
+          id: 2,
+          titulo: 'Curso de Java',
+          descripcion: 'Aprendiendo Java'
+      } ]
+    }
+  }
+}
+
+const schema = makeExecutableSchema({
+  typeDefs,
+  resolvers
+})

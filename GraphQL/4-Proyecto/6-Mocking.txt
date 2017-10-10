@@ -1,0 +1,55 @@
+graphql-tools tiene una funcion que se llama addMockFunctionsToSchema para añadir al principio
+en el schema.
+
+const { makeExecutableSchema, addMockFunctionsToSchema  } = require ('graphql-tools')
+
+Se usa despues de definido el schema.
+
+addMockFunctionsToSchema ({
+   schema,
+   mocks:{
+     Curso: ()=>{
+       return{
+         id:1,
+         titulo: 'Curso GraphQL',
+         descripcion:'Aprendiendo GraphQL'
+       }
+     },
+     Profesor: ()=>{
+       return{
+         nombre:'Juan Francisco'
+       }
+     }
+   }
+})
+
+
+Hay una funcion muy util para generar aleatoriedad a los datos, mas parecidos a los de un entorno
+real que se llama casual de boo1ean www.github.com/boo1ean/casual. Permite generar paises,
+ciudad, una oracion, muchas, etc..
+
+Se importa
+$ yarn add casual
+
+importamos la libreria
+ y añadimos el mock, el tercer parametro indica si se usa el mock o los resolvers (preserveResolvers)
+
+ addMockFunctionsToSchema ({
+    schema,
+    mocks:{
+      Curso: ()=>{
+        return{
+          id: casual.uuid,
+          titulo: casual.title,
+          descripcion: casual.text
+        }
+      },
+      Profesor: ()=>{
+        return{
+          nombre:casual.name,
+          nacionalidad:casual.country
+        }
+      }
+    },
+    preserveResolvers:true
+ })

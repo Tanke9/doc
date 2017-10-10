@@ -1,0 +1,25 @@
+Durante el modulo 3 del curso estaremos viendo conceptos teóricos como Querys, Argumentos,
+Variables, Aliases, Fragments, Directives, Mutations, input types entre otros, y para demostrarlos
+con algunos ejemplos estaré trabajando con el proyecto que desarrollaremos a partir del 4 modulo
+del curso.
+
+Sé que vas a querer probarlo desde el comienzo, esto esta muy bien, por eso aquí te dejo
+algunos pasos para que lo hagas.
+
+Descarga el material que te dejo en éste enlace: Material proyecto graphQL.
+
+Ingresa a la carpeta del proyecto y corre el comando
+
+npm install
+
+Esto instalara todas las dependencias requeridas por el proyecto incluidas en el package.json
+
+Cuando haya finalizado el proceso, ejecuta
+
+node index.js
+
+Se te informara que el servidor ya esta corriendo y puedes ir a tu navegador y entrar usando
+http://localhost:5678/graphiql
+
+Con esto ya puedes probar los ejemplos que estaré dando en éste modulo, recuerda que el
+proyecto empezaremos a desarrollarlo por completo en el modulo 4.

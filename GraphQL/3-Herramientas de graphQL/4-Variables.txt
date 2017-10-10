@@ -1,0 +1,21 @@
+Para usar variables es necesario usar la forma completa de la query.
+
+query <nombreQuery>(<$variable>: type = <valor por defecto>) {
+...
+}
+
+
+ejemplo
+
+query UnCurso($id:Int){     //si pongo query UnCurso($id:Int = 1) por defecto pilla el uno (sino viene nada)
+  curso(id: $id){
+    titulo
+  }
+}
+
+
+y en la zona de query variables
+
+{
+  "id": 1
+}

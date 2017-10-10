@@ -1,0 +1,7 @@
+-Servidor en javascript Node.js
+-Para la capa de webserver vamos a usar express. Para generar servidor web que responda a las peticiones http
+-graphql-server de apollographql en github, Apollo es un set de tecnologias para GraphQL, tanto
+para clientes como para servidor, que es el que se va a usar. Tiene implementaciones para la
+mayoria de webservers: express,Connct, Hapi, Koa, Restify y Aws Lambda.
+-Bdd mysql o sqllite
+-orm Ojectcion.js

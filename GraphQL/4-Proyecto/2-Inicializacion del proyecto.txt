@@ -1,0 +1,51 @@
+Yarn es una package manager parecido a npm que permite manejar las dependencias como npm o mejor.
+
+https://yarnpkg.com/en/docs/install
+
+https://nodejs.org/en/download/
+
+1-) En una carpeta vacia, (en mi caso server-graphql) poner en consola el comando
+
+   $yarn init -y
+
+   Pone valores por defecto y crea el archivo package.json. Que nos va a permetir instalar dependencias.
+
+2-)La primera dependencia es express, nuestro servidor web.
+
+  $ yarn add express
+
+3-) La siguiente dependencia que se necesita es body-parser para poder obtener el body del
+request http y poder parsearlo
+
+  $ yarn add body-parser
+
+4-) Las siguientes dependencias que quedan son
+
+        graphql: paquete oficial que parsea el esquema.
+        apollo-server-express: la version especifica del graphql de apollo para express
+        graphql-tools : herramientas de apollo para trabajar con esquema de graphQL
+
+        para añadir las 3 a la vez con un espacio
+
+        $ yarn add graphql apollo-server-express graphql-tools
+
+5-) Crear index en la carpeta con la estrucutra
+
+            const express = require ('express')      //requerir dependencias con la palabra clave const
+            const bodyParser = require ('body-parser')
+
+            const app = express()                 //la aplicacion con server express
+
+            const PORT = 5679
+
+            app.listen(PORT, ()  =>{             //decir a express que empieze a escuchar ese puerto
+              console.log('Servidor corriendo')
+            })
+
+6-) arrancamos el servidor en consola
+
+            $ node index.js
+            Para pararlo Ctrl+c
+
+7-)Crear porcion del schema. Crear archivo nuevo que se llame schema.js, donde vamos a
+escribir el schema de nuestra aplicacion

@@ -1,0 +1,10 @@
+Type Mutation
+
+Un tipo especial de endpoints, mutations, que permite definir Insertar, Modificar o Eliminar elementos
+
+typeMutation {
+	agregarCurso(
+		descripcion: String,
+		profesorId: String
+	): Curso    //en el return despues de los dos puntos devuelve el curso.
+}

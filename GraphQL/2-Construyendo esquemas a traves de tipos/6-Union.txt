@@ -1,0 +1,9 @@
+Imagina que estás en Facebook y quieres hacer una búsqueda en la barra de búsquedas, cuando
+ingresas algo de texto automáticamente comienzan a salir algunas opciones de personas, lugares,
+etc. Entonces, si tuviéramos que tirar eso en GraphQL, esto definiría que una búsqueda devuelve
+un lugar o un evento, y lo logramos a través de los union que nos deja agrupar varios tipos en uno solo.
+
+UNION es parecido al operador lógico or, es decir retorna todos los resultados que cumplan con
+alguna de las opciones. Aquí la palabra clave es O.
+
+En el ejemplo búsqueda retorna todos los resultados que sean Amigo o Lugar o Evento… etc.

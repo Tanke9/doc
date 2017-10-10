@@ -1,0 +1,12 @@
+La Interfaz de GraphiQL
+
+GraphiQL es la herramienta que más vamos a utilizar para interactuar con un esquema de GraphQL.
+Esta herramienta fue desarrollada por la misma gente de Facebook y nos permite hacer consultas,
+ ver la documentación, interactuar con el esquema de GraphQL y así entender las queries que vamos a ejecutar.
+
+
+ Aquí les dejo el repositorio de Github listo para clonarlo, correr un par de comandos en la terminal,
+ y levantar su propia instancia local de GraphiQL para jugar contra el mismo set de datos que yo
+  trabajé en los
+
+ https://github.com/p4bloch/graphql-platzi

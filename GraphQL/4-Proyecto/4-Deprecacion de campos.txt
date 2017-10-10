@@ -1,0 +1,4 @@
+Se puede deprecar un campo, indicar que no se va a usar en el futuro, aunque actualmente lo
+soporte, la manera es poner en el schema.js despues del tipo la etiqueta @deprecated y su razon.
+
+@deprecated(reason: no queremos puntuar mas)

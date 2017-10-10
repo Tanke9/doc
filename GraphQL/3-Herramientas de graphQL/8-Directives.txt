@@ -1,0 +1,21 @@
+Las Directivas nos permiten pedir ciertos valores de una consulta dependiendo de si una variable
+ es true o false.
+
+Existen 2 tipos:
+
+@include incluye el campo si el argumento es true.
+@skip omite el campo si el argumento es true. (revirtiendo la condición)
+Declaramos la variable:
+
+{
+  "conDescription": true
+}
+Realizamos la consulta:
+
+query Cursos($conDescription: Boolean!) {
+  cursos {
+    titulo
+    descripcion @include(if: $conDescription)
+  }
+}
+Responder

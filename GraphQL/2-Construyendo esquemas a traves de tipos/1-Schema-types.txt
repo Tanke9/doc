@@ -1,0 +1,6 @@
+El Schema - Types
+¿Qué es el schema en GraphQL?
+Es la columna vertebral de GraphQL y es la manera en la que decidimos las entidades, cómo se
+relacionan entre ellas, cuáles son las entidades que están disponibles para cada cliente,
+en pocas palabras, es todo lo que el cliente puede pedir a través de GraphQL.
+Algo que tenemos que saber es que los Schemas están compuestos de Types.

@@ -1,0 +1,27 @@
+La ventaja de Interface es que nosotros estamos definiendo ciertos campos requeridos y
+sabemos que todas las implementaciones se van a cumplir. si en un futuro necesitáramos que
+todas las implementaciones de perfil tuvieran un nuevo campo, solamente debemos agregarlo a
+la Interface
+
+El type interface permite que los atributos especificados dentro de esta, tambien se definan en
+los objetos que la implementen
+
+// Interface
+interface Perfil{
+  nombre: String!
+  mail: String!
+}
+
+//Implementaciones de la Interface
+type PerfilFB implements Perfil{
+  nombre: String!
+  mail: String!
+  amigos: [Usuario]
+}
+
+type PerfilTW implements Perfil{
+  nombre: String!
+  mail: String!
+  handle: String
+  seguidores: [Usuario]
+}

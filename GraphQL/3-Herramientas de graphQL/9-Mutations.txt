@@ -1,0 +1,11 @@
+profesorAdd(profesor: NuevoProfesor): Profesor
+
+mutation {
+  profesorAdd(profesor: {
+    nombre: "Pedro"
+    genero: MASCULINO
+    nacionalidad: "España"
+  }) {
+    id
+  }
+}

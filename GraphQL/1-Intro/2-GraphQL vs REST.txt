@@ -1,0 +1,18 @@
+Rest es solo una convención, lo que quiere decir que es solo la manera en que nos ponemos de
+ acuerdo para comunicarnos. Sin embargo, el hecho de que no hay unas reglas establecidas
+ genera que cada uno utilice la convención de la forma que más le convenga y esto hace que no
+ haya un orden establecido.
+
+GraphQL por otro lado, es un lenguaje tipado y validable, por esto conocemos la forma en la que
+debemos enviar y recibir.
+
+En REST el servidor expone una serie de recursos, mientras que en GraphQL el cliente es quien
+define qué quiere recibir. Además, REST tiene el problema del overfetching que significa que
+envía más información de la que se necesita. En GraphQL se envía solo lo necesario.
+
+En rest se hacen multiples request por vista, o uno pero sin embargo se quedaria dependiente
+de la vista y cualquier cambio en una parte implicaria desarrollar la otra parte, no hay independencia
+de las responsabilidades. En graphql solo hay un request por vista, como hace facebook.
+
+En Rest la documentacion es ajena al desarrolloo o con un plugin como swagger, grapql al  ser
+un lenguaje tipado, GraphQL es un lenguaje documentado por definición.

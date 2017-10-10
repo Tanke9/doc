@@ -1,0 +1,12 @@
+Cuando cambiamos un archivo y grabamos el servidor que esta corriendo no se actualiza.
+Con la dependecia nodemon esta monitoreando y si hay un cambio lo reinicia. Con el parametro -D
+hace que solo esta dependencia solo sea en desarrollo
+
+yarn add nodemon -D
+
+Lo recomendado cuando se agrega una dependencia binaria (qu se ejecuta) es agregar un script
+de npm que en este caso vamos a correr con yarn. en packages.json agregar .
+
+"scripts": {
+  "start": "nodemon index.js"
+},

@@ -1,0 +1,10 @@
+{
+  buscar(query:"GraphQl"){
+    ... on Curso{
+      titulo
+    }
+    ... on Profesor{
+      nombre
+    }
+  }
+}
