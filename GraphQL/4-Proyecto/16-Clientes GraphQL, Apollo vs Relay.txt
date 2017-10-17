@@ -1,0 +1,12 @@
+Los clientes son librerias de javascript que se ejecuta en el navegador
+
+-Hace las queryes mas fáciles, permitiendo manejarlas de mejor manera
+-Caching de las requests
+-Normalización de datos.
+-Optimistic UI.
+-Paginación
+
+Apollo y relay(de fb, pero solo para relay y demasiado complejo)
+
+Apollo fue creado por meteor, es una api sencilla, funciona con cualquier framewor de JS,
+estructura flexible y una adopcion incremental.

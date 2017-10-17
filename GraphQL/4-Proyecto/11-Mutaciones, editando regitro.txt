@@ -1,0 +1,24 @@
+Al igual que con el ejemplo del profesor add, hacer uno para el edit.
+
+1º- Empezamos con el schema agregando el type Mutation del profesor Edit, y creando al igual que
+en el mutation de creacion un input para los datos del profesor (ProfesorEditable)
+
+type Mutation{
+  profesorAdd(profesor: NuevoProfesor): Profesor
+  profesorEdit(profesorid: Int!, profesor: ProfesorEditable): Profesor
+}
+
+2º)Implmeentar en la capa de resolvers. Se consulta en la documentacion de objection como
+actualizar registro. http://vincit.github.io/objection.js/#update-queries
+
+de los ejemplos, el que mejor va es este que obtiene el registro actualizado.
+
+Person
+  .query()
+  .patchAndFetchById(246, {lastName: 'Updated'})
+  .then(updated => {
+    console.log(updated.lastName); // --> Updated.
+  })
+  .catch(err => {
+    console.log(err.stack);
+  });

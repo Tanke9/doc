@@ -4,4 +4,4 @@
 para clientes como para servidor, que es el que se va a usar. Tiene implementaciones para la
 mayoria de webservers: express,Connct, Hapi, Koa, Restify y Aws Lambda.
 -Bdd mysql o sqllite
--orm Ojectcion.js
+-orm Ojection.js

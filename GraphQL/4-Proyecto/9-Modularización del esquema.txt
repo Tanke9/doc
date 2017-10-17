@@ -1,0 +1,7 @@
+Lo primero que deberiamos hacer es modularizar el esquema en modulos. Para tener responsabili-
+dades mas clara.
+
+1º crear y extraer los resolvers. Importamos tambien los modelos que usar y exportamos los resolvers
+para poder importarlos (module.exports = resolvers)
+
+2º metemos el schema en una carpeta nueva llamada schema 

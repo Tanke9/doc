@@ -1,0 +1,20 @@
+Primero vamos al profesor donde esta el tipo,
+
+generamos el input con los campos nuevos,
+
+en el archivo index generamos el type Mutation
+
+en la capa de resolvers implementamos el mutation insertando el pforesor.
+
+y por ultimo la sintaxis es:
+
+mutation AgregarProfesor{
+  profesorAdd(profesor: {
+    nombre: "Celia"
+    genero:FEMENINO
+    nacionalidad:"Española"
+
+  }){
+    id
+  }
+}

@@ -1,0 +1,21 @@
+cuando ejecutamos por ejemplo en el interface grafico
+
+{
+cursos{
+id
+}
+}
+
+y vamos al f12 y vemos la peticion que hace en "network" y volvemos a ejecutar la consulta
+vemos la peticion que se esta haciendo
+
+en el apartado Request-payload, view source o view parsed vemos la peticion post
+
+Graphql se puede dar desde cualquier lado, por ejemplo en postman
+
+ponemos post, la direccion y seleccionamos json, y pegamos la peticion {"query":"{\n  cursos{\n
+ id\n    titulo\n  }\n}","variables":null,"operationName":null}
+
+Para entender mas podemos ver la documentacion de apollo server.
+
+http://dev.apollodata.com/tools/graphql-server/requests.html

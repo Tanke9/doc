@@ -1,0 +1,14 @@
+Real time de verdad.
+Por ejemplo un chat deberia usar subscription.
+
+Implementacion en schema
+type Subscription{
+  nuevoComentario(cursoId: Int!): Comentario
+}
+
+una nueva subscripcion al cual el cliente se puede subscribir que se llama nuevo comentariosque
+recibu un cursoid y va a devolver un comentario a medida que se van generando esos comentarios.
+
+Del lado del servidor hay que agregar otro servidor de web-sockets(comuniciacion entre clientres-
+servidor en tiempo real). Arquetecutura Pub/Sub (publicar y subscribir. un servidor publica cambios
+y un cliente se subscribe a cambios)

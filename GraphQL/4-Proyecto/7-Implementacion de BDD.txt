@@ -1,0 +1,22 @@
+En el package.json se añaden las dependencias de mysql, knex y ojection
+
+$ yarn add mysql knex objection
+
+Y dos comandos al script
+
+"db:migrate": "knex migrate:latest --knexfile=db/knexfile.js",
+"db:seed": "knex seed:run --knexfile=db/knexfile.js"
+
+migrate sirve para correr las mirgracioes y el otro para correr los seeders.
+Dos carpetas nuevas db y models. Db es la estructura con las migraciones y los seeders y los
+modelos estan ligados al orm con el mapeo a la bdd y las relaciones entre ellos.
+
+Las migraciones es un control de version sobre la bdd, se puede hacer gracias a knex. Las
+migraciones tienen dos metodos un up y un down. En el up se dice que va a pasar cuando la
+migracion se ejecute y en el down cuando esa migracion se deshaga.
+Los seeders son para rellenar estas tablas con datos falsos para probar.
+En knexfile.js se le puede especificar una BDD para development y otra BDD para produccion.
+
+$ yarn run db:migrate   //corre las tres migraciones que hay en el proyecto
+
+$ yarn rub db:seed   //corre los seeders y rellena las 3 tablas creadas de datos

@@ -1,0 +1,19 @@
+profesorDelete(_, args) =>{
+  Profesor.query().findById(args.profesorid).then((profesor) => {
+  Profesor.query().deleteById(args.profesorid).then(() => profesor)
+  })
+}
+
+para devolver el profesor primero lo guardamos.
+En javascript se hace con el comando then, resolver la promesa. primer parametro es el resultado
+de la promesa que es el profesor, y dentro borramos el registro.
+
+En el segundo then el primer resultado, que es el resultado del delete, no nos interesa (lo dejamos)
+vacio y devolvemos el profesor. que esa forma seria igual a
+
+
+profesorDelete(_, args) =>{
+  Profesor.query().findById(args.profesorid).then((profesor) => {
+  Profesor.query().deleteById(args.profesorid).then(() => { return profesor})
+  })
+}

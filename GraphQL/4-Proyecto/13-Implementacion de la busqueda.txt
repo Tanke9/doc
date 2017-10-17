@@ -1,0 +1,42 @@
+Buscar a traves de una query que puede devolver profesor, o curso, etc.
+
+1ºDefinir el tipo union
+
+  union resultadoBusqueda= Profesor | Curso
+
+  y el buscar
+
+    buscar(query: String!): [resultadoBusqueda]
+
+  2º en el resolver creamos  el endopoint donde devolvemos un profesor o un curso
+
+  buscar: (_, args) => {
+    return [
+      Profesor.query().findById(3),
+      Curso.query().findById(3)
+    ]
+  }
+
+3º) como ultimo paso decimos a graphql si el objeto que recibe es de un typo u otro en funcion
+de sus propiedades
+
+
+resultadoBusqueda: {
+  __resolveType: (obj) => {
+   if (obj.nombre) return 'Profesor'
+   return 'Curso'
+  }
+},
+
+ejecutamos en graphiql
+{
+  buscar(query:"GraphQl"){
+    __typename
+    ... on Profesor{
+      nombre
+    }
+    ... on Curso{
+      titulo
+    }
+  }
+}

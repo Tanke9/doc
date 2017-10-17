@@ -1,0 +1,27 @@
+En los resolvers se implementa como devolver los datos que hay en la bdd.
+
+En el setup se inicia la conexion a la BDD con el knexConfig que es el archivo de configuracion
+(knexfile) que simplemente dice, en este caso, que el motor es sqlite3 y el fichero donde esta.
+
+Y este archivo se llama en el index.js
+
+require('./db/setup')
+
+Ahora ya usamos los modelos, que son las clases utilitarias que nos van a permitir acceder a la
+BDD desde nuestro código.
+
+Vamos al schema y ponemos que los cursos devuelvan informacion de la bdd en lugar de que este
+a piñon.
+
+1º Importamos modelo curso. const Curso = require('./models/Curso')
+
+2º const resolvers = {
+  Query:{
+    cursos: () => Curso.query(),
+    profesores: () => Profesor.query()
+  },
+}
+
+Para poder pedir las relaciones entre los objetos, objection usa eager. Se obtiene el key definido
+en las relationMappings del models (en este caso Curso)
+cursos: () => Curso.query().eager('profesor'),

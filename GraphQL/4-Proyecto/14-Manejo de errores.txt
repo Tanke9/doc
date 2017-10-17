@@ -1,0 +1,50 @@
+1-) si esta mal formada la consulta
+
+por ejemplo:
+mutation BorrarProfesor{
+profesorDelete(profesorid: 3){
+   numbr
+}
+}
+
+numbr no existe, esta mal formada la consulta. Al ejecutar va a poner un json con "errors" y
+la descripcion. Esta consulta no se va a llegar a ejecutar en la bdd.
+
+2º) Intento borrar dos veces el mismo elemento. la primera vez lo borra y devuelve el
+profesor borrado, pero segunda vez va adevolver null
+
+Se modifica el metodo
+
+profesorDelete: (_, args) =>{
+    return Profesor.query().findById(args.profesorid).then((profesor) => {
+    return Profesor.query().deleteById(args.profesorid).then((filasBorradas) => {
+       if (filasBorradas>0) return profesor
+       throw new Error (`El pforesor con id ${args.profesorid} no se puede eliminar `)
+    })
+  })
+},
+
+se ejecuta:
+
+mutation BorrarProfesor{
+  profesorDelete(profesorid: 4){
+    id
+    nombre
+  }
+}
+
+3º) esta bien, pero mejor formatearlo.añadiendo en el index.js el formatError
+
+app.use(
+  '/graphql',
+  bodyParser.json(),
+  graphqlExpress({
+    schema,
+    formatError: (error) =>{
+      return {
+        codigo: 'a43',
+        name: error.name,
+        mensaje: error.message
+      }
+    }
+  }))

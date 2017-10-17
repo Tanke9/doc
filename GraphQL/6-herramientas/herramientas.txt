@@ -1,0 +1,8 @@
+cheatsheet, chuleta con todo lo que vimos para generar un esquema.
+https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png
+
+para jugar con graphql y starwars
+
+http://graphql.org/swapi-graphql/
+
+https://github.com/chentsulin/awesome-graphql
