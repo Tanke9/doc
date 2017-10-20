@@ -1,0 +1,4 @@
+Bajar tres librerias jsonwebtoken, bcrypt, lodash(libreria que ofrece muas opciones para trabajar
+con arrays, strings, etc...)
+
+yarn add lodash bcrypt jsonwebtoken
