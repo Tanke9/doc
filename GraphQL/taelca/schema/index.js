@@ -16,6 +16,7 @@ type Link {
     usuarios: [Usuario]
     usuario(id: Int): Usuario
     allLinks: [Link!]!
+    me: Usuario
   }
 
 type Mutation{

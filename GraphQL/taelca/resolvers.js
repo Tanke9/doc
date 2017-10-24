@@ -17,12 +17,19 @@ const links = [
 ];
 
 const resolvers = {
-  Query:{
-   usuarios: () => Usuario.query(),
-    usuario: (rootValue,args) => Usuario.query().findById(args.id),
-    allLinks:() => links
 
-  },
+
+  Query:{
+    me: (_,args, {USER})=>{
+      if (USER) {
+        return Usuario.query().findById(USER.id);
+      }
+      return null;
+    } ,
+   usuarios: () => Usuario.query(),
+  }
+
+
   Mutation: {
     usuarioAdd: (_, args) => {
       return Usuario.query().insert(args.usuario)
@@ -38,11 +45,7 @@ const resolvers = {
         })
       })
     },
-    createLink: (_, args) => {
-      const newLink = Object.assign({id: links.length + 1}, args);
-      links.push(newLink);
-      return newLink;
-    },
+
     register: async (_, args) => {
         const newUser = args;
         newUser.password= await bcrypt.hash(newUser.password, 12)
@@ -51,8 +54,6 @@ const resolvers = {
      login: async(_,args, {SECRET}) => {
         const newLogin = args;
          const newUser= await Usuario.query().where('email',newLogin.email)
-         console.log(newUser);
-         console.log(newUser[0].password);
          const valid = await bcrypt.compare(newLogin.password, newUser[0].password);
          console.log(valid);
          if (!valid){
@@ -63,7 +64,7 @@ const resolvers = {
          //decode: no secret | use on the client side
           const token = jwt.sign(
             {
-            myname: 'gallego',
+            user: lodash.pick(newUser[0], ['id', 'nombre'])
             } ,
             SECRET,  {
              expiresIn: '1y',
@@ -71,43 +72,6 @@ const resolvers = {
            return token;
 
 }
-// login: (_,args, {SECRET}) => {
-//     const usuariop = Usuario.query().where('email',args.email)
-//     console.log(usuariop);
-//     console.log(args.password);
-//     console.log(usuariop.password);
-//      const valid =  bcrypt.compare(args.password, usuariop.password, function(err, res){
-//        if(err) {
-//            console.log('Comparison error: ', err);
-//        }
-//        const token = jwt.sign(
-//          {
-//            usuariop: lodash.pick(usuariop, ['id','nombre' ])
-//          } ,
-//          SECRET,  {
-//           expiresIn: '1y',
-//         } )
-//         return token;
-//      });
-// }
-
-      // console.log('*************************************************************************');
-      // console.log(SECRET);
-      // console.log(args.email);
-      // const variable8 = 8
-      //  console.log(Usuario.query().findById(variable8))
-      // const userBD = Usuario.query().where('email',args.email)
-      // const usermail=userBD.email;
-      // console.log(usermail);
-      // console.log('**************************************************************************');
-      // if(!userBD){
-      //   throw new Error ('Not user with  ${args.email} email ')
-      // }
-      // const valid = bcrypt.compare(args.password, userBD.password)
-      // if(!valid){
-      //     throw new Error ('Incorrect password')
-      // }
-    // }
   }
 }
 

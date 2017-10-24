@@ -1,0 +1,36 @@
+Añadimos el usuario para luego pasarlo a la app
+
+const addUser = async (req, res) =>{
+  const token = req.headers.authorization;
+  try {
+    const {user} = await jwt.verify(token, SECRET);
+    console.log(user);
+    req.user=user
+  } catch (err) {
+    console.log(err);
+  }
+  req.next();
+}
+
+// app.use(cors('*'))
+app.use(addUser)
+
+se pass en el contexto el usuairo
+
+app.use(
+  '/graphql',
+  bodyParser.json(),
+  graphqlExpress(req => ( {
+    schema,
+    context: {
+      USER:req.user,
+      SECRET
+    },
+    formatError: (error) =>{
+      return {
+        codigo: 'a43',
+        name: error.name,
+        mensaje: error.message
+      }
+    }
+  })))

@@ -6,6 +6,7 @@
   const {graphqlExpress, graphiqlExpress} = require('apollo-server-express')
   const schema = require('./schema')
   const cors = require('cors')
+  const jwt = require('jsonwebtoken')
 
 require('./db/setup')
 
@@ -13,13 +14,30 @@ const SECRET = 'fdsakfjsañd34543534fjksda'
 
   const app = express()
 
+const addUser = async (req, res) =>{
+  const token = req.headers.authorization;
+  try {
+    const {user} = await jwt.verify(token, SECRET);
+    console.log(user);
+    req.user=user
+  } catch (err) {
+    console.log(err);
+  }
+  req.next();
+}
+
+// app.use(cors('*'))
+app.use(addUser)
 
   app.use(
     '/graphql',
     bodyParser.json(),
-    graphqlExpress({
+    graphqlExpress(req => ( {
       schema,
-      context: {SECRET},
+      context: {
+        USER:req.user,
+        SECRET
+      },
       formatError: (error) =>{
         return {
           codigo: 'a43',
@@ -27,7 +45,7 @@ const SECRET = 'fdsakfjsañd34543534fjksda'
           mensaje: error.message
         }
       }
-    }))
+    })))
 
   app.use(
     '/graphiql',
